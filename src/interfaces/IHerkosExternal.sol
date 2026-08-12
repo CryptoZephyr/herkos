@@ -12,10 +12,7 @@ interface IFlareContractRegistry {
 /// FtsoV2 0x7bde3df0624114edb3a67dfe6753e62f4e7c1d20.
 /// Verified live: getFeedById(0x015852502f55534400...) -> (1039350, 6, 1786285014)
 interface IFtsoV2 {
-    function getFeedById(bytes21 _feedId)
-        external
-        view
-        returns (uint256 _value, int8 _decimals, uint64 _timestamp);
+    function getFeedById(bytes21 _feedId) external view returns (uint256 _value, int8 _decimals, uint64 _timestamp);
 }
 
 /// AssetManager FXRP 0x2a3fe068cd92178554cabcf7c95adf49b4b0b6a8 — an EIP-2535

@@ -35,7 +35,9 @@ contract ProofPathTest is ForkBase {
     }
 
     function _fdcAccepts(bool ok) internal {
-        vm.mockCall(FDC_VERIFICATION, abi.encodeWithSelector(IFdcVerification.verifyXRPPayment.selector), abi.encode(ok));
+        vm.mockCall(
+            FDC_VERIFICATION, abi.encodeWithSelector(IFdcVerification.verifyXRPPayment.selector), abi.encode(ok)
+        );
     }
 
     // ================================================================

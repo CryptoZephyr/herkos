@@ -150,7 +150,9 @@ contract GuardsTest is ForkBase {
         vm.prank(GOV);
         oracle.setExitModel(3_600, 172_800, escrowRate, 200_000);
 
-        assertGt(oracle.timeToExit(uint256(oracle.effectiveQueueUBA()) + 1), beforeSecs, "slower settlement, longer wait");
+        assertGt(
+            oracle.timeToExit(uint256(oracle.effectiveQueueUBA()) + 1), beforeSecs, "slower settlement, longer wait"
+        );
         assertLt(uint256(oracle.haircutPPM()), uint256(beforePPM), "a steeper discount must cost more");
     }
 

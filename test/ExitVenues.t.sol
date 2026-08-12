@@ -99,8 +99,8 @@ contract ExitVenuesTest is ForkBase {
         _addUncorrelatedPools();
         oracle.poke();
 
-        uint256 expected = IERC20(FXRP).balanceOf(POOL_FXRP_USDT0_A)
-            + IERC20(FXRP).balanceOf(POOL_FXRP_USDT0_B) + IERC20(FXRP).balanceOf(POOL_FXRP_USDT0_C);
+        uint256 expected = IERC20(FXRP).balanceOf(POOL_FXRP_USDT0_A) + IERC20(FXRP).balanceOf(POOL_FXRP_USDT0_B)
+            + IERC20(FXRP).balanceOf(POOL_FXRP_USDT0_C);
 
         emit log_named_uint("     dexExitUBA", oracle.dexExitUBA());
         emit log_named_uint("    dexQuoteUBA", oracle.dexQuoteUBA());
@@ -116,8 +116,8 @@ contract ExitVenuesTest is ForkBase {
         _addUncorrelatedPools();
         oracle.poke();
 
-        uint256 raw = IERC20(USDT0).balanceOf(POOL_FXRP_USDT0_A)
-            + IERC20(USDT0).balanceOf(POOL_FXRP_USDT0_B) + IERC20(USDT0).balanceOf(POOL_FXRP_USDT0_C);
+        uint256 raw = IERC20(USDT0).balanceOf(POOL_FXRP_USDT0_A) + IERC20(USDT0).balanceOf(POOL_FXRP_USDT0_B)
+            + IERC20(USDT0).balanceOf(POOL_FXRP_USDT0_C);
 
         assertEq(uint256(IERC20(USDT0).decimals()), 6, "USDT0 is 6 decimals");
         assertEq(uint256(oracle.dexQuoteUBA()), raw, "equal decimals must pass through unscaled");
@@ -196,17 +196,14 @@ contract ExitVenuesTest is ForkBase {
     /// 627,540 ppm with pools registered against 999,992 without.
     function test_dexCanOnlyImprove() public {
         uint256[6] memory sizes = [
-            uint256(10_000 * 1e6),
-            100_000 * 1e6,
-            1_000_000 * 1e6,
-            10_000_000 * 1e6,
-            50_000_000 * 1e6,
-            150_000_000 * 1e6
+            uint256(10_000 * 1e6), 100_000 * 1e6, 1_000_000 * 1e6, 10_000_000 * 1e6, 50_000_000 * 1e6, 150_000_000 * 1e6
         ];
 
         oracle.poke();
         uint256[6] memory redeemOnly;
-        for (uint256 i; i < sizes.length; ++i) redeemOnly[i] = oracle.clearingPricePPM(sizes[i]);
+        for (uint256 i; i < sizes.length; ++i) {
+            redeemOnly[i] = oracle.clearingPricePPM(sizes[i]);
+        }
         assertEq(uint256(oracle.dexExitUBA()), 0, "the baseline must be redemption alone");
 
         _addUncorrelatedPools();

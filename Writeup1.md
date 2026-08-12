@@ -392,10 +392,10 @@ rate-limit the queue walk into transport failures.
 | `npm run phase5` | Public release check for routes, source hygiene, and deployment records | n/a |
 | `npm run demo` | The demo page, reading live from Flare mainnet and the XRP Ledger in your browser | n/a |
 
-Each phase writes its own `phaseN-results.json`. Every number in this document
-appears in one of them. `npm run phase5` re-reads `readers.json`,
-`phase3-results.json`, `phase4-results.json`, and `fork.json`. It fails if a
-figure in this document has drifted from its source.
+The research phases write local `phaseN-results.json` files so their evidence
+can be inspected after a run. Those generated files remain ignored. `npm run
+phase5` checks the public source set, deployment records, routes, and release
+hygiene without depending on generated reports.
 
 ### Two ordering constraints that are checks doing their job, not flakes
 

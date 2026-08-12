@@ -310,9 +310,7 @@ contract ExitCapacityOracle is IPriceOracle {
 
         _recompute();
 
-        emit Poked(
-            uint64(block.number), effQ, coreVaultUBA, dexFxrp, exitCapacityUBA, haircutPPM
-        );
+        emit Poked(uint64(block.number), effQ, coreVaultUBA, dexFxrp, exitCapacityUBA, haircutPPM);
     }
 
     /// Walks AssetManager.redemptionQueue() page by page through nextId,
@@ -323,8 +321,7 @@ contract ExitCapacityOracle is IPriceOracle {
     function _walkQueue() internal view returns (uint128 effQ, uint64 tickets, uint64 pages, bool trunc) {
         uint256 cursor;
         uint256 budget = maxQueuePages;
-        AgentCache memory cache =
-            AgentCache({vaults: new address[](64), live: new bool[](64), n: 0});
+        AgentCache memory cache = AgentCache({vaults: new address[](64), live: new bool[](64), n: 0});
 
         while (pages < budget) {
             (IAssetManager.RedemptionTicketInfo[] memory page, uint256 next) =
@@ -722,10 +719,7 @@ contract ExitCapacityOracle is IPriceOracle {
         if (pool == address(0) || quoteToken == address(0)) revert ZeroAddress();
         exitPools.push(
             ExitPool({
-                pool: pool,
-                quoteToken: quoteToken,
-                quoteDecimals: IERC20(quoteToken).decimals(),
-                correlated: correlated
+                pool: pool, quoteToken: quoteToken, quoteDecimals: IERC20(quoteToken).decimals(), correlated: correlated
             })
         );
         emit PoolRegistered(pool, quoteToken, correlated);
@@ -757,12 +751,10 @@ contract ExitCapacityOracle is IPriceOracle {
         emit ParamsChanged();
     }
 
-    function setExitModel(
-        uint64 queueSettle,
-        uint64 cvCycle,
-        uint128 escrowPerDay,
-        uint32 discountPPMPerYear
-    ) external onlyGovernance {
+    function setExitModel(uint64 queueSettle, uint64 cvCycle, uint128 escrowPerDay, uint32 discountPPMPerYear)
+        external
+        onlyGovernance
+    {
         if (discountPPMPerYear > 1_000_000) revert BadParam();
         queueSettleSeconds = queueSettle;
         coreVaultCycleSeconds = cvCycle;

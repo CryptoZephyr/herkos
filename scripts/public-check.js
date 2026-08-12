@@ -18,11 +18,10 @@ const requiredFiles = [
   'test/Coston2LendingMarket.t.sol', 'test/Coston2Fork.t.sol', 'testnet/index.html', 'testnet/app.js',
   'testnet/style.css', 'testnet/contracts.json', 'scripts/demo.js',
   'scripts/deploy-coston2.js', 'scripts/verify-coston2.js', 'scripts/public-check.js', 'deployments/coston2.json', 'vercel.json',
-  'COSTON2_LENDING_REBUILD.md',
 ];
 const privateNames = [
   'CLAUDE.md', 'Handoff1.md', 'Memory1.md', 'LUNA_FRONTEND_AUDIT.md', 'PRD1.md',
-  'Tasks1.md', 'Architecture1.md', 'setup1.md',
+  'Tasks1.md', 'Architecture1.md', 'setup1.md', 'COSTON2_LENDING_REBUILD.md',
 ];
 const privateNamePattern = new RegExp(privateNames.map((name) => name.replace('.', '\\.')).join('|'));
 // Transaction hashes and Solidity constants are public 32-byte values, so do
@@ -64,9 +63,9 @@ function main() {
   const secrets = [];
   for (const file of publicFiles) {
     const content = read(file);
-    if (!['scripts/public-check.js', 'COSTON2_LENDING_REBUILD.md'].includes(file) && privateNamePattern.test(content)) forbiddenMentions.push(`${file} mentions removed private planning material`);
+    if (file !== 'scripts/public-check.js' && privateNamePattern.test(content)) forbiddenMentions.push(`${file} mentions removed private planning material`);
     if (!file.endsWith('.example') && secretPattern.test(content)) {
-      const allowed = file === 'scripts/deploy-coston2.js' || file === 'scripts/public-check.js' || file === 'COSTON2_LENDING_REBUILD.md';
+      const allowed = file === 'scripts/deploy-coston2.js' || file === 'scripts/public-check.js';
       if (!allowed) secrets.push(file);
     }
   }
