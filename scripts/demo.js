@@ -34,13 +34,17 @@ const TYPES = {
    under its root is a bad habit regardless of what is in the directory. */
 const ALLOW = new Set([
   'demo/index.html', 'demo/app.js', 'demo/style.css', 'demo/snapshot.json', 'demo/favicon.svg', 'demo/herkos-mark.svg',
+  'testnet/index.html', 'testnet/app.js', 'testnet/style.css', 'testnet/contracts.json',
   'docs/index.html', 'docs/technical.html', 'docs/privacy.html', 'docs/terms.html', 'docs/docs.css',
-  'README.md', 'Writeup1.md', 'src/ExitCapacityOracle.sol',
+  'README.md', 'Writeup1.md', 'src/ExitCapacityOracle.sol', 'src/Coston2SpotOracle.sol',
+  'src/Coston2LendingMarket.sol', 'deployments/coston2.json', 'scripts/verify-coston2.js',
 ]);
 
 const server = http.createServer((req, res) => {
   let rel = decodeURIComponent(new URL(req.url, 'http://x').pathname).replace(/^\/+/, '');
   if (rel === '' || rel === 'demo' || rel === 'demo/') rel = 'demo/index.html';
+  if (rel === 'testnet' || rel === 'testnet/') rel = 'testnet/index.html';
+  if (rel === 'docs' || rel === 'docs/') rel = 'docs/index.html';
 
   // The root URL is a convenience alias for demo/index.html. Its relative
   // stylesheet and script requests arrive as /style.css and /app.js, so map

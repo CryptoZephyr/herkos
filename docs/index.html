@@ -30,6 +30,7 @@
     <aside class="docs-aside" aria-label="On this page">
       <p>On this page</p>
       <a href="#overview">Overview</a>
+      <a href="#coston2">Coston2 test market</a>
       <a href="#data">Data and freshness</a>
       <a href="#boundaries">Boundaries</a>
       <a href="#more">More docs</a>
@@ -44,6 +45,13 @@
           <article class="doc-card"><h3>For lenders</h3><p>A position value that reflects both market price and observed exit conditions.</p></article>
           <article class="doc-card"><h3>For integrators</h3><p>A Compound-compatible price interface with the risk adjustment derived on-chain.</p></article>
         </div>
+      </section>
+      <section id="coston2" class="docs-section">
+        <p class="eyebrow">Coston2 test market</p>
+        <h2>Try the oracle with faucet assets</h2>
+        <p>The separate <a href="../testnet/">Coston2 test market</a> is a real testnet lending contract. It accepts faucet FTestXRP as collateral and faucet USDT0 as liquidity and debt. You can connect a browser wallet, refresh the oracle, supply liquidity, deposit collateral, borrow, repay, and withdraw.</p>
+        <p>The market uses a 70% maximum loan-to-value ratio, a 75% liquidation threshold, a 5% liquidation bonus, and no interest accrual. Every confirmed action is a Coston2 transaction with a link to the explorer. Testnet assets have no monetary value.</p>
+        <div class="callout"><p>The Mainnet page remains read-only. Its lending integration is a pinned fork result against an existing deployed market. The Coston2 market is a Herkos deployment for testing, not an external protocol adoption.</p></div>
       </section>
       <section id="data" class="docs-section">
         <p class="eyebrow">Data and freshness</p>

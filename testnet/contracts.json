@@ -1,0 +1,15 @@
+{
+  "network": "coston2",
+  "chainId": 114,
+  "deploymentPending": false,
+  "rpcUrl": "https://coston2-api.flare.network/ext/C/rpc",
+  "explorerUrl": "https://coston2-explorer.flare.network",
+  "faucetUrl": "https://faucet.flare.network/coston2",
+  "registry": "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
+  "fTestXrp": "0x0b6A3645c240605887a5532109323A3E12273dc7",
+  "testUsdt0": "0xC1A5B41512496B80903D1f32d6dEa3a73212E71F",
+  "spotOracle": "0x45A25862a31530197a3a7C1CA7a426959BD3dc8a",
+  "herkos": "0xdbE3207e6b6e25417FdC24B99932f554718C0972",
+  "lendingMarket": "0xb482A2FA8ec63F76B711813e685C4b4568a1c255",
+  "deploymentBlock": 33973530
+}

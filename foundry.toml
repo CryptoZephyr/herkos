@@ -14,3 +14,4 @@ fs_permissions = [{ access = "read", path = "./fork.json" }]
 
 [rpc_endpoints]
 flare = "https://flare-api.flare.network/ext/C/rpc"
+coston2 = "https://coston2-api.flare.network/ext/C/rpc"

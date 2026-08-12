@@ -1,0 +1,131 @@
+{
+  "network": "coston2",
+  "chainId": 114,
+  "deployedAtBlock": 33973530,
+  "deployer": "0x7C1a4157E7427060eB87B9C4B27a2ac12EB81A6F",
+  "fTestXrp": "0x0b6A3645c240605887a5532109323A3E12273dc7",
+  "testUsdt0": "0xC1A5B41512496B80903D1f32d6dEa3a73212E71F",
+  "spotOracle": "0x45A25862a31530197a3a7C1CA7a426959BD3dc8a",
+  "herkos": "0xdbE3207e6b6e25417FdC24B99932f554718C0972",
+  "lendingMarket": "0xb482A2FA8ec63F76B711813e685C4b4568a1c255",
+  "constructorArgs": {
+    "spotOracle": [
+      "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
+      "0x0b6A3645c240605887a5532109323A3E12273dc7",
+      "0xC1A5B41512496B80903D1f32d6dEa3a73212E71F",
+      "0x015852502f55534400000000000000000000000000",
+      "420"
+    ],
+    "herkos": [
+      "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
+      "0xc1Ca88b937d0b528842F95d5731ffB586f4fbDFA",
+      "0x45A25862a31530197a3a7C1CA7a426959BD3dc8a",
+      "0x015852502f55534400000000000000000000000000",
+      "0x7C1a4157E7427060eB87B9C4B27a2ac12EB81A6F"
+    ],
+    "lendingMarket": [
+      "0x0b6A3645c240605887a5532109323A3E12273dc7",
+      "0xC1A5B41512496B80903D1f32d6dEa3a73212E71F",
+      "0xdbE3207e6b6e25417FdC24B99932f554718C0972"
+    ]
+  },
+  "parameters": {
+    "maxLtvBps": 7000,
+    "liquidationThresholdBps": 7500,
+    "liquidationBonusBps": 500,
+    "interest": "none",
+    "referenceSizeUBA": "1000000000000"
+  },
+  "transactions": {
+    "spotOracleDeployment": "0xeddc15642a37fcc4069eed6fd471b814546ace215a7ca855ff0ebd4c550fd8a1",
+    "herkosDeployment": "0x60330f39f04cf2a16287bd28233c1d498f09bb8883fbe1e5734534a1c5164aa5",
+    "marketDeployment": "0x003f208f0010c2e998acfec1d99d3b107b4ce3ca5c4c0f16899967bffe93488b",
+    "marketRegistration": "0xfb1055b5d69f68d07404cd02b44654a66df21e370160eed0b27f0e23e282b956",
+    "firstPoke": "0x927a3e58204cfa9000250f11bcb82582898a02363203916e9dda1a05f8e5181f",
+    "firstPriceRefresh": "0xdf21048a131188ec22f831c309b23da5b31fda7f8f65a59872669cb1d8dea746"
+  },
+  "explorer": {
+    "spotOracle": "https://coston2-explorer.flare.network/address/0x45A25862a31530197a3a7C1CA7a426959BD3dc8a",
+    "herkos": "https://coston2-explorer.flare.network/address/0xdbE3207e6b6e25417FdC24B99932f554718C0972",
+    "lendingMarket": "https://coston2-explorer.flare.network/address/0xb482A2FA8ec63F76B711813e685C4b4568a1c255"
+  },
+  "verification": {
+    "checkedAtBlock": 33973920,
+    "wallet": "0x7C1a4157E7427060eB87B9C4B27a2ac12EB81A6F",
+    "seededLiquidity": "10 USDT0",
+    "collateralTested": "10 FTestXRP",
+    "borrowed": "7 USDT0",
+    "finalPosition": "(0, 0)",
+    "finalAvailableLiquidity": "0",
+    "judgeReserve": "10 USDT0 available to borrow",
+    "reserveCheckedAtBlock": 33974273,
+    "transactions": {
+      "approveUsdt": {
+        "hash": "0x93ca6a6070c2d3edd97e11e8b968d16902e74db04889527480d68df4170ed9e9",
+        "block": 33973901,
+        "gasUsed": 46335,
+        "explorer": "https://coston2-explorer.flare.network/tx/0x93ca6a6070c2d3edd97e11e8b968d16902e74db04889527480d68df4170ed9e9"
+      },
+      "supplyLiquidity": {
+        "hash": "0x40cd4739c5240d06483913ac0919d724a3e30f28bd9779204cdcc2ad987c7a0b",
+        "block": 33973903,
+        "gasUsed": 111915,
+        "explorer": "https://coston2-explorer.flare.network/tx/0x40cd4739c5240d06483913ac0919d724a3e30f28bd9779204cdcc2ad987c7a0b"
+      },
+      "approveFxrp": {
+        "hash": "0xbf395324f596fbeee6dbf4192c99115a9f6df670ee3cb20bf80253c5a77be912",
+        "block": 33973905,
+        "gasUsed": 51217,
+        "explorer": "https://coston2-explorer.flare.network/tx/0xbf395324f596fbeee6dbf4192c99115a9f6df670ee3cb20bf80253c5a77be912"
+      },
+      "depositCollateral": {
+        "hash": "0x072f7d4f330ecdbeb516aa90ed71ea6556283e4003f9ae01f00ab017715e0d6b",
+        "block": 33973909,
+        "gasUsed": 177296,
+        "explorer": "https://coston2-explorer.flare.network/tx/0x072f7d4f330ecdbeb516aa90ed71ea6556283e4003f9ae01f00ab017715e0d6b"
+      },
+      "borrow": {
+        "hash": "0x9a1d565491fb24a1d589154d37c67f12713008268a5b11969e16b6a19ec6b63d",
+        "block": 33973910,
+        "gasUsed": 192024,
+        "explorer": "https://coston2-explorer.flare.network/tx/0x9a1d565491fb24a1d589154d37c67f12713008268a5b11969e16b6a19ec6b63d"
+      },
+      "approveRepay": {
+        "hash": "0x21d00dc25324456c13a7619ed943c197012c9ab9a27047d23a21dd1e256ffae3",
+        "block": 33973912,
+        "gasUsed": 46335,
+        "explorer": "https://coston2-explorer.flare.network/tx/0x21d00dc25324456c13a7619ed943c197012c9ab9a27047d23a21dd1e256ffae3"
+      },
+      "repay": {
+        "hash": "0x1a3d8aed2d8a1b692b04466f7bf310baf475e8269f046679215aca1a0f14ea6e",
+        "block": 33973916,
+        "gasUsed": 61262,
+        "explorer": "https://coston2-explorer.flare.network/tx/0x1a3d8aed2d8a1b692b04466f7bf310baf475e8269f046679215aca1a0f14ea6e"
+      },
+      "withdrawCollateral": {
+        "hash": "0x68b674c80cbdc866d95376cc0af939347efdd69696cbed782bfaf12ab437f7cb",
+        "block": 33973918,
+        "gasUsed": 242741,
+        "explorer": "https://coston2-explorer.flare.network/tx/0x68b674c80cbdc866d95376cc0af939347efdd69696cbed782bfaf12ab437f7cb"
+      },
+    "withdrawLiquidity": {
+      "hash": "0x956277813b11663a5c18bc08df16a4ad6e4a8c0acd2ea2a8ba50d616279cb6f7",
+        "block": 33973920,
+        "gasUsed": 74529,
+        "explorer": "https://coston2-explorer.flare.network/tx/0x956277813b11663a5c18bc08df16a4ad6e4a8c0acd2ea2a8ba50d616279cb6f7"
+      }
+    },
+    "reserveApproval": {
+      "hash": "0x1dc3b8ab4c3e78698a303b8bf30123f186788f6e749ac4118bb2874512abb672",
+      "block": 33974073,
+      "gasUsed": 46335,
+      "explorer": "https://coston2-explorer.flare.network/tx/0x1dc3b8ab4c3e78698a303b8bf30123f186788f6e749ac4118bb2874512abb672"
+    },
+    "reserveSupply": {
+      "hash": "0x7708279f4b7aa27ef5912c9fdcbb4f97fd71e664d1382a4de9027e459153461b",
+      "block": 33974273,
+      "gasUsed": 111915,
+      "explorer": "https://coston2-explorer.flare.network/tx/0x7708279f4b7aa27ef5912c9fdcbb4f97fd71e664d1382a4de9027e459153461b"
+    }
+  }
+}

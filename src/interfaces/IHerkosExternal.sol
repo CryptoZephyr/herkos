@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.28;
 
-/// Every shape here was taken from a deployed contract on Flare mainnet, not
-/// from documentation. See Memory1.md: the docs have been wrong five times and
-/// the explorer is not the deployed contract either.
+/// Every shape here was checked against deployed Flare contract responses rather
+/// than copied from an explorer page or an unverified interface.
 
 /// FlareContractsRegistry 0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019
 interface IFlareContractRegistry {

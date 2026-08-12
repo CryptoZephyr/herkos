@@ -132,7 +132,7 @@ contract RefreshTest is ForkBase {
     }
 
     /// The gas budget for the refresh loop. Permissionless, not free: someone
-    /// pays this. Measured at the pin it is ~1.84M, not the ~600k Architecture1.md
+    /// pays this. Measured at the pin it is ~1.84M, not the smaller estimate
     /// claims -- that figure covered redemptionQueue(0,100) alone (472k here,
     /// 540,601 on mainnet) and omitted the agent-status filtering, which is the
     /// dominant term at ~282k per unique agent.

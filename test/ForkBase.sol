@@ -27,7 +27,7 @@ abstract contract ForkBase is Test {
     address internal constant GOV = 0x37C6C7c719DB93085678cE72981CDd96219C9B72;
 
     // Resolved from COMPTROLLER.getAllMarkets() by matching underlying(), not
-    // from the truncated `0xD1b7A5eF…` in Tasks1.md. Three markets are live;
+    // from a live on-chain market lookup. Three markets are live;
     // isoUSDT0 is the non-FXRP market the fallback-delegation test needs.
     address internal constant CFXRP = 0xD1b7A5eFa9bd88F291F7A4563a8f6185c0249CB3;
     address internal constant CUSDT0 = 0xad7e7989796414c9572da9854DEb1B920724fd09;

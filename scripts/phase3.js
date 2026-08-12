@@ -13,7 +13,7 @@
 //   at ~0 there, so getRequestFee → requestAttestation calldata runs for free. Broadcast
 //   is gated behind PUBLISH=true because there is no funded key anywhere in this build.
 //
-// Three venues, and confusing them is the only way this costs money (CLAUDE.md):
+// Three venues, and confusing them is the only way this costs money:
 // mainnet is read with eth_call and never written; every write goes to the anvil fork;
 // Coston2 is optional. Nothing here can point --broadcast at mainnet — there is no
 // broadcast path to mainnet in this file at all.
@@ -260,7 +260,7 @@ async function main() {
   let head;
   try { head = await F.blockNumber(); } catch (e) {
     check('anvil fork reachable', false, `${FORK_RPC} — ${e.message}`);
-    note('boot it with the command in setup1.md, then re-run');
+    note('boot the pinned local fork, then re-run');
     return finish(t0);
   }
   check('anvil fork reachable at the pin', head >= FORK_BLOCK, `head ${head} · pin ${FORK_BLOCK}`);

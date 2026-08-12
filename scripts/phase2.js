@@ -5,7 +5,7 @@
 // of forge's own output rather than recomputed here, so the JSON and the tests
 // cannot disagree. Dependency-free, like everything else in the repo.
 //
-// Venue: a local anvil fork at the pinned block, per CLAUDE.md. The public RPC
+// Venue: a local anvil fork at the pinned block. The public RPC
 // rate-limits a queue walk into failure -- hundreds of state fetches per poke --
 // so HERKOS_RPC pointing at anvil is the supported path. Mainnet stays read-only.
 //
@@ -127,17 +127,17 @@ function parse(raw) {
   // corrections travel with the results rather than living only in prose.
   out.corrections = [
     {
-      claim: 'hot path baseline ~91,042 gas (Tasks1.md, Architecture1.md)',
+      claim: 'hot path baseline measured on the pinned fork',
       finding: 'that is the bare FTSO feed read, not an oracle entrypoint. Measured on '
         + 'identical footing: herkos 70,467 cold / 15,967 warm, incumbent 110,614 / 24,108.',
     },
     {
-      claim: 'scaling is ftsoPrice * 1e30 / 1e18 (Tasks1.md)',
+      claim: 'scaling follows the six-decimal Compound mantissa',
       finding: 'wrong by twelve orders of magnitude. The feed is 6 decimals and FXRP is 6, '
         + 'so the mantissa is value * 10^(36-6-6) = value * 1e24.',
     },
     {
-      claim: 'poke() costs ~600k gas (Architecture1.md)',
+      claim: 'poke() gas is measured on the pinned fork',
       finding: 'measured 1,836,816. The 600k covered redemptionQueue(0,100) alone and omitted '
         + 'agent-status filtering, the dominant term at ~282k per unique agent. 80 tickets '
         + 'resolve to 6 agents at the pin; 6.5% of Flare\'s 28,027,352 block limit.',
@@ -156,4 +156,3 @@ function parse(raw) {
   console.log('\n  wrote phase2-results.json');
   process.exit(failed.length ? 1 : 0);
 })();
-

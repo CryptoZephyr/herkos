@@ -65,7 +65,8 @@ contract ExitCapacityOracle is IPriceOracle {
     // These three pack into a single 256-bit slot on purpose: the hot path
     // reads it with one SLOAD. ftsoV2 lives here rather than in an immutable
     // because addresses are resolved through FlareContractsRegistry at runtime
-    // (CLAUDE.md) — syncRegistry() refreshes it, permissionlessly.
+    // The registry is the source of truth; syncRegistry() refreshes it,
+    // permissionlessly.
     address public ftsoV2; //        160 bits
     uint32 public haircutPPM; //      32 bits — 1_000_000 == no haircut
     uint64 public pokedAt; //         64 bits
@@ -181,7 +182,7 @@ contract ExitCapacityOracle is IPriceOracle {
 
         _syncRegistry();
 
-        // Defaults come from measurement, not taste. See Memory1.md.
+        // Defaults come from the measured model, not from a display preference.
         referenceSizeUBA = 1_000_000 * 1e6; // 1M FXRP — small enough to agree at first
         maxPokeAge = 6 hours;
         maxFeedAge = 420; // the incumbent's own tokenConfig maxStalePeriod
@@ -256,8 +257,8 @@ contract ExitCapacityOracle is IPriceOracle {
     /// the incumbent at block 67,013,823: getFeedById returned (1039350, 6) and
     /// the incumbent returned 1.03935e30, so the exponent is
     /// 36 - assetDecimals - feedDecimals = 24. Note this is NOT the
-    /// `ftsoPrice * 1e30 / 1e18` shape written in Tasks1.md — implementing that
-    /// literally would have been wrong by twelve orders of magnitude.
+    /// A common 1e18 scaling shortcut would be wrong by twelve orders of
+    /// magnitude for this six-decimal asset.
     function _scale(uint256 value, int8 feedDecimals) internal view returns (uint256) {
         int256 exp = int256(36) - int256(uint256(fxrpDecimals)) - int256(feedDecimals);
         if (exp > 60 || exp < -18) revert BadFeedDecimals(feedDecimals);
@@ -481,7 +482,8 @@ contract ExitCapacityOracle is IPriceOracle {
     /// the correct answer is to wait — so an unconditional fill priced the exit
     /// below what a patient seller would actually get, and registering pools
     /// tightened the haircut (999,992 -> 627,540 ppm) while raising capacity.
-    /// See Memory1.md, *The DEX slice*.
+    /// The DEX slice is bounded by the same conservative redemption comparison
+    /// used by the contract.
     ///
     /// Constant product pays an average of x/(x+dx) and a *marginal*
     /// x^2/(x+dx)^2, so the two legs price equally at
@@ -800,4 +802,3 @@ contract ExitCapacityOracle is IPriceOracle {
         pendingGovernance = address(0);
     }
 }
-

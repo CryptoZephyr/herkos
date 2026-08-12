@@ -99,7 +99,7 @@ const canon = (it) => {
 
 const fmt = (x, dp = 0) => Number(x).toLocaleString('en-US', { maximumFractionDigits: dp });
 // FXRP and the vault collateral stablecoins are 6 decimals. An 18-decimal
-// assumption silently prints zeros — see CLAUDE.md.
+// assumption silently prints zeros — keep the asset precision explicit.
 const ubaToUnits = (v) => Number(v) / 1e6;
 
 module.exports = {

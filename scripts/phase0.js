@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 // Phase 0 — Prep. Read-only verification pass against Flare mainnet.
-// Closes the five open Phase 0 items in Tasks1.md. No keys, no writes, no cost.
+// Resolves the deployed contract shapes and pins the read-only research fork.
 //
 // Everything resolves through FlareContractsRegistry at runtime. The addresses below are
 // the expected answers — used to check the resolver returned the right thing, never to
 // skip resolution. And every shape is taken from the deployed contract, not the docs:
-// documented signatures have been wrong five times (Memory1.md).
+// Interface shapes are checked against live deployed responses.
 const fs = require('fs');
 const path = require('path');
 const {
@@ -74,7 +74,7 @@ async function fetchAbi(addr) {
   // ============================================================================
   // 1. Resolve AssetManager FXRP + FXRP token through FlareContractsRegistry
   // ============================================================================
-  hr('1. REGISTRY RESOLUTION AT RUNTIME  (Tasks1.md Phase 0)');
+  hr('1. REGISTRY RESOLUTION AT RUNTIME');
 
   const all = await M.call(REGISTRY, sel('getAllContracts()'));
   const names = strArrayAt(all, 0);
@@ -146,7 +146,7 @@ async function fetchAbi(addr) {
   //    Expected: (RedemptionTicketInfo[] queue, uint256 nextId)
   //              RedemptionTicketInfo { uint256 ticketId; address agentVault; uint256 ticketValueUBA; }
   // ============================================================================
-  hr('2. redemptionQueue(uint256,uint256) RETURN SHAPE  (Tasks1.md Phase 0)');
+  hr('2. redemptionQueue(uint256,uint256) RETURN SHAPE');
 
   const QSEL = sel('redemptionQueue(uint256,uint256)');
   const page1 = await M.call(AM, QSEL + enc(0n) + enc(200n));
@@ -198,7 +198,7 @@ async function fetchAbi(addr) {
     pages,
   };
 
-  // Gas for the walk poke() must pay. Memory1.md: 540,601 at (0,100) on mainnet.
+  // Gas for the walk is measured here against the pinned mainnet state.
   for (const n of [20n, 100n]) {
     const g = await M.rpc('eth_estimateGas', [{ to: AM, data: QSEL + enc(0n) + enc(n) }]);
     const gas = Number(BigInt(g));
@@ -209,7 +209,7 @@ async function fetchAbi(addr) {
   // ============================================================================
   // 3. Confirm CoreVaultManager accessors
   // ============================================================================
-  hr('3. CoreVaultManager ACCESSORS  (Tasks1.md Phase 0)');
+  hr('3. CoreVaultManager ACCESSORS');
 
   let CVM = null;
   for (const fn of ['getCoreVaultManager()', 'coreVaultManager()']) {
@@ -236,7 +236,7 @@ async function fetchAbi(addr) {
     xrplAddress: cvAddr,
   };
 
-  // Reconciliation — Memory1.md records drift of -0.015%. Backing must still close.
+  // Reconciliation keeps the public backing read internally consistent.
   if (cv['availableFunds()'] !== null && cv['escrowedFunds()'] !== null && totalSupply > 0n) {
     const backing = queueTotal + cv['availableFunds()'] + cv['escrowedFunds()'];
     const drift = (Number(backing - totalSupply) / Number(totalSupply)) * 100;
@@ -251,7 +251,7 @@ async function fetchAbi(addr) {
   //    diamond address returns only the proxy shell: events, errors, fallback, and ZERO
   //    functions. The on-chain loupe is the authority on what is dispatchable.
   // ============================================================================
-  hr('4. DEPLOYED AssetManager ABI  (Tasks1.md Phase 0)');
+  hr('4. DEPLOYED AssetManager ABI');
 
   const loupeRaw = await M.probe(AM, sel('facets()'));
   check('AssetManager answers the EIP-2535 loupe (facets())', !!loupeRaw,
@@ -340,7 +340,7 @@ async function fetchAbi(addr) {
   };
 
   // Re-confirm the recorded deployed-vs-documented mismatches still hold.
-  console.log('\n        Deployed-vs-documented mismatches (Memory1.md) — recheck:');
+  console.log('\n        Deployed-vs-interface mismatches — recheck:');
   const perf = [...events.keys()].find((k) => k.startsWith('RedemptionPerformed('));
   console.log(`          RedemptionPerformed        ${perf || 'ABSENT'}`);
   check('RedemptionPerformed emits uint256 requestId, not uint64',
@@ -351,7 +351,7 @@ async function fetchAbi(addr) {
   check('RedemptionRequestIncomplete is deployed (docs point at RedemptionAmountIncomplete)',
     inc.some((k) => k.startsWith('RedemptionRequestIncomplete(')),
     inc.map((k) => `${k} ${sel(k)}`).join('  ') || 'NEITHER PRESENT');
-  // Memory1.md recorded these as "documented but absent from the deployed ABI — those rate
+  // These are checked as "absent from the deployed ABI" so the rate
   // limits are not live". That was a shell-pull artifact: reading the ABI at the diamond
   // address returns no functions and an incomplete event set. Direct minting IS deployed,
   // with live limit getters. The entry recorded a tooling failure as a protocol fact.
@@ -383,7 +383,7 @@ async function fetchAbi(addr) {
   // 5. Pin a fork block and record it
   //    An unpinned fork drifts, gas numbers move, and the event cache never hits.
   // ============================================================================
-  hr('5. PIN THE FORK BLOCK  (Tasks1.md Phase 0)');
+  hr('5. PIN THE FORK BLOCK');
 
   const head = await M.blockNumber();
   // A pin that moves is not a pin. Once fork.json exists the block is a committed decision:

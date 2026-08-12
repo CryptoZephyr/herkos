@@ -42,7 +42,7 @@ contract HotPathTest is ForkBase {
     }
 
     /// Confirms the scaling exponent empirically rather than trusting the
-    /// `ftsoPrice * 1e30 / 1e18` shape in Tasks1.md, which is wrong by twelve
+    /// `ftsoPrice * 1e30 / 1e18` shape is wrong by twelve
     /// orders of magnitude. FXRP is 6 decimals and the feed is 6 decimals, so
     /// the mantissa is value * 10^(36 - 6 - 6) = value * 1e24.
     function test_scalingMatchesFeedDecimals() public {
@@ -59,7 +59,7 @@ contract HotPathTest is ForkBase {
         );
 
         // An 18-decimal assumption would print 1e12 times too small, and the
-        // Tasks1.md formula 1e12 too large. Bracket both.
+        // The mistaken 1e18-denominator formula is 1e12 too large. Bracket both.
         assertGt(oracle.getUnderlyingPrice(CFXRP), 1e29, "price collapsed, check decimals");
         assertLt(oracle.getUnderlyingPrice(CFXRP), 1e31, "price inflated, check decimals");
     }

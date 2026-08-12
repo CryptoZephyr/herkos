@@ -9,11 +9,11 @@
 // first number. `collateralFactorMantissa` is a governance constant — 0.70 on cFXRP — and
 // no oracle can move it. What an oracle moves is the *USD value of the collateral*, and
 // therefore borrowing power. So the honest reading is the **effective** collateral factor,
-// CF x haircut, and `getAccountLiquidity` measured against real borrowers. Tasks1.md says
+// CF x haircut, and `getAccountLiquidity` measured against real borrowers. An earlier
 // "show the collateral factor tighten"; the nominal factor does not tighten and this script
 // says so out loud rather than quietly reporting something else.
 //
-// Three venues (CLAUDE.md): mainnet is read with eth_call and never written; every write
+// Three venues: mainnet is read with eth_call and never written; every write
 // goes to the anvil fork; nothing here can broadcast to mainnet.
 const fs = require('fs');
 const path = require('path');
@@ -25,7 +25,7 @@ const ROOT = path.join(__dirname, '..');
 const REGISTRY = '0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019';
 const FORK_RPC = process.env.FORK_RPC || 'http://localhost:8545';
 
-// The deployed lending market. Verified in PRD1.md and re-asserted below through the fork.
+// The deployed lending market is re-asserted below through the fork.
 const COMPTROLLER = '0x15f69897e6aebe0463401345543c26d1fd994abb';
 const CFXRP = '0xD1b7A5eFa9bd88F291F7A4563a8f6185c0249CB3';
 const INCUMBENT = '0x61f77Ef0064736Ffa68c31D960E55BAf67F79A4b';
@@ -207,7 +207,7 @@ async function main() {
   let head;
   try { head = await F.blockNumber(); } catch (e) {
     check('anvil fork reachable', false, `${FORK_RPC} — ${e.message}`);
-    note('boot it with the command in setup1.md, then re-run');
+    note('boot the pinned local fork, then re-run');
     return finish(t0);
   }
   check('anvil fork reachable at the pin', head >= FORK_BLOCK, `head ${head} · pin ${FORK_BLOCK}`);
@@ -400,7 +400,7 @@ async function main() {
   // ==========================================================================
   hr('7. referenceSize — the risk control, and what it actually moves');
   // ==========================================================================
-  // Tasks1.md says "show the collateral factor tighten". It does not, and saying so is the
+  // The nominal collateral factor does not tighten, and saying so is the
   // honest version: `collateralFactorMantissa` is a governance constant and no oracle can
   // touch it. What moves is the USD value of the collateral, and therefore borrowing power.
   // Reported as the EFFECTIVE collateral factor — CF x haircut — plus the account liquidity

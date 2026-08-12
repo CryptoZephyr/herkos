@@ -14,7 +14,10 @@
     "publisher": "node scripts/phase3.js",
     "keccak": "node scripts/lib/k.js",
     "phase4": "node scripts/phase4.js",
-    "phase5": "node scripts/phase5.js",
+    "phase5": "node scripts/public-check.js",
+    "public-check": "node scripts/public-check.js",
+    "deploy:coston2": "node scripts/deploy-coston2.js",
+    "verify:coston2": "node scripts/verify-coston2.js",
     "demo": "node scripts/demo.js"
   }
 }

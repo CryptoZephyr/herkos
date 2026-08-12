@@ -14,6 +14,37 @@ Every number below was measured. Live readings are labelled as live. Recorded
 figures name the file that produced them. Section 6 shows how to reproduce the
 figures for $0.
 
+## Coston2 test market
+
+The repository now includes a separate public deployment on Flare Testnet
+Coston2. It gives a judge a real transaction path without pretending that
+Herkos has been adopted by a Mainnet lending protocol.
+
+The [Coston2 test market](https://herkos.vercel.app/testnet) uses faucet
+FTestXRP as collateral and faucet USDT0 as liquidity and debt. It has a 70%
+maximum loan-to-value ratio, a 75% liquidation threshold, a 5% liquidation
+bonus, and no interest accrual. A visitor can connect a browser wallet, get
+assets from the [official faucet](https://faucet.flare.network/coston2),
+refresh Herkos, supply liquidity, deposit collateral, borrow, repay, and
+withdraw. The assets have no monetary value.
+
+The deployment was checked with 10 USDT0 and 10 FTestXRP. The flow borrowed 7
+USDT0, repaid it, withdrew the collateral, and withdrew the supplied
+liquidity. The final position was zero. A later transaction left a fresh 10
+USDT0 reserve for the next judge. Every step is recorded in
+[`deployments/coston2.json`](deployments/coston2.json) with a Coston2 Explorer
+link.
+
+| Contract | Address |
+|---|---|
+| Spot oracle | [`0x45A25862a31530197a3a7C1CA7a426959BD3dc8a`](https://coston2-explorer.flare.network/address/0x45A25862a31530197a3a7C1CA7a426959BD3dc8a) |
+| Herkos oracle | [`0xdbE3207e6b6e25417FdC24B99932f554718C0972`](https://coston2-explorer.flare.network/address/0xdbE3207e6b6e25417FdC24B99932f554718C0972) |
+| Lending market | [`0xb482A2FA8ec63F76B711813e685C4b4568a1c255`](https://coston2-explorer.flare.network/address/0xb482A2FA8ec63F76B711813e685C4b4568a1c255) |
+
+This path is deliberately separate from the Mainnet evidence below. The
+Mainnet app remains read-only and its lending integration remains a pinned
+fork result against an existing deployed market.
+
 ---
 
 ## 1. The gap
@@ -296,10 +327,11 @@ These are the limits a judge should know before relying on the result.
    early figure counted only the queue read. The refresh is *permissionless*,
    not free.
 
-10. **The demo is a forked market, not a live integration.** The real deployed
-    market was repointed by its own admin on the fork. The admin is a contract,
-    so Anvil had to **impersonate** it. A live market would need its governance
-    process to make the same switch.
+10. **The Mainnet integration is a forked market, not a live integration.** The
+    real deployed market was repointed by its own admin on the fork. The admin
+    is a contract, so Anvil had to **impersonate** it. The separate Coston2
+    deployment is a public test market and does not imply a Mainnet governance
+    decision.
 
 11. **`referenceSize` is a governance parameter, and it sets the shape of the
     curve.** Herkos does not decide how large an exit a market should be priced
@@ -321,10 +353,11 @@ fork carries 0.9% gas fidelity, and a real mainnet FDC proof re-verifies on it.
 
 ## 6. Reproduce every number
 
-**Prerequisites:** Node 20+ and Foundry (`anvil`, `forge`, `cast`). **No account
-anywhere, no funded key, no API key, and no `npm install`** are needed. Nothing
-in this repo imports a package, and there is no `node_modules`. The project is
-dependency-free by design.
+**Mainnet reproduction prerequisites:** Node 20+ and Foundry (`anvil`, `forge`,
+`cast`). The read-only research and fork reproduction need no funded account,
+API key, or `npm install`. Nothing in this repo imports a package, and there is
+no `node_modules`. The project is dependency-free by design. The optional
+Coston2 deployment commands use a separate throwaway faucet-funded wallet.
 
 ### The three venues
 
@@ -332,7 +365,7 @@ dependency-free by design.
 |---|---|---|
 | Flare mainnet | Evidence | **Read-only forever.** `eth_call` only |
 | Anvil fork of mainnet | The demo: deploy, stress, and FDC verification | Where every write goes |
-| Coston2 | Optional public artifact | Free faucet |
+| Coston2 | Public test market | Free faucet |
 
 Confusing them is the only way this build costs money. Never point `forge create --broadcast` at the
 mainnet RPC.
@@ -356,7 +389,7 @@ rate-limit the queue walk into transport failures.
 | `npm run phase2` | The oracle contract on a fork, plus 2 gas budgets | 54 |
 | `npm run phase3` | Publisher: divergence gate, `poke()`, harvest, real proof verification, both rejections | 32 |
 | `npm run phase4` | The real deployed market repointed at Herkos by its own admin | 42 |
-| `npm run phase5` | Every number in this writeup and the demo traced back to a results file | n/a |
+| `npm run phase5` | Public release check for routes, source hygiene, and deployment records | n/a |
 | `npm run demo` | The demo page, reading live from Flare mainnet and the XRP Ledger in your browser | n/a |
 
 Each phase writes its own `phaseN-results.json`. Every number in this document
@@ -403,6 +436,19 @@ npm run phase1      # queue, event scan, liveness, XRPL, OFT, DEX, reconciliatio
 
 `phase1` is the slow one: the event scan is ~20M blocks on the first run and is cached against the pin
 afterwards. `RESCAN=true` forces a refetch.
+
+### The Coston2 test market
+
+```bash
+npm run deploy:coston2   # requires PUBLISHER_KEY in an ignored local environment
+npm run verify:coston2   # uses C2_VERIFIER_KEY or PUBLISHER_KEY
+```
+
+The deployment script refuses a non-Coston2 chain and writes only public
+addresses and transaction hashes. The verification script runs one small
+position and checks every receipt before recording the explorer links. A
+fresh visitor can use the already published deployment from
+<https://herkos.vercel.app/testnet> without running either command.
 
 ---
 

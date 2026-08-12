@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 // Phase 1 — Readers. Off-chain and read-only: eth_call, explorer getLogs, plain HTTPS.
 // Nothing here signs, broadcasts, or writes to a chain. Closes the eight Phase 1 items in
-// Tasks1.md and writes phase1-results.json + readers.json for the Phase 3 publisher.
+// Collects the read-only mainnet evidence and writes ignored local reports.
 //
 // Two rules the whole file obeys:
 //   - Everything on Flare resolves through FlareContractsRegistry at runtime. The recorded
 //     addresses below check the resolver returned the right thing; they are not shortcuts.
 //   - Everything on Flare is read AT THE PINNED BLOCK from fork.json. Phase 2 measured its
 //     numbers there, so a reader at `latest` would not be comparable, and an event cache
-//     keyed to a moving head never hits (setup1.md).
+//     keyed to a moving head never hits.
 const fs = require('fs');
 const path = require('path');
 const {
@@ -17,7 +17,7 @@ const {
 } = require('./lib/rpc.js');
 
 const REGISTRY = '0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019';
-const DEPLOY_BLOCK = 47_098_178;         // AssetManager FXRP deployment (Memory1.md)
+const DEPLOY_BLOCK = 47_098_178;         // AssetManager FXRP deployment
 const XRPL_RPC = process.env.XRPL_RPC || 'https://s1.ripple.com:51234/';
 const RIPPLE_EPOCH = 946684800;          // XRPL times are seconds since 2000-01-01
 
@@ -55,10 +55,10 @@ const REMOTE_CHAINS = [
 ];
 
 // ---------- liveness constants ----------
-// A judgement call, not a derivation (Architecture1.md §3). Published here so they can be
+// A judgement call, not a derivation. Published here so they can be
 // argued with rather than hidden in a constant.
 const LIVENESS = {
-  settlementHorizonHours: 48,   // PRD1.md: no settlement in 48h is not exit capacity
+  settlementHorizonHours: 48,   // no settlement in 48h is not exit capacity
   defaultWindowDays: 30,        // a default older than this no longer penalises
   defaultHalving: 0.5,          // each default in the window halves liveness
   floorPPM: 0,                  // no floor: a silent agent contributes nothing
@@ -314,7 +314,7 @@ const storedHaircutPPM = (st) => {
   // ============================================================================
   // 1. Walk the full redemption queue, page through nextId, per-agent totals
   // ============================================================================
-  hr('1. REDEMPTION QUEUE — full walk, per-agent totals  (Tasks1.md Phase 1)');
+  hr('1. REDEMPTION QUEUE — full walk, per-agent totals');
 
   const QSEL = sel('redemptionQueue(uint256,uint256)');
   const PAGE = 100n;                       // the contract's queuePageSize
@@ -375,7 +375,7 @@ const storedHaircutPPM = (st) => {
   //    topic0 is recomputed from the signatures the merged facet ABI reported —
   //    NOT from docs signatures. That distinction is the whole point of the item.
   // ============================================================================
-  hr('2. REDEMPTION EVENT SCAN — deployment block to the pin  (Tasks1.md Phase 1)');
+  hr('2. REDEMPTION EVENT SCAN — deployment block to the pin');
 
   const p0Path = path.join(ROOT, 'phase0-results.json');
   const p0 = fs.existsSync(p0Path) ? JSON.parse(fs.readFileSync(p0Path, 'utf8')) : null;
@@ -495,7 +495,7 @@ const storedHaircutPPM = (st) => {
   //                        only live off-chain. It refines the weighting; it never
   //                        raises a ticket above what the on-chain filter allows.
   // ============================================================================
-  hr('3. AGENT LIVENESS MODEL  (Tasks1.md Phase 1)');
+  hr('3. AGENT LIVENESS MODEL');
 
   console.log('        constants — a judgement call, published so it can be argued with:');
   for (const [k, v] of Object.entries(LIVENESS)) console.log(`          ${k} = ${v}`);
@@ -580,7 +580,7 @@ const storedHaircutPPM = (st) => {
     .reduce((s, e) => s + e.uba, 0n);
   check('on-chain effectiveQueue at the pin matches the Phase 2 recorded value',
     onChainEffective.toString() === '1860950000000',
-    `${onChainEffective} UBA (poke() binary filter) — Memory1.md records 1,860,950,000,000`);
+    `${onChainEffective} UBA (poke() binary filter)`);
   console.log(`        off-chain decay model would weight that to ${fmt(ubaToUnits(effectiveQueueUBA))} FXRP`);
 
   out.facts.liveness = {
@@ -597,7 +597,7 @@ const storedHaircutPPM = (st) => {
   //    *transactions*, never "the account held N at time T" — so what this reader
   //    produces is a discrepancy to attest against, not an attestation.
   // ============================================================================
-  hr('4. XRPL CORE VAULT  (Tasks1.md Phase 1)');
+  hr('4. XRPL CORE VAULT');
 
   const cvAvail = await numAt(M, CVM, sel('availableFunds()'), at);
   const cvEsc = await numAt(M, CVM, sel('escrowedFunds()'), at);
@@ -673,7 +673,7 @@ const storedHaircutPPM = (st) => {
   // ============================================================================
   // 5. OFT Adapter locked balance — the aggregate of every remote claim
   // ============================================================================
-  hr('5. OFT ADAPTER LOCKED BALANCE  (Tasks1.md Phase 1)');
+  hr('5. OFT ADAPTER LOCKED BALANCE');
 
   const adapter = process.env.OFT_ADAPTER || '0xd70659a6396285BF7214d7Ea9673184e7C72E07E';
   check('OFT adapter address is the recorded one', lc(adapter) === EXPECT.oftAdapter, adapter);
@@ -706,7 +706,7 @@ const storedHaircutPPM = (st) => {
   //    which is why the reconciliation below is the load-bearing check and the
   //    per-chain table is the decoration.
   // ============================================================================
-  hr('6. PER-CHAIN OFT SUPPLY  (Tasks1.md Phase 1)');
+  hr('6. PER-CHAIN OFT SUPPLY');
 
   const remotes = [];
   for (const [name, url, token] of REMOTE_CHAINS) {
@@ -758,7 +758,7 @@ const storedHaircutPPM = (st) => {
     `remote ${fmt(ubaToUnits(remoteTotal))} vs locked-at-head ${fmt(ubaToUnits(lockedHeadUBA))} = ` +
     `gap ${gapHead} UBA (${gapHeadPct.toFixed(4)}%)` +
     (gapHead === 0n ? ' — exact to the UBA' : ' — inside 1 bip, a mid-sweep bridge tx'));
-  // Stated, not asserted: this is the cross-time number setup1.md predicts.
+  // Stated, not asserted: this is a cross-time estimate.
   console.log(`        against the pin instead: gap ${fmt(ubaToUnits(gapPin))} FXRP ` +
     `(${Math.abs(pct(remoteTotal, lockedUBA)).toFixed(4)}%) — ${fmt(ubaToUnits(bridgedSincePin))} FXRP ` +
     `bridged out in the ${fmt(head - PIN)} blocks since. A cross-time artifact, not a discrepancy.`);
@@ -772,7 +772,7 @@ const storedHaircutPPM = (st) => {
   //    A rotation is not an exit. The pair is classified by reading token0/token1
   //    and asking whether both sides are XRP — not by trusting a constant's name.
   // ============================================================================
-  hr('7. DEX DEPTH — exit venues vs rotations  (Tasks1.md Phase 1)');
+  hr('7. DEX DEPTH — exit venues vs rotations');
 
   const pools = [];
   for (const pool of POOL_CANDIDATES) {
@@ -814,16 +814,16 @@ const storedHaircutPPM = (st) => {
     `correlated ${fmt(ubaToUnits(correlatedUBA))} FXRP excluded vs ${fmt(ubaToUnits(dexExitUBA))} FXRP counted`);
   check('uncorrelated depth matches the Phase 2 recorded value',
     dexExitUBA.toString() === '1684853279972' || Math.abs(pct(dexExitUBA, 1684853279972n)) < 1,
-    `${dexExitUBA} UBA (Memory1.md records 1,684,853 FXRP)`);
+    `${dexExitUBA} UBA (uncorrelated exit depth)`);
   // The quote side is what _readPools normalises to 6 decimals. Checking it separately catches
   // a decimals mistake that the FXRP side alone would not — an 18-decimal assumption here
   // prints a number 1e12 too large and nothing else notices.
   check('uncorrelated quote-side depth matches the Phase 2 recorded value',
     dexQuoteUBA.toString() === '1192547828650' || Math.abs(pct(dexQuoteUBA, 1192547828650n)) < 1,
-    `${dexQuoteUBA} UBA normalised to 6 dp (phase2-results.json records 1,192,547,828,650)`);
+    `${dexQuoteUBA} UBA normalised to 6 dp`);
   check('the correlated pool is the recorded FXRP/stXRP depth',
     correlatedUBA.toString() === '2319350567176' || Math.abs(pct(correlatedUBA, 2319350567176n)) < 1,
-    `${correlatedUBA} UBA excluded (phase2-results.json records 2,319,350,567,176)`);
+    `${correlatedUBA} UBA excluded as correlated depth`);
   out.facts.dex = { pools, dexExitUBA: dexExitUBA.toString(), dexQuoteUBA: dexQuoteUBA.toString(),
     correlatedExcludedUBA: correlatedUBA.toString() };
 
@@ -878,10 +878,10 @@ const storedHaircutPPM = (st) => {
     '1,800s in queue / 88,200s reaching the vault / 5,272,200s beyond');
   check('haircut at the 1M reference size reproduces the Phase 2 measurement',
     refPPM === 999_992,
-    `${fmt(refPPM)} ppm — Memory1.md records 999,992 (8 ppm)`);
+    `${fmt(refPPM)} ppm — measured at the pinned block`);
   check('clearing price at 50M reproduces the Phase 2 measurement',
     curve[curve.length - 1].clearingPPM === 997_526,
-    `${fmt(curve[curve.length - 1].clearingPPM)} ppm — Memory1.md records 997,526`);
+    `${fmt(curve[curve.length - 1].clearingPPM)} ppm — measured at the pinned block`);
   check('exitCapacity without DEX reproduces the Phase 2 measurement',
     capBaseline.toString() === '8911760428154',
     `${capBaseline} UBA (${fmt(ubaToUnits(capBaseline))} FXRP) — records 8,911,760,428,154`);
@@ -919,7 +919,7 @@ const storedHaircutPPM = (st) => {
   // ============================================================================
   // 8. Reconcile: queue + CV available + CV escrowed vs FXRP total supply
   // ============================================================================
-  hr('8. BACKING RECONCILIATION  (Tasks1.md Phase 1)');
+  hr('8. BACKING RECONCILIATION');
 
   const backing = queueTotal + cvAvail + cvEsc;
   const drift = pct(backing, totalSupply);
@@ -979,8 +979,6 @@ const storedHaircutPPM = (st) => {
   console.log('\n  wrote phase1-results.json, readers.json, cache-redemption-events.json');
   process.exit(failed.length ? 1 : 0);
 })().catch((e) => { console.error('\nFATAL', e.message); process.exit(1); });
-
-
 
 
 

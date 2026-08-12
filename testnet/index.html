@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Herkos Coston2 test market</title>
+  <meta name="description" content="Try the Herkos risk signal with real Coston2 testnet transactions.">
+  <meta name="theme-color" content="#f7faf9">
+  <link rel="icon" href="../demo/herkos-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/testnet/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../" aria-label="Herkos home"><img src="../demo/herkos-mark.svg" alt=""><span>herkos</span></a>
+      <div class="header-actions">
+        <span class="network-badge">Coston2 testnet</span>
+        <button id="connect" class="button button-small" type="button">Connect wallet</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Public test market</p>
+        <h1 id="page-title">Try Herkos with real Coston2 transactions.</h1>
+        <p class="intro-copy">Use faucet FTestXRP as collateral, borrow test USDT0, and watch Herkos keep the lending price tied to measured exit capacity.</p>
+      </div>
+      <div class="intro-note">
+        <strong>Testnet only</strong>
+        <p>These tokens have no monetary value. The market is experimental and has no interest or yield.</p>
+        <a class="text-link" href="https://faucet.flare.network/coston2" target="_blank" rel="noopener noreferrer">Open the official faucet <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section id="deployment-notice" class="notice notice-info" hidden aria-live="polite"></section>
+    <section id="status" class="status-line" aria-live="polite">Connect a wallet to begin.</section>
+
+    <section class="start-grid" aria-label="Getting started">
+      <article class="start-step"><span>01</span><div><h2>Connect</h2><p>Use a browser wallet and switch it to Coston2.</p></div></article>
+      <article class="start-step"><span>02</span><div><h2>Get tokens</h2><p>The Flare faucet supplies C2FLR, FTestXRP, and test USDT0.</p></div></article>
+      <article class="start-step"><span>03</span><div><h2>Test a position</h2><p>Refresh the oracle, deposit collateral, borrow, repay, and withdraw. A small test liquidity reserve is already available.</p></div></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel oracle-panel" aria-labelledby="oracle-title">
+        <div class="panel-heading"><div><p class="eyebrow">Risk signal</p><h2 id="oracle-title">Herkos on Coston2</h2></div><span id="oracle-status" class="status-chip">Waiting for a wallet</span></div>
+        <p class="panel-copy">The market reads the FTestXRP price from Herkos. Refreshing it takes two wallet confirmations: one for the Herkos measurement and one for the market cache.</p>
+        <div class="data-grid">
+          <div class="data-item"><span>Collateral price</span><strong id="oracle-price">Not available</strong></div>
+          <div class="data-item"><span>Exit capacity</span><strong id="exit-capacity">Not available</strong></div>
+          <div class="data-item"><span>Haircut</span><strong id="haircut">Not available</strong></div>
+          <div class="data-item"><span>Last refresh</span><strong id="last-refresh">Not available</strong></div>
+        </div>
+        <div class="panel-footer"><a id="herkos-link" class="text-link" target="_blank" rel="noopener noreferrer" hidden>Open Herkos contract <span aria-hidden="true">↗</span></a><button id="refresh-oracle" class="button" type="button" disabled>Refresh Herkos</button></div>
+      </article>
+
+      <article class="panel balances-panel" aria-labelledby="balances-title">
+        <div class="panel-heading"><div><p class="eyebrow">Wallet</p><h2 id="balances-title">Your test tokens</h2></div><button id="refresh-balances" class="text-button" type="button">Refresh</button></div>
+        <div class="balance-list">
+          <div><span>C2FLR</span><strong id="balance-flr">Not connected</strong></div>
+          <div><span>FTestXRP</span><strong id="balance-xrp">Not connected</strong></div>
+          <div><span>Test USDT0</span><strong id="balance-usdt">Not connected</strong></div>
+        </div>
+        <p id="wallet-hint" class="quiet">The wallet address and balances come directly from Coston2. Herkos does not store them.</p>
+      </article>
+    </section>
+
+    <section class="content-grid lower-grid">
+      <article class="panel position-panel" aria-labelledby="position-title">
+        <div class="panel-heading"><div><p class="eyebrow">Your position</p><h2 id="position-title">Collateral and debt</h2></div><span id="position-status" class="status-chip">No wallet</span></div>
+        <div class="position-list">
+          <div><span>Collateral</span><strong id="position-collateral">Not available</strong></div>
+          <div><span>Debt</span><strong id="position-debt">Not available</strong></div>
+          <div><span>Supplied liquidity</span><strong id="position-supplied">Not available</strong></div>
+          <div><span>Borrowing limit</span><strong id="position-limit">Not available</strong></div>
+          <div><span>Health factor</span><strong id="position-health">Not available</strong></div>
+        </div>
+        <p id="position-note" class="quiet">Deposit FTestXRP after the oracle has a fresh price.</p>
+      </article>
+
+      <article class="panel market-panel" aria-labelledby="market-title">
+        <div class="panel-heading"><div><p class="eyebrow">Market</p><h2 id="market-title">Test USDT0 liquidity</h2></div><span id="market-status" class="status-chip">Not loaded</span></div>
+        <div class="market-number"><strong id="market-liquidity">Not available</strong><span>available to borrow</span></div>
+        <dl class="parameter-list"><div><dt>Maximum LTV</dt><dd>70%</dd></div><div><dt>Liquidation threshold</dt><dd>75%</dd></div><div><dt>Liquidation bonus</dt><dd>5%</dd></div><div><dt>Interest</dt><dd>None</dd></div></dl>
+        <a id="market-link" class="text-link" target="_blank" rel="noopener noreferrer" hidden>Open lending market <span aria-hidden="true">↗</span></a>
+      </article>
+    </section>
+
+    <section class="panel actions-panel" aria-labelledby="actions-title">
+      <div class="panel-heading"><div><p class="eyebrow">Test an action</p><h2 id="actions-title">Move testnet assets</h2></div><span id="action-state" class="status-chip">Connect to enable actions</span></div>
+      <div class="action-tabs" role="tablist" aria-label="Market actions">
+        <button class="tab active" type="button" role="tab" aria-selected="true" data-action="deposit">Deposit collateral</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-action="borrow">Borrow</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-action="repay">Repay</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-action="withdrawCollateral">Withdraw collateral</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-action="supply">Supply liquidity</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-action="withdrawLiquidity">Withdraw liquidity</button>
+      </div>
+      <form id="action-form" class="action-form">
+        <label for="amount">Amount</label>
+        <div class="amount-row"><input id="amount" name="amount" inputmode="decimal" autocomplete="off" placeholder="0.00" required><span id="amount-unit">FTestXRP</span><button id="max-amount" class="text-button" type="button">Use max</button></div>
+        <p id="action-help" class="quiet">Approve FTestXRP, then deposit it as collateral.</p>
+        <button id="submit-action" class="button" type="submit" disabled>Connect wallet first</button>
+      </form>
+      <div id="transaction" class="transaction" aria-live="polite" hidden></div>
+    </section>
+
+    <section class="limits">
+      <div><p class="eyebrow">What this is</p><h2>A small test market with real chain state.</h2><p>Every balance, price, limit, and confirmed action on this page comes from Coston2. The Mainnet page remains a read-only research view and pinned fork result.</p></div>
+      <div class="limits-links"><a href="../">Mainnet research view <span aria-hidden="true">↗</span></a><a href="../docs/index.html">Herkos official docs <span aria-hidden="true">↗</span></a><a href="../docs/privacy.html">Privacy <span aria-hidden="true">↗</span></a><a href="../docs/terms.html">Terms <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="../"><img src="../demo/herkos-mark.svg" alt=""><span>herkos</span></a><p>Coston2 test market. Faucet assets have no monetary value.</p></footer>
+  <script src="/testnet/app.js"></script>
+</body>
+</html>
