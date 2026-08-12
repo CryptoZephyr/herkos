@@ -27,9 +27,6 @@ audio/
 renders/
 auth-state.json
 
-# Keep the local README out of the public repository per project workflow.
-README.md
-
 # Local verification output. Reproducible phase reports stay off the public repo.
 phase*-results.json
 
