@@ -1,0 +1,383 @@
+{
+  "venue": "http://localhost:8545",
+  "forkBlock": 67013823,
+  "suites": {
+    "HotPathTest": {
+      "pass": 8,
+      "fail": 0,
+      "tests": [
+        {
+          "name": "test_agreesWithIncumbentUnderNormalConditions",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_delegatesNonFXRPMarketsToIncumbent",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_hotPathDoesNotWalkQueue",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_hotPathGasCold_herkosPaysFeedWarming",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_hotPathGasCold_incumbentPaysFeedWarming",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_hotPathGasWarmAtOrBelowIncumbent",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_isPriceOracle",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_scalingMatchesFeedDecimals",
+          "pass": true,
+          "reason": ""
+        }
+      ]
+    },
+    "ExitVenuesTest": {
+      "pass": 11,
+      "fail": 0,
+      "tests": [
+        {
+          "name": "test_clearingPriceStaysMonotonicWithPoolsRegistered",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_correlatedPoolDoesNotInflateExitDepth",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_correlationFlagIsTheWholeDifference",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_deepestPoolIsBothSidesXRP",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_dexCanOnlyImprove",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_dexDepthWidensCapacity",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_oftAdapterIsRecordedNotCountedAsCapacity",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_quoteSideNormalisedToSixDecimals",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_registeringPoolsWidensCapacityWithoutTighteningTheHaircut",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_uncorrelatedPoolsContributeMeasuredDepth",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_venueRegistrationIsGovernanceOnly",
+          "pass": true,
+          "reason": ""
+        }
+      ]
+    },
+    "ProofPathTest": {
+      "pass": 13,
+      "fail": 0,
+      "tests": [
+        {
+          "name": "test_anyoneMayRelay",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_multipleProofsAccumulateDownward",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_omittedOutflowCannotInflateCapacity",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_oversizedOutflowFloorsAtZero",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_proofsOnlySubtract",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_reductionClearsWhenFlareAccountingCatchesUp",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_rejectsNonPositiveAndUnboundedAmounts",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_rejectsProofFdcDoesNotAccept",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_rejectsReplay",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_rejectsUnsuccessfulPayment",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_rejectsWrongSubject",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_staleAttestationIsFlaggedNotCleared",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_subjectIsTheLiveCoreVaultAddress",
+          "pass": true,
+          "reason": ""
+        }
+      ]
+    },
+    "GuardsTest": {
+      "pass": 12,
+      "fail": 0,
+      "tests": [
+        {
+          "name": "test_allSettersAreGovernanceGated",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_anyoneCanClearStalenessByPoking",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_badParamsRefused",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_exitModelParamsMoveTheDerivedNumber",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_feedStalenessIsGuardedSeparately",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_governanceTransferIsTwoStep",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_haircutFloorClamps",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_hotPathRevertsOncePokeAgesOut",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_noSetterForPriceOrHaircut",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_referenceSizeMovesHaircutWithoutPoking",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_stalenessDoesNotBreakDelegatedMarkets",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_unpokedOracleRefusesToPrice",
+          "pass": true,
+          "reason": ""
+        }
+      ]
+    },
+    "RefreshTest": {
+      "pass": 10,
+      "fail": 0,
+      "tests": [
+        {
+          "name": "test_clearingPriceFallsWithSize",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_haircutIsDerivedNotSubmitted",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_pokeCostScalesWithAgentsNotTickets",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_pokeGasWithinBudget",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_pokeIsPermissionless",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_pokeProducesSaneAggregate",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_pokeReadsCoreVault",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_pokeWalksRealQueue",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_timeToExitIsTieredBySize",
+          "pass": true,
+          "reason": ""
+        },
+        {
+          "name": "test_truncationIsFlaggedNotSilent",
+          "pass": true,
+          "reason": ""
+        }
+      ]
+    }
+  },
+  "measured": {
+    "herkos": "1039341685200000000000000000000",
+    "incumbent": "1039350000000000000000000000000",
+    "haircut ppm": "999992",
+    "herkos cold": "70467",
+    "incumb cold": "110614",
+    "herkos warm": "15967",
+    "incumb warm": "24108",
+    "200M FXRP ppm": "992595",
+    "dexExitUBA": "0",
+    "capacity before": "8911760428154",
+    "capacity after": "10596613708126",
+    "stXRP/FXRP fxrp": "2319350567176",
+    "size UBA": "150000000000000",
+    "redemption ppm": "992184",
+    "routed ppm": "992184",
+    "cap without dex": "8911760428154",
+    "cap with dex": "10596613708126",
+    "remoteClaimsUBA": "12929855160693",
+    "haircut before": "999992",
+    "haircut after": "999992",
+    "dexQuoteUBA": "1192547828650",
+    "silent cap": "8911760428154",
+    "reported cap": "8411760428154",
+    "silent hairc": "999992",
+    "report hairc": "999992",
+    "default hairc": "999992",
+    "large hairc": "997526",
+    "10k FXRP": "999992",
+    "1M FXRP": "999992",
+    "50M FXRP": "997526",
+    "2nd poke gas": "1045256",
+    "per-ticket gas": "13065",
+    "poke gas": "1837659",
+    "tickets": "80",
+    "exitCapacity": "8911760428154",
+    "available": "7050810428154",
+    "escrowed": "140000000000000",
+    "coreVaultUBA": "7050810428154",
+    "pages": "1",
+    "effectiveQueue": "1860950000000",
+    "queue secs": "1800",
+    "vault secs": "88200",
+    "beyond secs": "5272200"
+  },
+  "checks": [
+    {
+      "name": "every Phase 2 test passes",
+      "pass": true,
+      "detail": "54/54 across 5 suites"
+    },
+    {
+      "name": "herkos cold within budget",
+      "pass": true,
+      "detail": "70,467 <= 100,000 (hot path must clear the 100k drop-in target)"
+    },
+    {
+      "name": "poke gas within budget",
+      "pass": true,
+      "detail": "1,837,659 <= 3,000,000 (refresh must stay affordable for a volunteer caller)"
+    }
+  ],
+  "corrections": [
+    {
+      "claim": "hot path baseline ~91,042 gas (Tasks1.md, Architecture1.md)",
+      "finding": "that is the bare FTSO feed read, not an oracle entrypoint. Measured on identical footing: herkos 70,467 cold / 15,967 warm, incumbent 110,614 / 24,108."
+    },
+    {
+      "claim": "scaling is ftsoPrice * 1e30 / 1e18 (Tasks1.md)",
+      "finding": "wrong by twelve orders of magnitude. The feed is 6 decimals and FXRP is 6, so the mantissa is value * 10^(36-6-6) = value * 1e24."
+    },
+    {
+      "claim": "poke() costs ~600k gas (Architecture1.md)",
+      "finding": "measured 1,836,816. The 600k covered redemptionQueue(0,100) alone and omitted agent-status filtering, the dominant term at ~282k per unique agent. 80 tickets resolve to 6 agents at the pin; 6.5% of Flare's 28,027,352 block limit."
+    }
+  ],
+  "generatedAt": "2026-08-10T20:09:48.061Z"
+}

@@ -1,0 +1,17 @@
+{
+  "note": "Pinned fork block for the demo venue. anvil --fork-url $RPC_URL --fork-block-number FORK_BLOCK",
+  "network": "flare-mainnet",
+  "chainId": 14,
+  "rpc": "https://flare-api.flare.network/ext/C/rpc",
+  "forkBlock": 67013823,
+  "forkBlockTimestamp": 1786285014,
+  "forkBlockISO": "2026-08-09T14:16:54.000Z",
+  "headAtPinning": 67014023,
+  "fingerprints": {
+    "fxrpTotalSupplyUBA": "148911766665872",
+    "queueTicketsFirstPage": 80,
+    "queueValueFirstPageUBA": "1860950000000",
+    "coreVaultAvailableUBA": "7050810428154",
+    "coreVaultEscrowedUBA": "140000000000000"
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "network": "flare-mainnet",
+  "rpc": "https://flare-api.flare.network/ext/C/rpc",
+  "checks": [
+    {
+      "name": "registry.getAllContracts() decodes",
+      "pass": true,
+      "detail": "67 contracts registered"
+    },
+    {
+      "name": "registry -> fdcVerification",
+      "pass": true,
+      "detail": "0x5c14fe9d73ab763f4d4a76f334bf7029ddd20ecc (matches expected)"
+    },
+    {
+      "name": "registry -> relay",
+      "pass": true,
+      "detail": "0xccf30790a93f15e24eb909548a2c58a9b0a7fbd4 (matches expected)"
+    },
+    {
+      "name": "registry -> ftsoV2",
+      "pass": true,
+      "detail": "0x7bde3df0624114edb3a67dfe6753e62f4e7c1d20 (matches expected)"
+    },
+    {
+      "name": "registry -> fdcHub",
+      "pass": true,
+      "detail": "0xc25c749dc27efb1864cb3dada8845b7687eb2d44 (matches expected)"
+    },
+    {
+      "name": "registry -> fdcRequestFeeConfigurations",
+      "pass": true,
+      "detail": "0x259852ae6d5085bdc0650d3887825f7b76f0c4fe"
+    },
+    {
+      "name": "registry -> assetManagerController",
+      "pass": true,
+      "detail": "0x097b93eebe9b76f2611e1e7d9665a9d7ff5280b3"
+    },
+    {
+      "name": "assetManagerController.getAssetManagers()",
+      "pass": true,
+      "detail": "1 asset managers"
+    },
+    {
+      "name": "resolved AssetManager FXRP",
+      "pass": true,
+      "detail": "0x2a3fe068cd92178554cabcf7c95adf49b4b0b6a8"
+    },
+    {
+      "name": "resolved FXRP token",
+      "pass": true,
+      "detail": "0xad552a648c74d49e10027ab8a618a3ad4901c5be"
+    },
+    {
+      "name": "FXRP is 6 decimals",
+      "pass": true,
+      "detail": "decimals() = 6"
+    },
+    {
+      "name": "head is (offset, nextId) — array is the first return value",
+      "pass": true,
+      "detail": "offset word0 = 64 bytes, nextId word1 = 0"
+    },
+    {
+      "name": "struct is 3 words {ticketId, agentVault, ticketValueUBA}",
+      "pass": true,
+      "detail": "84 tickets, 252 body words = 84 x 3"
+    },
+    {
+      "name": "middle field decodes as address (agentVault)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "nextId terminates the walk",
+      "pass": true,
+      "detail": "1 page(s), cursor ended at 0"
+    },
+    {
+      "name": "queue walk produces sane totals",
+      "pass": true,
+      "detail": "84 tickets, 1,860,290 FXRP, 6 agents"
+    },
+    {
+      "name": "agentVault is a contract",
+      "pass": true,
+      "detail": "0x8ea74d78a03f20597cee115176f7f8b65271c87a code 177 bytes"
+    },
+    {
+      "name": "AssetManager exposes the CoreVaultManager",
+      "pass": true,
+      "detail": "0x6c8d96defe4cbee05fa969fc0ac436d94fc21784"
+    },
+    {
+      "name": "CoreVaultManager.availableFunds()",
+      "pass": true,
+      "detail": "7,062,133 XRP"
+    },
+    {
+      "name": "CoreVaultManager.escrowedFunds()",
+      "pass": true,
+      "detail": "140,000,000 XRP"
+    },
+    {
+      "name": "CoreVaultManager.totalRequestAmountWithFee()",
+      "pass": true,
+      "detail": "0 XRP"
+    },
+    {
+      "name": "CoreVaultManager.coreVaultAddress() is the XRPL account",
+      "pass": true,
+      "detail": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj"
+    },
+    {
+      "name": "backing reconciles under 0.02% drift",
+      "pass": true,
+      "detail": "queue + available + escrowed = 148,922,423 vs supply 148,922,431 -> -0.0000%"
+    },
+    {
+      "name": "AssetManager answers the EIP-2535 loupe (facets())",
+      "pass": true,
+      "detail": "11200 bytes"
+    },
+    {
+      "name": "loupe enumerates facets and selectors",
+      "pass": true,
+      "detail": "33 facets, 216 selectors"
+    },
+    {
+      "name": "diamond dispatches redemptionQueue(uint256,uint256)",
+      "pass": true,
+      "detail": "0x91a76c40 -> facet 0xe57cea676ec31c0a0b890bbdfcf773ac66486539"
+    },
+    {
+      "name": "diamond dispatches getCoreVaultManager()",
+      "pass": true,
+      "detail": "0xa2785a71 -> facet 0xf24088e28208c00e1a4d2c8fee4d0513448dd172"
+    },
+    {
+      "name": "diamond dispatches lotSize()",
+      "pass": true,
+      "detail": "0x4942f65f -> facet 0xa6484039c89c540dcc38f9c06a3312174ac76741"
+    },
+    {
+      "name": "diamond dispatches getSettings()",
+      "pass": true,
+      "detail": "0x85b4bb53 -> facet 0xa6484039c89c540dcc38f9c06a3312174ac76741"
+    },
+    {
+      "name": "diamond dispatches fAsset()",
+      "pass": true,
+      "detail": "0x7c7db1a5 -> facet 0xa6484039c89c540dcc38f9c06a3312174ac76741"
+    },
+    {
+      "name": "diamond shell ABI retrieved from the explorer",
+      "pass": true,
+      "detail": "71 items (events + errors, no functions — expected)"
+    },
+    {
+      "name": "merged ABI carries the functions the shell lacks",
+      "pass": true,
+      "detail": "219 functions, 82 events, 214 errors"
+    },
+    {
+      "name": "merged ABI names every dispatchable selector",
+      "pass": true,
+      "detail": "216/216 selectors named"
+    },
+    {
+      "name": "merged ABI declares every required signature",
+      "pass": true,
+      "detail": "all present"
+    },
+    {
+      "name": "getSettings() carries maxRedeemedTickets (a setting, not a getter)",
+      "pass": true,
+      "detail": "component 30 = 20 tickets per redemption"
+    },
+    {
+      "name": "RedemptionPerformed emits uint256 requestId, not uint64",
+      "pass": true,
+      "detail": "topic0 0xd5150395"
+    },
+    {
+      "name": "RedemptionRequestIncomplete is deployed (docs point at RedemptionAmountIncomplete)",
+      "pass": true,
+      "detail": "RedemptionRequestIncomplete(address,uint256) 0xffb29516  RedemptionAmountIncomplete(address,uint256) 0x904705a8"
+    },
+    {
+      "name": "DirectMintingDelayed / LargeDirectMintingDelayed ARE in the deployed ABI",
+      "pass": true,
+      "detail": "DirectMintingDelayed(bytes32,uint256,uint256) LargeDirectMintingDelayed(bytes32,uint256,uint256)"
+    },
+    {
+      "name": "direct-minting rate limits are live on mainnet",
+      "pass": true,
+      "detail": "hourly 4,000,000 XRP · daily 40,000,000 XRP · large-mint delay 7,200s"
+    },
+    {
+      "name": "fork block is a stable pin, not the moving head",
+      "pass": true,
+      "detail": "27,046 blocks behind head"
+    },
+    {
+      "name": "archival read at the pinned block",
+      "pass": true,
+      "detail": "148,911,767 FXRP"
+    },
+    {
+      "name": "archival read 1,000,000 blocks deep",
+      "pass": true,
+      "detail": "block 66,040,869 -> 150,369,398 FXRP"
+    },
+    {
+      "name": "pinned-block state reproduces exactly across runs",
+      "pass": true,
+      "detail": "5 fingerprints identical"
+    },
+    {
+      "name": "fork block pinned and recorded",
+      "pass": true,
+      "detail": "fork.json -> block 67,013,823"
+    }
+  ],
+  "resolved": {
+    "fdcVerification": "0x5c14fe9d73ab763f4d4a76f334bf7029ddd20ecc",
+    "relay": "0xccf30790a93f15e24eb909548a2c58a9b0a7fbd4",
+    "ftsoV2": "0x7bde3df0624114edb3a67dfe6753e62f4e7c1d20",
+    "fdcHub": "0xc25c749dc27efb1864cb3dada8845b7687eb2d44",
+    "fdcRequestFeeConfigurations": "0x259852ae6d5085bdc0650d3887825f7b76f0c4fe",
+    "assetManagerController": "0x097b93eebe9b76f2611e1e7d9665a9d7ff5280b3",
+    "assetManager": "0x2a3fe068cd92178554cabcf7c95adf49b4b0b6a8",
+    "fxrp": "0xad552a648c74d49e10027ab8a618a3ad4901c5be",
+    "fxrpDecimals": 6,
+    "coreVaultManager": "0x6c8d96defe4cbee05fa969fc0ac436d94fc21784"
+  },
+  "facts": {
+    "fxrpTotalSupply": "148922430956962",
+    "queue": {
+      "tickets": 84,
+      "totalUBA": "1860290000000",
+      "totalFXRP": 1860290,
+      "agents": 6,
+      "pages": 1
+    },
+    "gas_redemptionQueue_0_20": 141687,
+    "gas_redemptionQueue_0_100": 497926,
+    "coreVault": {
+      "availableFundsUBA": "7062132635864",
+      "escrowedFundsUBA": "140000000000000",
+      "xrplAddress": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj"
+    },
+    "backingDriftPct": -0.000005587538389300645,
+    "settings": {
+      "maxRedeemedTickets": 20,
+      "lotSizeAMG": "10000000"
+    },
+    "abi": {
+      "diamond": true,
+      "facets": 33,
+      "verifiedFacets": 33,
+      "selectors": 216,
+      "functions": 219,
+      "events": 82,
+      "errors": 214,
+      "unnamedSelectors": 0
+    },
+    "directMinting": {
+      "getDirectMintingHourlyLimitUBA()": "4000000000000",
+      "getDirectMintingDailyLimitUBA()": "40000000000000",
+      "getDirectMintingLargeMintingThresholdUBA()": "4000000000000",
+      "getDirectMintingLargeMintingDelaySeconds()": "7200"
+    },
+    "redemptionEventTopics": {
+      "RedemptionAmountIncomplete(address,uint256)": "0x904705a8",
+      "RedemptionDefault(address,address,uint256,uint256,uint256,uint256)": "0x1de98aa7",
+      "RedemptionPaymentBlocked(address,address,uint256,bytes32,uint256,int256)": "0x37c87538",
+      "RedemptionPaymentFailed(address,address,uint256,bytes32,int256,string)": "0xa7891c8e",
+      "RedemptionPerformed(address,address,uint256,bytes32,uint256,int256)": "0xd5150395",
+      "RedemptionPoolFeeMinted(address,uint256,uint256)": "0x317ababa",
+      "RedemptionRejected(address,address,uint256,uint256)": "0x94d66df0",
+      "RedemptionRequestIncomplete(address,uint256)": "0xffb29516",
+      "RedemptionRequested(address,address,uint256,string,uint256,uint256,uint256,uint256,uint256,bytes32,address,uint256)": "0x8cbbd73a",
+      "RedemptionTicketCreated(address,uint256,uint256)": "0x631f8f20",
+      "RedemptionTicketDeleted(address,uint256)": "0xb7f65e70",
+      "RedemptionTicketUpdated(address,uint256,uint256)": "0x9d2e72c5",
+      "RedemptionTicketsConsolidated(uint256,uint256)": "0xfcd4d7e3",
+      "RedemptionWithTagRequested(address,address,uint256,string,uint256,uint256,uint256,uint256,uint256,bytes32,address,uint256,uint256)": "0x69d3fbff"
+    }
+  },
+  "generatedAt": "2026-08-09T22:56:48.557Z",
+  "forkBlock": 67013823
+}

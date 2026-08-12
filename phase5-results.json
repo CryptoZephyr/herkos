@@ -1,0 +1,2031 @@
+{
+  "phase": 5,
+  "venues": {
+    "mainnet": "read-only",
+    "xrpl": "read-only",
+    "fork": "not required"
+  },
+  "checks": [
+    {
+      "name": "Writeup1.md exists",
+      "pass": true,
+      "detail": "19745 bytes"
+    },
+    {
+      "name": "demo/index.html exists",
+      "pass": true,
+      "detail": "11523 bytes"
+    },
+    {
+      "name": "demo/app.js exists",
+      "pass": true,
+      "detail": "21054 bytes"
+    },
+    {
+      "name": "demo/style.css exists",
+      "pass": true,
+      "detail": "15935 bytes"
+    },
+    {
+      "name": "demo/snapshot.json exists",
+      "pass": true,
+      "detail": "2098 bytes"
+    },
+    {
+      "name": "demo/favicon.svg exists",
+      "pass": true,
+      "detail": "314 bytes"
+    },
+    {
+      "name": "demo/herkos-mark.svg exists",
+      "pass": true,
+      "detail": "486 bytes"
+    },
+    {
+      "name": "docs/index.html exists",
+      "pass": true,
+      "detail": "5242 bytes"
+    },
+    {
+      "name": "docs/technical.html exists",
+      "pass": true,
+      "detail": "5397 bytes"
+    },
+    {
+      "name": "docs/privacy.html exists",
+      "pass": true,
+      "detail": "3256 bytes"
+    },
+    {
+      "name": "docs/terms.html exists",
+      "pass": true,
+      "detail": "3241 bytes"
+    },
+    {
+      "name": "docs/docs.css exists",
+      "pass": true,
+      "detail": "4378 bytes"
+    },
+    {
+      "name": "scripts/demo.js exists",
+      "pass": true,
+      "detail": "2857 bytes"
+    },
+    {
+      "name": "fork.json is present to trace figures against",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "readers.json is present to trace figures against",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "phase3-results.json is present to trace figures against",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "phase4-results.json is present to trace figures against",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no internal phase labels",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no developer infrastructure in the public page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no test-era labels or controls",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no placeholder or raw runtime errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no placeholder link targets",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "public page has the product flow landmarks",
+      "pass": true,
+      "detail": "hero → live risk snapshot → coherent stress result → method → evidence → limits"
+    },
+    {
+      "name": "skip navigation and focus-visible affordances exist",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced-motion behavior is defined",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "async surfaces use polite live regions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the technical ladder is contained for narrow screens",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the browser page has no transaction or wallet surface",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "live Flare reads are pinned to one block per refresh",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the live page never renders a live incumbent-vs-snapshot comparison",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the pinned comparison states one shared block",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "failure states are composed and retryable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "snapshot failure does not print implementation errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "initial states do not use literal loading ellipses",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "every rendered local evidence link resolves in the repository",
+      "pass": true,
+      "detail": "favicon.svg, style.css, docs/index.html, docs/technical.html, docs/index.html, docs/technical.html, src/ExitCapacityOracle.sol, docs/index.html, docs/privacy.html, docs/terms.html"
+    },
+    {
+      "name": "external links open safely",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "snapshot uses the recorded fork block",
+      "pass": true,
+      "detail": "67013823 vs 67013823"
+    },
+    {
+      "name": "snapshot incumbent and Herkos values trace to phase 4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "snapshot stress ladder traces all five phase 4 rungs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "snapshot proof reference traces to the harvested mainnet proof",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "snapshot makes the integration boundary explicit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "static server uses an explicit safe allow-list",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pin block traces to fork.json",
+      "pass": true,
+      "detail": "fork.json forkBlock 67,013,823"
+    },
+    {
+      "name": "queue depth traces to fork.json",
+      "pass": true,
+      "detail": "1,860,950 FXRP"
+    },
+    {
+      "name": "queue ticket count traces to fork.json",
+      "pass": true,
+      "detail": "80 tickets"
+    },
+    {
+      "name": "FXRP supply traces to fork.json",
+      "pass": true,
+      "detail": "148,911,766.666 FXRP"
+    },
+    {
+      "name": "Core Vault available traces to fork.json",
+      "pass": true,
+      "detail": "7,050,810.428 FXRP"
+    },
+    {
+      "name": "uncorrelated DEX depth traces to readers.json",
+      "pass": true,
+      "detail": "dexExitUBA 1,684,853.28 FXRP"
+    },
+    {
+      "name": "cross-chain claims trace to readers.json",
+      "pass": true,
+      "detail": "lockedUBA 12,929,855.161 FXRP"
+    },
+    {
+      "name": "the excluded correlated pool traces to readers.json",
+      "pass": true,
+      "detail": "correlatedExcludedUBA 2,319,350.567 FXRP — counted as zero"
+    },
+    {
+      "name": "readers.json confirms the correlated pool is the deepest one",
+      "pass": true,
+      "detail": "excluding the largest venue is the conservative direction"
+    },
+    {
+      "name": "Core Vault divergence traces to phase3-results.json",
+      "pass": true,
+      "detail": "measured 18 bips"
+    },
+    {
+      "name": "the divergence gate declined to attest, and the writeup says so",
+      "pass": true,
+      "detail": "attestable=false · lowersCapacity=false"
+    },
+    {
+      "name": "poke() gas traces to a measured run, not an estimate",
+      "pass": true,
+      "detail": "phase3 measured 1,852,899 · phase2 budget 1,836,816"
+    },
+    {
+      "name": "the writeup does not restore the retired ~600k poke() figure",
+      "pass": true,
+      "detail": "the retired estimate may appear, but only alongside what replaced it"
+    },
+    {
+      "name": "FDC round and root trace to phase3-results.json",
+      "pass": true,
+      "detail": "round 1420598"
+    },
+    {
+      "name": "the wrong-subject XRPL address is the full 34 characters",
+      "pass": true,
+      "detail": "rwerD4SoJ8sHPKqXWTf93n7QgQfAJy4HEo (34 chars)"
+    },
+    {
+      "name": "the 20 FLR attestation fee traces to a probed fee, not a doc",
+      "pass": true,
+      "detail": "getRequestFee → 20 FLR"
+    },
+    {
+      "name": "incumbent price traces to phase4-results.json",
+      "pass": true,
+      "detail": "incumbent $1.039350"
+    },
+    {
+      "name": "Herkos price traces to phase4-results.json",
+      "pass": true,
+      "detail": "herkos $1.039342"
+    },
+    {
+      "name": "the agreement is stated in bips, and it is small",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the referenceSize ladder has all five rungs",
+      "pass": true,
+      "detail": "5 rungs"
+    },
+    {
+      "name": "every ladder haircut in the writeup traces to phase4-results.json",
+      "pass": true,
+      "detail": "999,992 · 999,170 · 997,526 · 992,184 · 984,786"
+    },
+    {
+      "name": "borrow capacity endpoints trace to phase4-results.json",
+      "pass": true,
+      "detail": "$2662798.48 → $2585733.56"
+    },
+    {
+      "name": "no rung pushed an account into shortfall, in the file and in the writeup",
+      "pass": true,
+      "detail": "5 rungs · 0 shortfalls"
+    },
+    {
+      "name": "the haircut is monotonically decreasing across the ladder",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the nominal collateral factor is unchanged at every rung — an oracle cannot move it",
+      "pass": true,
+      "detail": "what moves is the effective CF, which is CF × haircut"
+    },
+    {
+      "name": "hot-path gas traces to a measured comparison",
+      "pass": true,
+      "detail": "Herkos 70,467 / 15,967 vs incumbent 110,614 / 24,108"
+    },
+    {
+      "name": "the writeup does not restore the retired 91,042 \"parity\" figure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "capacity with the exit pools registered traces to phase4",
+      "pass": true,
+      "detail": "registering uncorrelated depth raises capacity"
+    },
+    {
+      "name": "the retired 627,540 ppm appears only as the corrected-away figure",
+      "pass": true,
+      "detail": "the old unconditional DEX fill"
+    },
+    {
+      "name": "Flare mainnet RPC is reachable from a browser",
+      "pass": true,
+      "detail": "preflight 200 · ACAO *"
+    },
+    {
+      "name": "XRPL cluster is reachable from a browser",
+      "pass": true,
+      "detail": "preflight 204 · ACAO *"
+    },
+    {
+      "name": "FlareContractsRegistry.getAllContracts() decodes",
+      "pass": true,
+      "detail": "67 contracts"
+    },
+    {
+      "name": "mainnet Relay still holds the root for voting round 1,420,598",
+      "pass": true,
+      "detail": "0x539e514f77d7791a1de99f1898eda2fe19e79fb8c843adb7949de75908707f3b — the proof the demo replays verifies against this"
+    },
+    {
+      "name": "the pin is behind head, and by how much is recorded",
+      "pass": true,
+      "detail": "pin 67,013,823 · head 67,232,061 · 218,238 blocks"
+    },
+    {
+      "name": "no document carries the ~600k poke() estimate without the figure that replaced it",
+      "pass": true,
+      "detail": "named in Handoff1.md, PRD1.md, Architecture1.md, Memory1.md, Tasks1.md, setup1.md, Writeup1.md, corrected in each"
+    },
+    {
+      "name": "no document carries the 91,042 \"at parity\" hot-path figure without the figure that replaced it",
+      "pass": true,
+      "detail": "named in Handoff1.md, Architecture1.md, Memory1.md, Tasks1.md, setup1.md, corrected in each"
+    },
+    {
+      "name": "no document carries the 1e30 / 1e18 scaling error without the figure that replaced it",
+      "pass": true,
+      "detail": "named in Memory1.md, Tasks1.md, setup1.md, corrected in each"
+    },
+    {
+      "name": "poke() gas (1,836,816) is quoted consistently",
+      "pass": true,
+      "detail": "in Handoff1.md, Architecture1.md, Memory1.md, Tasks1.md, setup1.md, Writeup1.md"
+    },
+    {
+      "name": "hot-path cold gas (70,467) is quoted consistently",
+      "pass": true,
+      "detail": "in Handoff1.md, PRD1.md, Architecture1.md, Memory1.md, Tasks1.md, setup1.md, Writeup1.md"
+    },
+    {
+      "name": "incumbent cold gas (110,614) is quoted consistently",
+      "pass": true,
+      "detail": "in Handoff1.md, PRD1.md, Architecture1.md, Memory1.md, Tasks1.md, setup1.md, Writeup1.md"
+    },
+    {
+      "name": "the pinned fork block (67,013,823) is quoted consistently",
+      "pass": true,
+      "detail": "in Handoff1.md, PRD1.md, Memory1.md, Tasks1.md, Writeup1.md"
+    },
+    {
+      "name": "Tasks1.md has no unchecked Phase 5 items",
+      "pass": true,
+      "detail": "4 checked"
+    },
+    {
+      "name": "Tasks1.md no longer says the writeup is still to come",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Handoff1.md no longer points at Phase 5 as the next move",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the writeup is linked from the document map",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "facts": {
+    "publicContract": {
+      "localLinks": [
+        "favicon.svg",
+        "style.css",
+        "docs/index.html",
+        "docs/technical.html",
+        "docs/index.html",
+        "docs/technical.html",
+        "src/ExitCapacityOracle.sol",
+        "docs/index.html",
+        "docs/privacy.html",
+        "docs/terms.html"
+      ],
+      "snapshotBlock": 67013823,
+      "ladderRows": 5
+    },
+    "merkleRoot": "0x539e514f77d7791a1de99f1898eda2fe19e79fb8c843adb7949de75908707f3b",
+    "headDrift": {
+      "pin": 67013823,
+      "head": 67232061,
+      "blocks": 218238,
+      "days": 4.5
+    }
+  },
+  "sources": {
+    "fork": {
+      "note": "Pinned fork block for the demo venue. anvil --fork-url $RPC_URL --fork-block-number FORK_BLOCK",
+      "network": "flare-mainnet",
+      "chainId": 14,
+      "rpc": "https://flare-api.flare.network/ext/C/rpc",
+      "forkBlock": 67013823,
+      "forkBlockTimestamp": 1786285014,
+      "forkBlockISO": "2026-08-09T14:16:54.000Z",
+      "headAtPinning": 67014023,
+      "fingerprints": {
+        "fxrpTotalSupplyUBA": "148911766665872",
+        "queueTicketsFirstPage": 80,
+        "queueValueFirstPageUBA": "1860950000000",
+        "coreVaultAvailableUBA": "7050810428154",
+        "coreVaultEscrowedUBA": "140000000000000"
+      }
+    },
+    "readers": {
+      "generatedAt": "2026-08-09T22:56:08.498Z",
+      "network": "flare-mainnet",
+      "block": 67013823,
+      "blockTimestamp": 1786285014,
+      "blockISO": "2026-08-09T14:16:54.000Z",
+      "readOnly": true,
+      "resolved": {
+        "assetManager": "0x2a3fe068cd92178554cabcf7c95adf49b4b0b6a8",
+        "fxrp": "0xad552a648c74d49e10027ab8a618a3ad4901c5be",
+        "fxrpDecimals": 6,
+        "assetManagerController": "0x097b93eebe9b76f2611e1e7d9665a9d7ff5280b3",
+        "coreVaultManager": "0x6c8d96defe4cbee05fa969fc0ac436d94fc21784"
+      },
+      "queue": {
+        "tickets": 80,
+        "pages": 1,
+        "truncated": false,
+        "totalUBA": "1860950000000",
+        "totalFXRP": 1860950,
+        "uniqueAgents": 6,
+        "perAgent": [
+          {
+            "agent": "0x8ea74d78a03f20597cee115176f7f8b65271c87a",
+            "tickets": 15,
+            "uba": "360260000000",
+            "fxrp": 360260
+          },
+          {
+            "agent": "0x0f6ab40fe44aa3ab15b8ff96df98c6f5865f048e",
+            "tickets": 9,
+            "uba": "267150000000",
+            "fxrp": 267150
+          },
+          {
+            "agent": "0x7cec6ec27f3a0f0a37b1847e5af3e99a7499a0bc",
+            "tickets": 13,
+            "uba": "307060000000",
+            "fxrp": 307060
+          },
+          {
+            "agent": "0xe56f464c23760d563dd4c73dada05159ae71fc50",
+            "tickets": 19,
+            "uba": "336090000000",
+            "fxrp": 336090
+          },
+          {
+            "agent": "0xa69bf2ec0ef91a29b5da634bd4958aa32bad9fe3",
+            "tickets": 4,
+            "uba": "447190000000",
+            "fxrp": 447190
+          },
+          {
+            "agent": "0x09011d2a11a40db855cb00b3aa5a0f5f3bd485fd",
+            "tickets": 20,
+            "uba": "143200000000",
+            "fxrp": 143200
+          }
+        ]
+      },
+      "liveness": {
+        "constants": {
+          "settlementHorizonHours": 48,
+          "defaultWindowDays": 30,
+          "defaultHalving": 0.5,
+          "floorPPM": 0
+        },
+        "onChainEffectiveQueueUBA": "1860950000000",
+        "offChainEffectiveQueueUBA": "496638429740",
+        "agents": [
+          {
+            "agent": "0xa69bf2ec0ef91a29b5da634bd4958aa32bad9fe3",
+            "status": 0,
+            "statusFactor": 1,
+            "hoursSinceSettlement": 74.6875,
+            "recency": 0,
+            "recentDefaults": 3,
+            "defaultFactor": 0.125,
+            "liveness": 0,
+            "ticketUBA": "447190000000",
+            "weightedUBA": "0"
+          },
+          {
+            "agent": "0x8ea74d78a03f20597cee115176f7f8b65271c87a",
+            "status": 0,
+            "statusFactor": 1,
+            "hoursSinceSettlement": 0.40805555555555556,
+            "recency": 0.9914988425925926,
+            "recentDefaults": 0,
+            "defaultFactor": 1,
+            "liveness": 0.9914988425925926,
+            "ticketUBA": "360260000000",
+            "weightedUBA": "357197429740"
+          },
+          {
+            "agent": "0xe56f464c23760d563dd4c73dada05159ae71fc50",
+            "status": 0,
+            "statusFactor": 1,
+            "hoursSinceSettlement": 77.88861111111112,
+            "recency": 0,
+            "recentDefaults": 2,
+            "defaultFactor": 0.25,
+            "liveness": 0,
+            "ticketUBA": "336090000000",
+            "weightedUBA": "0"
+          },
+          {
+            "agent": "0x7cec6ec27f3a0f0a37b1847e5af3e99a7499a0bc",
+            "status": 0,
+            "statusFactor": 1,
+            "hoursSinceSettlement": 95.16222222222223,
+            "recency": 0,
+            "recentDefaults": 0,
+            "defaultFactor": 1,
+            "liveness": 0,
+            "ticketUBA": "307060000000",
+            "weightedUBA": "0"
+          },
+          {
+            "agent": "0x0f6ab40fe44aa3ab15b8ff96df98c6f5865f048e",
+            "status": 0,
+            "statusFactor": 1,
+            "hoursSinceSettlement": 61.31194444444444,
+            "recency": 0,
+            "recentDefaults": 0,
+            "defaultFactor": 1,
+            "liveness": 0,
+            "ticketUBA": "267150000000",
+            "weightedUBA": "0"
+          },
+          {
+            "agent": "0x09011d2a11a40db855cb00b3aa5a0f5f3bd485fd",
+            "status": 0,
+            "statusFactor": 1,
+            "hoursSinceSettlement": 1.26,
+            "recency": 0.97375,
+            "recentDefaults": 0,
+            "defaultFactor": 1,
+            "liveness": 0.97375,
+            "ticketUBA": "143200000000",
+            "weightedUBA": "139441000000"
+          }
+        ],
+        "note": "statusFactor mirrors poke()'s binary status<=1 filter. recency/default decay is off-chain only — per-agent event history is not on-chain readable. It refines the weight downward, never upward."
+      },
+      "coreVault": {
+        "xrplAddress": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj",
+        "availableUBA": "7050810428154",
+        "escrowedUBA": "140000000000000",
+        "totalRequestAmountWithFeeUBA": "0",
+        "xrplBalanceUBA": "7063788996353",
+        "xrplLedgerIndex": 106186745,
+        "divergenceUBA": "12978568199",
+        "escrows": {
+          "count": 15,
+          "totalUBA": "140000020000000",
+          "totalXRP": 140000020,
+          "conditionGated": 15,
+          "withFinishAfter": 1,
+          "objects": [
+            {
+              "index": "0B29EF28C4E75D3439FD7A5DAEAA2F337966FAC4CC330D2DC966A40AA7B371A1",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-23T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "1F5715ADC452F709BEFC059BB57B633A5D9DD438AF21061E72D896E719396E72",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-20T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "2034386DD52F739A165E1CE37CAE4CC0DCF8BD33FD13EA78CEEEA166046DF565",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-10T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "249E267CE25CEB9EEB9AC3D8835E9E146AFBC117E539F63240048371A6DD2F76",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-11T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "574FFBD3F855756BE63C4265BA7EE6DEFF96B35A011E018D534291FDFD1CD808",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-21T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "6E03833EDC0210F6FEA6EC12729D95217A94905BBDAC11E45AD62E4AC2F0534A",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-22T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "6F889BF19B9D7270A5B6C07819D76BBA04EFC412778591450046DB57A313FF6D",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-12T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "79EC37D537916639099C77EF59003CFC0A881EF51453AC0398249B66620CD18C",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-15T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "81B1D91A6D2E4995B739D3EEDE24FF97FCEE5CCB7FDE5DDA900D8DB732FF7D19",
+              "amountUBA": "20000000",
+              "destination": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj",
+              "condition": true,
+              "cancelAfter": "2026-08-08T19:04:00.000Z",
+              "finishAfter": "2026-08-08T15:02:00.000Z"
+            },
+            {
+              "index": "A0FE65DA71A4638A259A3163AC986A5E9BE96CDDCB192A0E30D102C62661F3F7",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-17T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "B071DEC930557FBF27C5129574EFDB0E1999FB9D7A2A8E8D42BDDEBAE39A2C42",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-18T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "B2DE08D2BD1C4F3EF5B3DDAFD4F1EAC837494B11B1B4C94A53297367864FE975",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-13T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "C5B3E7ED259C08C30D3C00F8CA21F7D77B5E5A3A95F180662258DC79E06A6FD7",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-16T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "C9F704CA257B939DC1FE2FB3673C350F888E8FE2CAE3411B2C616D51276F353B",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-14T16:00:00.000Z",
+              "finishAfter": null
+            },
+            {
+              "index": "FC71E91452BF85C9FD0AD0A654941F0C4BE81AAFE6B169B30A0C4CDE05E22D72",
+              "amountUBA": "10000000000000",
+              "destination": "rMLNvZR9dascY5jtCfCv3whAp8HdUSZAQ",
+              "condition": true,
+              "cancelAfter": "2026-08-19T16:00:00.000Z",
+              "finishAfter": null
+            }
+          ]
+        }
+      },
+      "oft": {
+        "adapter": "0xd70659a6396285BF7214d7Ea9673184e7C72E07E",
+        "lockedUBA": "12929855160693",
+        "lockedFXRP": 12929855.160693,
+        "lockedHeadUBA": "12941706148299",
+        "bridgedSincePinUBA": "11850987606",
+        "shareOfSupplyPct": 8.682896892698205,
+        "remotes": [
+          {
+            "chain": "Ethereum",
+            "rpc": "https://ethereum-rpc.publicnode.com",
+            "token": "0xce6170ea245dc8d1f275a710a062b70f125f0110",
+            "deployed": true,
+            "supplyUBA": "7834741874344",
+            "supplyFXRP": 7834741.874344,
+            "error": null
+          },
+          {
+            "chain": "Monad",
+            "rpc": "https://rpc.monad.xyz",
+            "token": "0xCE6170EA245dC8D1f275A710a062b70f125F0110",
+            "deployed": true,
+            "supplyUBA": "3797974851127",
+            "supplyFXRP": 3797974.851127,
+            "error": null
+          },
+          {
+            "chain": "HyperEVM",
+            "rpc": "https://rpc.hyperliquid.xyz/evm",
+            "token": "0xd70659a6396285BF7214d7Ea9673184e7C72E07E",
+            "deployed": true,
+            "supplyUBA": "1101503298673",
+            "supplyFXRP": 1101503.298673,
+            "error": null
+          },
+          {
+            "chain": "Base",
+            "rpc": "https://mainnet.base.org",
+            "token": "0xCE6170EA245dC8D1f275A710a062b70f125F0110",
+            "deployed": true,
+            "supplyUBA": "123873224114",
+            "supplyFXRP": 123873.224114,
+            "error": null
+          },
+          {
+            "chain": "BNB Chain",
+            "rpc": "https://bsc-rpc.publicnode.com",
+            "token": "0xCE6170EA245dC8D1f275A710a062b70f125F0110",
+            "deployed": true,
+            "supplyUBA": "83612900041",
+            "supplyFXRP": 83612.900041,
+            "error": null
+          },
+          {
+            "chain": "Katana",
+            "rpc": "https://rpc.katana.network",
+            "token": null,
+            "deployed": false,
+            "supplyUBA": null,
+            "supplyFXRP": null,
+            "error": null
+          }
+        ],
+        "remoteTotalUBA": "12941706148299",
+        "reconciliationGapHeadUBA": "0",
+        "reconciliationGapPinUBA": "-11850987606"
+      },
+      "dex": {
+        "pools": [
+          {
+            "pool": "0x2a91D9296ee2fe4139b49c7071b2f29f59a9f9aE",
+            "quoteToken": "0x4c18ff3c89632c3dd62e796c0afa5c07c4c1b2b3",
+            "quoteSymbol": "stXRP",
+            "quoteDecimals": 6,
+            "correlated": true,
+            "fxrpSideUBA": "2319350567176",
+            "quoteSideUBA": "2914536186632"
+          },
+          {
+            "pool": "0x927485d88a66253c63Af9163dca5f21c25A57393",
+            "quoteToken": "0xe7cd86e13ac4309349f30b3435a9d337750fc82d",
+            "quoteSymbol": "USD₮0",
+            "quoteDecimals": 6,
+            "correlated": false,
+            "fxrpSideUBA": "931062123423",
+            "quoteSideUBA": "862994069573"
+          },
+          {
+            "pool": "0x686f53F0950Ef193C887527eC027E6A574A4DbE1",
+            "quoteToken": "0xe7cd86e13ac4309349f30b3435a9d337750fc82d",
+            "quoteSymbol": "USD₮0",
+            "quoteDecimals": 6,
+            "correlated": false,
+            "fxrpSideUBA": "538462600678",
+            "quoteSideUBA": "146599703220"
+          },
+          {
+            "pool": "0x88D46717b16619B37fa2DfD2F038DEFB4459F1F7",
+            "quoteToken": "0xe7cd86e13ac4309349f30b3435a9d337750fc82d",
+            "quoteSymbol": "USD₮0",
+            "quoteDecimals": 6,
+            "correlated": false,
+            "fxrpSideUBA": "215328555871",
+            "quoteSideUBA": "182954055857"
+          }
+        ],
+        "dexExitUBA": "1684853279972",
+        "dexQuoteUBA": "1192547828650",
+        "correlatedExcludedUBA": "2319350567176"
+      },
+      "exitModel": {
+        "constants": {
+          "queueSettleSeconds": 1800,
+          "coreVaultCycleSeconds": 86400,
+          "escrowReleasePerDayUBA": "8235294000000",
+          "discountRatePPMPerYear": 150000,
+          "minHaircutPPM": 500000,
+          "referenceSizeUBA": "1000000000000"
+        },
+        "effectiveQueueUBA": "1860950000000",
+        "coreVaultUBA": "7050810428154",
+        "dexExitUBA": "1684853279972",
+        "exitCapacityUBA": "8911760428154",
+        "exitCapacityWithDexUBA": "10596613708126",
+        "haircutPPMAtReference": 999992,
+        "haircutPPMAtReferenceWithDex": 627540,
+        "storedHaircutPPM": 999992,
+        "curve": [
+          {
+            "sizeFXRP": 10000,
+            "clearingPPM": 999992,
+            "timeToExitSeconds": 1800
+          },
+          {
+            "sizeFXRP": 100000,
+            "clearingPPM": 999992,
+            "timeToExitSeconds": 1800
+          },
+          {
+            "sizeFXRP": 500000,
+            "clearingPPM": 999992,
+            "timeToExitSeconds": 1800
+          },
+          {
+            "sizeFXRP": 1000000,
+            "clearingPPM": 999992,
+            "timeToExitSeconds": 1800
+          },
+          {
+            "sizeFXRP": 5000000,
+            "clearingPPM": 999581,
+            "timeToExitSeconds": 88200
+          },
+          {
+            "sizeFXRP": 10000000,
+            "clearingPPM": 999170,
+            "timeToExitSeconds": 174600
+          },
+          {
+            "sizeFXRP": 50000000,
+            "clearingPPM": 997526,
+            "timeToExitSeconds": 520200
+          }
+        ],
+        "curveWithDex": [
+          {
+            "sizeFXRP": 10000,
+            "clearingPPM": 994099,
+            "timeToExitSeconds": 1800
+          },
+          {
+            "sizeFXRP": 100000,
+            "clearingPPM": 943972,
+            "timeToExitSeconds": 1800
+          },
+          {
+            "sizeFXRP": 500000,
+            "clearingPPM": 771151,
+            "timeToExitSeconds": 1800
+          },
+          {
+            "sizeFXRP": 1000000,
+            "clearingPPM": 627540,
+            "timeToExitSeconds": 1800
+          },
+          {
+            "sizeFXRP": 5000000,
+            "clearingPPM": 831236,
+            "timeToExitSeconds": 88200
+          },
+          {
+            "sizeFXRP": 10000000,
+            "clearingPPM": 915408,
+            "timeToExitSeconds": 174600
+          },
+          {
+            "sizeFXRP": 50000000,
+            "clearingPPM": 980760,
+            "timeToExitSeconds": 520200
+          }
+        ]
+      },
+      "reconciliation": {
+        "backingUBA": "148911760428154",
+        "totalSupplyUBA": "148911766665872",
+        "driftPct": -0.000004188868441804321
+      },
+      "history": {
+        "fromBlock": 47098178,
+        "toBlock": 67013823,
+        "requests": 24010,
+        "performed": 23988,
+        "defaults": 8,
+        "defaultRatePct": 0.03331945022907122,
+        "spanDays": 338.07957175925924,
+        "settledUBA": "259044318329603",
+        "settledFXRP": 259044318.329603,
+        "throughputFXRPPerDay": 766222.9249215451,
+        "sizesFXRP": {
+          "p50": 450,
+          "p75": 3780,
+          "p90": 22336.854846,
+          "p99": 186020,
+          "max": 521540.011167
+        },
+        "defaultDays": [
+          "2026-02-06",
+          "2026-03-17",
+          "2026-07-31",
+          "2026-08-01"
+        ]
+      },
+      "divergence": {
+        "thresholdUBA": "100000000000",
+        "observedUBA": "12978568199",
+        "attestable": false,
+        "note": "Only a divergence that LOWERS capacity is attestable — attested state is one-directional."
+      }
+    },
+    "phase3": {
+      "phase": 3,
+      "venues": {
+        "mainnet": "read-only",
+        "fork": "http://localhost:8545",
+        "coston2": "https://coston2-api.flare.network/ext/C/rpc"
+      },
+      "publish": false,
+      "checks": [
+        {
+          "name": "readers.json loaded",
+          "pass": true,
+          "detail": "block 67013823 · 0 reader checks"
+        },
+        {
+          "name": "readers.json is at the same pin",
+          "pass": true,
+          "detail": "readers 67013823 vs fork.json 67013823"
+        },
+        {
+          "name": "FdcVerification resolved through the registry",
+          "pass": true,
+          "detail": "0x5c14fe9d73ab763f4d4a76f334bf7029ddd20ecc"
+        },
+        {
+          "name": "Core Vault XRPL address read live from CoreVaultManager",
+          "pass": true,
+          "detail": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj"
+        },
+        {
+          "name": "CoreVaultManager funds re-read at the pin",
+          "pass": true,
+          "detail": "available 7,050,810.428 FXRP"
+        },
+        {
+          "name": "divergence direction classified",
+          "pass": true,
+          "detail": "XRPL at or above Flare — would RAISE capacity, never attestable"
+        },
+        {
+          "name": "divergence gate agrees with the Phase 1 reader",
+          "pass": true,
+          "detail": "attestable=false"
+        },
+        {
+          "name": "an FDC fee is authorised only by the divergence gate",
+          "pass": true,
+          "detail": "gate closed — 0 FLR, the correct outcome rather than a skipped step"
+        },
+        {
+          "name": "anvil fork reachable at the pin",
+          "pass": true,
+          "detail": "head 67013847 · pin 67013823"
+        },
+        {
+          "name": "fork clock warped back to the pinned timestamp",
+          "pass": true,
+          "detail": "was 0s ahead of the pin — the FTSO feed is frozen at the pin, so the feed staleness window (420s) would otherwise refuse to price"
+        },
+        {
+          "name": "oracle deployed on the fork",
+          "pass": true,
+          "detail": "0x36C02dA8a0983159322a80FFE9F24b1acfF8B570"
+        },
+        {
+          "name": "poke() succeeds from an unrelated account",
+          "pass": true,
+          "detail": "1,852,899 gas, caller 0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+        },
+        {
+          "name": "poke() takes no arguments and no submitted values",
+          "pass": true,
+          "detail": "selector poke() — 4 bytes of calldata, nothing else"
+        },
+        {
+          "name": "poke() wrote an aggregate",
+          "pass": true,
+          "detail": "capacity 8,911,760.428 FXRP · haircut 999992 ppm"
+        },
+        {
+          "name": "proof-carrying mainnet transactions found below the pin",
+          "pass": true,
+          "detail": "8 decoded IXRPPayment proofs"
+        },
+        {
+          "name": "proof + args re-encode byte-identical to mainnet calldata",
+          "pass": true,
+          "detail": "8/8 round-trip exactly"
+        },
+        {
+          "name": "a pre-pin proof is available to verify",
+          "pass": true,
+          "detail": "0x1df2dda233160bc9d82e127bb8de73d7dca1e5bf491c7ae904f73114f0ef254c @ 67012947"
+        },
+        {
+          "name": "the fork holds the finalized Merkle root for that voting round",
+          "pass": true,
+          "detail": "round 1420598 → 0x539e514f77d7791a…"
+        },
+        {
+          "name": "FdcVerification.verifyXRPPayment accepts the real proof on the fork",
+          "pass": true,
+          "detail": "verifyXRPPayment → true"
+        },
+        {
+          "name": "DA Layer endpoint is live and answering at the HTTP level",
+          "pass": true,
+          "detail": "HTTP 400: attestation request not found"
+        },
+        {
+          "name": "a real FDC-accepted proof whose subject is NOT the vault is refused",
+          "pass": true,
+          "detail": "→ WrongSubject(string,string)"
+        },
+        {
+          "name": "the fork holds NO root for a post-pin voting round",
+          "pass": true,
+          "detail": "round 1421530 → empty (control)"
+        },
+        {
+          "name": "a proof from a post-fork round is refused as unverifiable",
+          "pass": true,
+          "detail": "→ ProofRejected() (round 1421530 finalized after the pin, block 67086229)"
+        },
+        {
+          "name": "XRPPayment is fee-configured on both networks",
+          "pass": true,
+          "detail": "C2 testXRP 1,000 wei · mainnet XRP 20.0000 FLR — Core Vault flows — returns the XRPL address as a string"
+        },
+        {
+          "name": "XRPPaymentNonexistence is fee-configured on both networks",
+          "pass": true,
+          "detail": "C2 testXRP 1,000 wei · mainnet XRP 20.0000 FLR — proves a specific claimed payment absent"
+        },
+        {
+          "name": "BalanceDecreasingTransaction is fee-configured on both networks",
+          "pass": true,
+          "detail": "C2 testXRP 1,000 wei · mainnet XRP 20.0000 FLR — outflows where the balance delta is the fact"
+        },
+        {
+          "name": "ConfirmedBlockHeightExists is fee-configured on both networks",
+          "pass": true,
+          "detail": "C2 testXRP 1,000 wei · mainnet XRP 3.0000 FLR — freshness anchor — cheapest type"
+        },
+        {
+          "name": "EVMTransaction is fee-configured on both networks",
+          "pass": true,
+          "detail": "C2 testETH 1,000 wei · mainnet ETH 20.0000 FLR — optional: Ethereum OFT supply"
+        },
+        {
+          "name": "FdcHub.requestAttestation calldata built without broadcasting",
+          "pass": true,
+          "detail": "164 bytes"
+        },
+        {
+          "name": "every published number carries its inputs",
+          "pass": true,
+          "detail": "inputs() returns all 12 derived values in one call — a consumer can re-derive the haircut"
+        },
+        {
+          "name": "Herkos agrees with the incumbent under normal conditions",
+          "pass": true,
+          "detail": "$1.039342 vs $1.039350 — 0.08 bips below, the 999992 ppm haircut and nothing else"
+        },
+        {
+          "name": "FLR spend tracked per update",
+          "pass": true,
+          "detail": "fork 0 FLR · mainnet-equivalent poke 1.20 FLR · 0 attestations"
+        }
+      ],
+      "facts": {
+        "coreVault": {
+          "xrplAddress": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj",
+          "availableUBA": "7050810428154",
+          "escrowedUBA": "140000000000000"
+        },
+        "divergence": {
+          "xrplUBA": "7063788996353",
+          "flareUBA": "7050810428154",
+          "divergenceUBA": "12978568199",
+          "thresholdUBA": "100000000000",
+          "bips": 18,
+          "lowersCapacity": false,
+          "overThreshold": false,
+          "attestable": false,
+          "note": "Attested state is one-directional: only a divergence that LOWERS capacity may be attested."
+        },
+        "poke": {
+          "gas": 1852899,
+          "caller": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+          "flrAt650Gwei": 1.20438435
+        },
+        "daLayer": {
+          "url": "https://flr-data-availability.flare.network/api/v1/fdc/proof-by-request-round",
+          "round": 1420598,
+          "reqBytes": "0x5852505061796d656e7400000000000000000000000000000000000000000000585250000000000000000000000000000000000000000000000000000000000028f177558bf5a112928b4eb796e05a9d7d5ee9d5981c482c312ebbd486b47e270000000000000000000000000000000000000000000000000000000000000000",
+          "response": "attestation request not found",
+          "httpStatus": 400,
+          "note": "Informational. The binding check is FdcVerification on the fork, which validates the Merkle path against a finalized root rather than trusting an off-chain API."
+        },
+        "wrongSubject": {
+          "sourceAddress": "rwerD4SoJ8sHPKqXWTf93n7QgQfAJy4HEo",
+          "coreVault": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj",
+          "revert": "WrongSubject(string,string)"
+        },
+        "postPinControl": {
+          "hash": "0x82fe003dd0fde63f11dfb6a57b4f6854695fdc28a25638c43f049f59679d31a6",
+          "block": 67086229,
+          "votingRound": 1421530,
+          "rootOnFork": null,
+          "revert": "ProofRejected()"
+        },
+        "requestFees": {
+          "coston2": {
+            "XRPPayment/testXRP": "1000",
+            "XRPPaymentNonexistence/testXRP": "1000",
+            "BalanceDecreasingTransaction/testXRP": "1000",
+            "ConfirmedBlockHeightExists/testXRP": "1000",
+            "EVMTransaction/testETH": "1000"
+          },
+          "mainnet": {
+            "XRPPayment/XRP": "20000000000000000000",
+            "XRPPaymentNonexistence/XRP": "20000000000000000000",
+            "BalanceDecreasingTransaction/XRP": "20000000000000000000",
+            "ConfirmedBlockHeightExists/XRP": "3000000000000000000",
+            "EVMTransaction/ETH": "20000000000000000000"
+          }
+        },
+        "requestCalldata": "0x6238f354000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000605852505061796d656e740000000000000000000000000000000000000000000058525000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "spend": {
+        "forkFLR": 0,
+        "mainnetEquivalentFLR": {
+          "pokeAt650Gwei": 1.20438435,
+          "fdcAttestationsRequested": 0,
+          "fdcFeeFLR": 0,
+          "note": "Attestations are requested on divergence, never on a timer. A 15-minute heartbeat would be ~96 requests/day at 20 FLR = 1,920 FLR/day for no new information. This run requested none: the divergence was not attestable."
+        }
+      },
+      "harvest": [
+        {
+          "hash": "0x1df2dda233160bc9d82e127bb8de73d7dca1e5bf491c7ae904f73114f0ef254c",
+          "block": 67012947,
+          "selector": "0x78d0299e",
+          "selectorName": "executeDirectMinting",
+          "votingRound": 1420598,
+          "transactionId": "0x28f177558bf5a112928b4eb796e05a9d7d5ee9d5981c482c312ebbd486b47e27",
+          "sourceAddress": "rwerD4SoJ8sHPKqXWTf93n7QgQfAJy4HEo",
+          "spentAmount": "81300012",
+          "status": 0,
+          "merkleProofDepth": 3
+        },
+        {
+          "hash": "0x993cf0e614252b012a0fa9a801195d06c564933642083ee2fdcb298bfb6dddfe",
+          "block": 67011800,
+          "selector": "0x78d0299e",
+          "selectorName": "executeDirectMinting",
+          "votingRound": 1420583,
+          "transactionId": "0xe9f0a3454d1b841678b1642bf2835fdc1dbacdb9c763314f83e1e673dae89626",
+          "sourceAddress": "rMiry59sfiVYwvLMAXaNUPUYYHXG6nM7Ag",
+          "spentAmount": "3001201213",
+          "status": 0,
+          "merkleProofDepth": 3
+        },
+        {
+          "hash": "0x3902a485109de512df5bf64975f03d8f9d65385908c714d9ffc8f3adb0c6c754",
+          "block": 67010883,
+          "selector": "0x78d0299e",
+          "selectorName": "executeDirectMinting",
+          "votingRound": 1420572,
+          "transactionId": "0x4143f9f3be06d042b3c0632689b8f9c2c3dbb5b9a7f1f93ea1ccb6bd4cbe4cb7",
+          "sourceAddress": "rNx2puFgL1b7nF2rM9KxHUh25NbArg23fh",
+          "spentAmount": "588788801",
+          "status": 0,
+          "merkleProofDepth": 3
+        },
+        {
+          "hash": "0x6fbce62736e27e3d17aeb367d80d0fb5cc83b61dd72933b096a6f19096a06369",
+          "block": 67010339,
+          "selector": "0xa7556da6",
+          "selectorName": "executeDirectMintingWithData",
+          "votingRound": 1420565,
+          "transactionId": "0x09cacf2b024349e5d7514c5d4f91066acfd30b2c57f52401b36cc57edb9dafa2",
+          "sourceAddress": "r9TngtY1DHUXdcn19pMdZ9kdxBJ7fXwJH6",
+          "spentAmount": "300012",
+          "status": 0,
+          "merkleProofDepth": 3
+        },
+        {
+          "hash": "0xf73068a27561c11d629b021ed7c659b563733bac3282dc578e9840448f2a2a0d",
+          "block": 67009940,
+          "selector": "0x78d0299e",
+          "selectorName": "executeDirectMinting",
+          "votingRound": 1420560,
+          "transactionId": "0xbff996a74c2ed1b48b43f2706ff2d1b658f2f56bdf0bb190080cc8efda1f1f39",
+          "sourceAddress": "r9TngtY1DHUXdcn19pMdZ9kdxBJ7fXwJH6",
+          "spentAmount": "6208870307",
+          "status": 0,
+          "merkleProofDepth": 2
+        },
+        {
+          "hash": "0x92580c12630708015e0a54822c946dadee3047c52e01d718288cf4b5daee5f19",
+          "block": 67007877,
+          "selector": "0x78d0299e",
+          "selectorName": "executeDirectMinting",
+          "votingRound": 1420534,
+          "transactionId": "0x887d741e566e7a0a4d9839b731d77ca640294c9655c19806f0a62c4f2cdf73fc",
+          "sourceAddress": "rMdG3ju8pgyVh29ELPWaDuA74CpWW6Fxns",
+          "spentAmount": "4296912",
+          "status": 0,
+          "merkleProofDepth": 2
+        },
+        {
+          "hash": "0x74f0d346664c1b23bb0734007577b7c2160fd3306bc8cd67769ad2b2d48ab0f6",
+          "block": 67004294,
+          "selector": "0x78d0299e",
+          "selectorName": "executeDirectMinting",
+          "votingRound": 1420488,
+          "transactionId": "0xfae5f5409103b8d6a972c98d53f049ae33f0049a84b9ee8fc8b7b87d8aca94ee",
+          "sourceAddress": "rDAZJrimtEg5FGg7ZGidCxjNJaNYp3pvb2",
+          "spentAmount": "498698711",
+          "status": 0,
+          "merkleProofDepth": 3
+        },
+        {
+          "hash": "0xdc6cfba77059aafe2059f37f07f068983beb6a6a706b384a9b6d5d794e6790a5",
+          "block": 67000117,
+          "selector": "0x78d0299e",
+          "selectorName": "executeDirectMinting",
+          "votingRound": 1420434,
+          "transactionId": "0xbc721fa2df9a493de23053c80820754aac1780f6a06c3aaf7d93311f0a237d98",
+          "sourceAddress": "rMXJYHzPjkTEJP6KAFcbx5JMZXw1dPusku",
+          "spentAmount": "4404604617",
+          "status": 0,
+          "merkleProofDepth": 2
+        }
+      ],
+      "provenance": {
+        "publishedAt": "2026-08-10T13:27:11.756Z",
+        "price": "1039341685200000000000000000000",
+        "priceUSD": 1.0393416852,
+        "incumbent": "1039350000000000000000000000000",
+        "incumbentUSD": 1.03935,
+        "haircutPPM": 999992,
+        "inputs": {
+          "effectiveQueueUBA": "1860950000000",
+          "coreVaultUBA": "7050810428154",
+          "dexExitUBA": "0",
+          "dexQuoteUBA": "0",
+          "remoteClaimsUBA": "0",
+          "pendingProvenOutflowsUBA": "0",
+          "capacityUBA": "8911760428154",
+          "queueTickets": 80,
+          "queueTruncated": false,
+          "pokedAt": 1786285014,
+          "pokedAtBlock": 67013851
+        },
+        "derivedFrom": {
+          "pin": 67013823,
+          "xrplLedger": 106186745,
+          "divergence": {
+            "xrplUBA": "7063788996353",
+            "flareUBA": "7050810428154",
+            "divergenceUBA": "12978568199",
+            "thresholdUBA": "100000000000",
+            "bips": 18,
+            "lowersCapacity": false,
+            "overThreshold": false,
+            "attestable": false,
+            "note": "Attested state is one-directional: only a divergence that LOWERS capacity may be attested."
+          }
+        }
+      },
+      "generatedAt": "2026-08-10T13:27:11.758Z"
+    },
+    "phase4": {
+      "phase": 4,
+      "venues": {
+        "mainnet": "read-only",
+        "fork": "http://localhost:8545"
+      },
+      "market": {
+        "comptroller": "0x15f69897e6aebe0463401345543c26d1fd994abb",
+        "cFXRP": "0xD1b7A5eFa9bd88F291F7A4563a8f6185c0249CB3",
+        "incumbent": "0x61f77Ef0064736Ffa68c31D960E55BAf67F79A4b"
+      },
+      "checks": [
+        {
+          "name": "anvil fork reachable at the pin",
+          "pass": true,
+          "detail": "head 67013823 · pin 67013823"
+        },
+        {
+          "name": "comptroller carries real deployed bytecode on the fork",
+          "pass": true,
+          "detail": "0x15f69897e6aebe0463401345543c26d1fd994abb · 1508 bytes"
+        },
+        {
+          "name": "cFXRP carries real deployed bytecode on the fork",
+          "pass": true,
+          "detail": "0xD1b7A5eFa9bd88F291F7A4563a8f6185c0249CB3 · 8085 bytes"
+        },
+        {
+          "name": "incumbent oracle carries real deployed bytecode on the fork",
+          "pass": true,
+          "detail": "0x61f77Ef0064736Ffa68c31D960E55BAf67F79A4b · 7791 bytes"
+        },
+        {
+          "name": "comptroller.oracle() identical on fork and mainnet",
+          "pass": true,
+          "detail": "0x000000000000000000000000…"
+        },
+        {
+          "name": "comptroller.admin() identical on fork and mainnet",
+          "pass": true,
+          "detail": "0x000000000000000000000000…"
+        },
+        {
+          "name": "comptroller.closeFactorMantissa() identical on fork and mainnet",
+          "pass": true,
+          "detail": "0x000000000000000000000000…"
+        },
+        {
+          "name": "comptroller.markets(cFXRP) identical on fork and mainnet",
+          "pass": true,
+          "detail": "0x000000000000000000000000…"
+        },
+        {
+          "name": "cFXRP.exchangeRateStored() identical on fork and mainnet",
+          "pass": true,
+          "detail": "0x000000000000000000000000…"
+        },
+        {
+          "name": "cFXRP.totalBorrows() identical on fork and mainnet",
+          "pass": true,
+          "detail": "0x000000000000000000000000…"
+        },
+        {
+          "name": "incumbent.getUnderlyingPrice(cFXRP) identical on fork and mainnet",
+          "pass": true,
+          "detail": "0x000000000000000000000000…"
+        },
+        {
+          "name": "the market is pointed at the incumbent oracle to begin with",
+          "pass": true,
+          "detail": "0x61f77ef0064736ffa68c31d960e55baf67f79a4b"
+        },
+        {
+          "name": "cFXRP is a listed market with a governance-set collateral factor",
+          "pass": true,
+          "detail": "collateralFactorMantissa 0.70 (700000000000000000)"
+        },
+        {
+          "name": "real borrowers with real FXRP collateral read back from the fork",
+          "pass": true,
+          "detail": "8 accounts · $2,662,839.03 total remaining capacity"
+        },
+        {
+          "name": "nobody is liquidatable under the incumbent at the pin",
+          "pass": true,
+          "detail": "shortfall 0 across the set — the market is healthy, which is the honest starting point"
+        },
+        {
+          "name": "fork clock warped back to the pinned timestamp",
+          "pass": true,
+          "detail": "was 0s ahead — the forked FTSO feed is frozen at the pin, so the 420s feed staleness window would otherwise refuse to price"
+        },
+        {
+          "name": "Herkos deployed on the fork by a prefunded Anvil account",
+          "pass": true,
+          "detail": "0x9E545E3C0baAB3E08CdfD552C960A1050f373042 · deployer 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 · 0 FLR spent anywhere real"
+        },
+        {
+          "name": "non-FXRP markets fall back to the incumbent",
+          "pass": true,
+          "detail": "0x61f77ef0064736ffa68c31d960e55baf67f79a4b"
+        },
+        {
+          "name": "poke() succeeds from an account with no role in this demo",
+          "pass": true,
+          "detail": "1,853,742 gas, caller 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+        },
+        {
+          "name": "poke() wrote an aggregate before the market ever consumes it",
+          "pass": true,
+          "detail": "capacity 8,911,760.428 FXRP · haircut 999992 ppm"
+        },
+        {
+          "name": "an unprivileged account cannot repoint the market",
+          "pass": true,
+          "detail": "_setPriceOracle returned error code 1 (0 would mean success)"
+        },
+        {
+          "name": "comptroller._setPriceOracle(herkos) executed by the real admin",
+          "pass": true,
+          "detail": "oracle() 0x61f77ef0064736ffa68c31d960e55baf67f79a4b → 0x9e545e3c0baab3e08cdfd552c960a1050f373042"
+        },
+        {
+          "name": "integration is exactly one governance call, no new interface",
+          "pass": true,
+          "detail": "isPriceOracle() + getUnderlyingPrice(address) — the same two functions the market already calls"
+        },
+        {
+          "name": "the market now prices FXRP through Herkos",
+          "pass": true,
+          "detail": "comptroller.oracle().getUnderlyingPrice(cFXRP) → $1.039342"
+        },
+        {
+          "name": "Herkos agrees with the incumbent at the default referenceSize",
+          "pass": true,
+          "detail": "$1.039342 vs $1.039350 — 0.08 bips below, the 999992 ppm haircut and nothing else (referenceSize 1,000,000 FXRP)"
+        },
+        {
+          "name": "a non-FXRP market is passed through byte-identical",
+          "pass": true,
+          "detail": "cUSDT0 → $0.999210 either way"
+        },
+        {
+          "name": "borrow capacity is materially unchanged the moment Herkos takes over",
+          "pass": true,
+          "detail": "$2,662,839.03 → $2,662,798.48 across 8 accounts"
+        },
+        {
+          "name": "raising referenceSize to 10M FXRP tightens the effective collateral factor",
+          "pass": true,
+          "detail": "999992 → 999170 ppm · effective CF 0.7000 → 0.6994 · capacity $2,662,798.48 → $2,658,632.54"
+        },
+        {
+          "name": "the NOMINAL collateral factor never moves — an oracle cannot set it",
+          "pass": true,
+          "detail": "collateralFactorMantissa stays 0.70 at every referenceSize. Herkos moves the USD value of the collateral, which is what borrowing power is actually made of"
+        },
+        {
+          "name": "the haircut is monotone in referenceSize",
+          "pass": true,
+          "detail": "999992 ≥ 999170 ≥ 997526 ≥ 992184 ≥ 984786 — a larger exit can never clear better"
+        },
+        {
+          "name": "the floor holds at an absurd referenceSize",
+          "pass": true,
+          "detail": "300M FXRP → 984786 ppm, above the 500,000 ppm floor: a bad input cannot zero the market"
+        },
+        {
+          "name": "registering uncorrelated depth widens measured capacity",
+          "pass": true,
+          "detail": "8,911,760.428 → 10,596,613.708 FXRP · dexExit 1,684,853.28 FXRP"
+        },
+        {
+          "name": "and does NOT tighten the haircut — a venue you may ignore cannot lower the price",
+          "pass": true,
+          "detail": "999992 → 999992 ppm"
+        },
+        {
+          "name": "anyone may poke; nobody unprivileged may change what poke reads",
+          "pass": true,
+          "detail": "addExitPool from an unrelated account → NotGovernance()"
+        },
+        {
+          "name": "a pre-pin mainnet proof is available to replay",
+          "pass": true,
+          "detail": "0x1df2dda233160bc9d82e127bb8de73d7dca1e5bf491c7ae904f73114f0ef254c @ block 67012947, round 1420598"
+        },
+        {
+          "name": "the proof is re-decoded from mainnet calldata, not from our own results file",
+          "pass": true,
+          "detail": "executeDirectMinting · 1120 bytes of calldata from mainnet"
+        },
+        {
+          "name": "the fork holds the finalized Merkle root for that voting round",
+          "pass": true,
+          "detail": "round 1420598 → 0x539e514f77d7791a…"
+        },
+        {
+          "name": "the deployed FdcVerification accepts the real proof on the fork",
+          "pass": true,
+          "detail": "verifyXRPPayment → true  (0x5c14fe9d73ab763f4d4a76f334bf7029ddd20ecc)"
+        },
+        {
+          "name": "a genuine FDC-accepted proof whose subject is not the vault is refused",
+          "pass": true,
+          "detail": "→ WrongSubject(string,string) · source rwerD4SoJ8sHPKqXWTf93n7QgQfAJy4HEo"
+        },
+        {
+          "name": "the refusal left the price the market consumes untouched",
+          "pass": true,
+          "detail": "capacity and haircut unchanged at 10,596,613.708 FXRP / 999992 ppm"
+        },
+        {
+          "name": "spotUnderlyingPrice() exposes the un-haircut number for a one-call diff",
+          "pass": true,
+          "detail": "$1.039350 — identical to the incumbent, so the haircut is the entire delta"
+        },
+        {
+          "name": "every number on the demo screen traces to an on-chain read",
+          "pass": true,
+          "detail": "inputs() returns all 12 derived values in one call — a judge can re-derive the haircut"
+        }
+      ],
+      "facts": {
+        "parity": {
+          "reads": 7,
+          "matched": 7,
+          "pin": 67013823
+        },
+        "poke": {
+          "gas": 1853742,
+          "caller": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+        },
+        "governance": {
+          "admin": "0x37c6c7c719db93085678ce72981cdd96219c9b72",
+          "adminIsContract": true,
+          "from": "0x61f77ef0064736ffa68c31d960e55baf67f79a4b",
+          "to": "0x9e545e3c0baab3e08cdfd552c960a1050f373042",
+          "gas": 35577,
+          "note": "Impossible on mainnet without governance. The fork is the venue precisely because this call is real rather than mocked."
+        },
+        "referenceSize": {
+          "nominalCollateralFactor": 0.7,
+          "note": "collateralFactorMantissa is a governance constant. An oracle moves the USD value of collateral, hence borrow capacity. Reported as effective CF = CF x haircut."
+        },
+        "venues": {
+          "pools": [
+            "0x927485d88a66253c63Af9163dca5f21c25A57393",
+            "0x686f53F0950Ef193C887527eC027E6A574A4DbE1",
+            "0x88D46717b16619B37fa2DfD2F038DEFB4459F1F7"
+          ],
+          "quote": "0xe7cd86e13ac4309349f30b3435a9d337750fc82d",
+          "capacityBefore": "8911760428154",
+          "capacityAfter": "10596613708126",
+          "haircutBefore": 999992,
+          "haircutAfter": 999992,
+          "dexExitUBA": "1684853279972",
+          "dexQuoteUBA": "1192547828650",
+          "note": "The correlated FXRP/stXRP pool — the deepest on Flare — is deliberately not registered here. A rotation is not an exit."
+        },
+        "fdc": {
+          "hash": "0x1df2dda233160bc9d82e127bb8de73d7dca1e5bf491c7ae904f73114f0ef254c",
+          "block": 67012947,
+          "votingRound": 1420598,
+          "fdcVerification": "0x5c14fe9d73ab763f4d4a76f334bf7029ddd20ecc",
+          "merkleRoot": "0x539e514f77d7791a1de99f1898eda2fe19e79fb8c843adb7949de75908707f3b",
+          "verifyXRPPayment": true,
+          "sourceAddress": "rwerD4SoJ8sHPKqXWTf93n7QgQfAJy4HEo",
+          "oracleVerdict": "WrongSubject(string,string)",
+          "note": "Attested state is one-directional: a proof may only lower capacity. FdcVerification judges authenticity; Herkos judges direction."
+        }
+      },
+      "baseline": {
+        "collateralFactorMantissa": "700000000000000000",
+        "incumbentPrice": "1039350000000000000000000000000",
+        "incumbentPriceUSD": 1.03935,
+        "exchangeRateStored": "200101723146878",
+        "borrowers": [
+          {
+            "who": "0x3521884bb802ef605082fe1da804b55082914a34",
+            "cTokenBalance": "18492566637045548",
+            "underlyingUBA": "3700394449481",
+            "collateralUSD": 3846004.9710680773,
+            "borrowUBA": "0",
+            "liquidityUSD": 2083899.7646928818,
+            "shortfallUSD": 0
+          },
+          {
+            "who": "0x1f43ffc1e174ce745852d98d29d84c2d69653c7b",
+            "cTokenBalance": "3320285288547020",
+            "underlyingUBA": "664394807577",
+            "collateralUSD": 690538.7432551549,
+            "borrowUBA": "225389813168",
+            "liquidityUSD": 249118.21796280044,
+            "shortfallUSD": 0
+          },
+          {
+            "who": "0x5d0ca3b33d0d915a0cef127442d7a0ebcc3e9151",
+            "cTokenBalance": "5312673869326399",
+            "underlyingUBA": "1063075195769",
+            "collateralUSD": 1104907.2047225102,
+            "borrowUBA": "0",
+            "liquidityUSD": 233858.05271200545,
+            "shortfallUSD": 0
+          },
+          {
+            "who": "0xbd10a197b856bc7883f3e43bdd992a7329c4f1c5",
+            "cTokenBalance": "2375909334030915",
+            "underlyingUBA": "475423551780",
+            "collateralUSD": 494131.46854254295,
+            "borrowUBA": "0",
+            "liquidityUSD": 29703.17471358462,
+            "shortfallUSD": 0
+          },
+          {
+            "who": "0x90f4943c1195675031d2c1a9cdc05e04a89f07a1",
+            "cTokenBalance": "4507591077750325",
+            "underlyingUBA": "901976741899",
+            "collateralUSD": 937469.5266927256,
+            "borrowUBA": "0",
+            "liquidityUSD": 26849.614540942755,
+            "shortfallUSD": 0
+          },
+          {
+            "who": "0xf8161dbfbdc43d2b50b8d668b243d216cb5d24c0",
+            "cTokenBalance": "1124635495182443",
+            "underlyingUBA": "225041500498",
+            "collateralUSD": 233896.8835425963,
+            "borrowUBA": "0",
+            "liquidityUSD": 20757.983028951312,
+            "shortfallUSD": 0
+          },
+          {
+            "who": "0x2f766abd3faa749929633a76b7de86707c5aebdf",
+            "cTokenBalance": "705448349883677",
+            "underlyingUBA": "141161430402",
+            "collateralUSD": 146716.1326883187,
+            "borrowUBA": "0",
+            "liquidityUSD": 15543.52823067972,
+            "shortfallUSD": 0
+          },
+          {
+            "who": "0x756835adbf208fea266f556f4fa092150894b069",
+            "cTokenBalance": "787481734451724",
+            "underlyingUBA": "157576452010",
+            "collateralUSD": 163777.08539659347,
+            "borrowUBA": "28758469110",
+            "liquidityUSD": 3108.690755295063,
+            "shortfallUSD": 0
+          }
+        ]
+      },
+      "ladder": [
+        {
+          "referenceSizeFXRP": 1000000,
+          "haircutPPM": 999992,
+          "priceUSD": 1.0393416852,
+          "timeToExitSeconds": 1800,
+          "effectiveCollateralFactor": 0.6999943999999999,
+          "nominalCollateralFactor": 0.7,
+          "totalBorrowCapacityUSD": 2662798.4821539894,
+          "accountsInShortfall": 0,
+          "perAccount": [
+            {
+              "who": "0x3521884bb802ef605082fe1da804b55082914a34",
+              "liquidityUSD": 2083878.2270650438,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x1f43ffc1e174ce745852d98d29d84c2d69653c7b",
+              "liquidityUSD": 249116.22501705674,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x5d0ca3b33d0d915a0cef127442d7a0ebcc3e9151",
+              "liquidityUSD": 233851.865231659,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xbd10a197b856bc7883f3e43bdd992a7329c4f1c5",
+              "liquidityUSD": 29700.40757736078,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x90f4943c1195675031d2c1a9cdc05e04a89f07a1",
+              "liquidityUSD": 26844.364711593273,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xf8161dbfbdc43d2b50b8d668b243d216cb5d24c0",
+              "liquidityUSD": 20756.673206403473,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x2f766abd3faa749929633a76b7de86707c5aebdf",
+              "liquidityUSD": 15542.706620336661,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x756835adbf208fea266f556f4fa092150894b069",
+              "liquidityUSD": 3108.0127245357953,
+              "shortfallUSD": 0
+            }
+          ]
+        },
+        {
+          "referenceSizeFXRP": 10000000,
+          "haircutPPM": 999170,
+          "priceUSD": 1.0384873395,
+          "timeToExitSeconds": 174600,
+          "effectiveCollateralFactor": 0.699419,
+          "nominalCollateralFactor": 0.7,
+          "totalBorrowCapacityUSD": 2658632.5365101607,
+          "accountsInShortfall": 0,
+          "perAccount": [
+            {
+              "who": "0x3521884bb802ef605082fe1da804b55082914a34",
+              "liquidityUSD": 2081665.235804691,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x1f43ffc1e174ce745852d98d29d84c2d69653c7b",
+              "liquidityUSD": 248911.4498418913,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x5d0ca3b33d0d915a0cef127442d7a0ebcc3e9151",
+              "liquidityUSD": 233216.1016260613,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xbd10a197b856bc7883f3e43bdd992a7329c4f1c5",
+              "liquidityUSD": 29416.084330361202,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x90f4943c1195675031d2c1a9cdc05e04a89f07a1",
+              "liquidityUSD": 26304.944745934084,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xf8161dbfbdc43d2b50b8d668b243d216cb5d24c0",
+              "liquidityUSD": 20622.08893961297,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x2f766abd3faa749929633a76b7de86707c5aebdf",
+              "liquidityUSD": 15458.286157587296,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x756835adbf208fea266f556f4fa092150894b069",
+              "liquidityUSD": 3038.345064021018,
+              "shortfallUSD": 0
+            }
+          ]
+        },
+        {
+          "referenceSizeFXRP": 50000000,
+          "haircutPPM": 997526,
+          "priceUSD": 1.0367786481,
+          "timeToExitSeconds": 520200,
+          "effectiveCollateralFactor": 0.6982682,
+          "nominalCollateralFactor": 0.7,
+          "totalBorrowCapacityUSD": 2650300.645222502,
+          "accountsInShortfall": 0,
+          "perAccount": [
+            {
+              "who": "0x3521884bb802ef605082fe1da804b55082914a34",
+              "liquidityUSD": 2077239.2532839857,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x1f43ffc1e174ce745852d98d29d84c2d69653c7b",
+              "liquidityUSD": 248501.89949156047,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x5d0ca3b33d0d915a0cef127442d7a0ebcc3e9151",
+              "liquidityUSD": 231944.57441486593,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xbd10a197b856bc7883f3e43bdd992a7329c4f1c5",
+              "liquidityUSD": 28847.43783636204,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x90f4943c1195675031d2c1a9cdc05e04a89f07a1",
+              "liquidityUSD": 25226.1048146157,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xf8161dbfbdc43d2b50b8d668b243d216cb5d24c0",
+              "liquidityUSD": 20352.920406031975,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x2f766abd3faa749929633a76b7de86707c5aebdf",
+              "liquidityUSD": 15289.445232088568,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x756835adbf208fea266f556f4fa092150894b069",
+              "liquidityUSD": 2899.009742991465,
+              "shortfallUSD": 0
+            }
+          ]
+        },
+        {
+          "referenceSizeFXRP": 150000000,
+          "haircutPPM": 992184,
+          "priceUSD": 1.0312264404,
+          "timeToExitSeconds": 1643400,
+          "effectiveCollateralFactor": 0.6945288,
+          "nominalCollateralFactor": 0.7,
+          "totalBorrowCapacityUSD": 2623227.0665980056,
+          "accountsInShortfall": 0,
+          "perAccount": [
+            {
+              "who": "0x3521884bb802ef605082fe1da804b55082914a34",
+              "liquidityUSD": 2062857.5022951725,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x1f43ffc1e174ce745852d98d29d84c2d69653c7b",
+              "liquidityUSD": 247171.1099712032,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x5d0ca3b33d0d915a0cef127442d7a0ebcc3e9151",
+              "liquidityUSD": 227812.88441352424,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xbd10a197b856bc7883f3e43bdd992a7329c4f1c5",
+              "liquidityUSD": 26999.682622892753,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x90f4943c1195675031d2c1a9cdc05e04a89f07a1",
+              "liquidityUSD": 21720.531266499645,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xf8161dbfbdc43d2b50b8d668b243d216cb5d24c0",
+              "liquidityUSD": 19478.28639971221,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x2f766abd3faa749929633a76b7de86707c5aebdf",
+              "liquidityUSD": 14740.814925510587,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x756835adbf208fea266f556f4fa092150894b069",
+              "liquidityUSD": 2446.2547034903264,
+              "shortfallUSD": 0
+            }
+          ]
+        },
+        {
+          "referenceSizeFXRP": 300000000,
+          "haircutPPM": 984786,
+          "priceUSD": 1.0235373291,
+          "timeToExitSeconds": 3198600,
+          "effectiveCollateralFactor": 0.6893502,
+          "nominalCollateralFactor": 0.7,
+          "totalBorrowCapacityUSD": 2585733.555803542,
+          "accountsInShortfall": 0,
+          "perAccount": [
+            {
+              "who": "0x3521884bb802ef605082fe1da804b55082914a34",
+              "liquidityUSD": 2042940.580951998,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x1f43ffc1e174ce745852d98d29d84c2d69653c7b",
+              "liquidityUSD": 245328.1333947144,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x5d0ca3b33d0d915a0cef127442d7a0ebcc3e9151",
+              "liquidityUSD": 222091.01196314502,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xbd10a197b856bc7883f3e43bdd992a7329c4f1c5",
+              "liquidityUSD": 24440.77339989653,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x90f4943c1195675031d2c1a9cdc05e04a89f07a1",
+              "liquidityUSD": 16865.751575566923,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0xf8161dbfbdc43d2b50b8d668b243d216cb5d24c0",
+              "liquidityUSD": 18267.027998597725,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x2f766abd3faa749929633a76b7de86707c5aebdf",
+              "liquidityUSD": 13981.030760766313,
+              "shortfallUSD": 0
+            },
+            {
+              "who": "0x756835adbf208fea266f556f4fa092150894b069",
+              "liquidityUSD": 1819.2457588573377,
+              "shortfallUSD": 0
+            }
+          ]
+        }
+      ],
+      "sideBySide": {
+        "incumbent": "1039350000000000000000000000000",
+        "incumbentUSD": 1.03935,
+        "herkos": "1039341685200000000000000000000",
+        "herkosUSD": 1.0393416852,
+        "spot": "1039350000000000000000000000000",
+        "spotUSD": 1.03935,
+        "haircutPPM": 999992,
+        "deltaBips": 0.08,
+        "inputs": {
+          "effectiveQueueUBA": "1860950000000",
+          "coreVaultUBA": "7050810428154",
+          "dexExitUBA": "1684853279972",
+          "dexQuoteUBA": "1192547828650",
+          "remoteClaimsUBA": "0",
+          "pendingProvenOutflowsUBA": "0",
+          "capacityUBA": "10596613708126",
+          "queueTickets": 80,
+          "queueTruncated": false,
+          "pokedAt": 1786285141,
+          "pokedAtBlock": 67013852
+        },
+        "gas": {
+          "incumbentColdGas": 110614,
+          "herkosColdGas": 70467,
+          "source": "Phase 2, measured on the fork"
+        }
+      },
+      "generatedAt": "2026-08-10T19:56:37.214Z"
+    }
+  },
+  "generatedAt": "2026-08-12T11:39:46.764Z"
+}

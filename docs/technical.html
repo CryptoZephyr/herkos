@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herkos technical documentation</title>
+<meta name="description" content="Technical documentation for the Herkos exit-capacity oracle.">
+<link rel="icon" href="../demo/herkos-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<header class="docs-header"><div class="docs-nav"><a class="brand" href="../"><img class="brand-mark" src="../demo/herkos-mark.svg" alt=""><span>herkos</span></a><nav class="docs-nav-links" aria-label="Documentation navigation"><a href="index.html">Docs</a><a href="technical.html">Technical</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></div></header>
+<main class="docs-shell">
+  <section class="docs-hero"><p class="eyebrow">Technical documentation</p><h1>How the measurement becomes a lending price.</h1><p class="intro">Herkos keeps the lending integration familiar while making exit capacity part of the price signal.</p></section>
+  <div class="docs-layout">
+    <aside class="docs-aside" aria-label="On this page"><p>On this page</p><a href="#model">Measurement model</a><a href="#sources">Data sources</a><a href="#contract">Contract interface</a><a href="#verification">Verification</a><a href="#repository">Repository</a></aside>
+    <div>
+      <section id="model" class="docs-section"><p class="eyebrow">Measurement model</p><h2>Capacity falls as exit size grows</h2><p>The oracle starts with a reference FXRP price from the existing feed. It measures the time and capacity needed to settle an exit, then derives a haircut for the requested size. The haircut is bounded and cannot improve the price because of missing or optimistic evidence.</p><p>The key inputs are the open redemption queue, liquid Core Vault funds, and only the trading pools that can convert FXRP into a stable asset without counting correlated XRP rotations as new exit capacity.</p><div class="code-note">effective lending price = reference price × measured haircut</div></section>
+      <section id="sources" class="docs-section"><p class="eyebrow">Data sources</p><h2>Each source has a defined job</h2><div class="doc-card-grid"><article class="doc-card"><h3>Flare contracts</h3><p>Reads public contract state for queue depth, supply, vault accounting, and market exposure at one block.</p></article><article class="doc-card"><h3>XRP Ledger</h3><p>Checks the Core Vault account and condition-gated escrow records against the source ledger.</p></article><article class="doc-card"><h3>Flare Data Connector</h3><p>Supplies finalized cross-chain evidence. The proof path only subtracts capacity when the evidence is accepted.</p></article><article class="doc-card"><h3>Eligible markets</h3><p>Uses uncorrelated exit depth. A pool that only moves value inside the XRP ecosystem is excluded from the conservative capacity number.</p></article></div></section>
+      <section id="contract" class="docs-section"><p class="eyebrow">Contract interface</p><h2>Designed for existing lending markets</h2><p>The contract exposes <code>getUnderlyingPrice(address)</code>, the same method used by Compound-style price oracles. Non-FXRP markets delegate to the incumbent oracle. FXRP reads use the measured haircut for the configured reference size.</p><p>Governance controls configuration and venue registration. Price and haircut are derived from measured state rather than submitted by an operator.</p><div class="callout"><p>Refreshing the measurement is permissionless, but production still needs a clear update cadence and an incentive for the caller.</p></div></section>
+      <section id="verification" class="docs-section"><p class="eyebrow">Verification</p><h2>What the public result proves</h2><p>The pinned result is traced to the repository run files and a shared fork block. The public page shows the block, capture time, proof reference, and explorer link. It does not compare a live market price with a recorded Herkos price.</p><ul><li>Foundry tests cover the hot path, venue handling, proof path, guards, and refresh behavior.</li><li>The presentation check traces displayed figures to the files that produced them.</li><li>The browser demo is read-only. It does not request a wallet or send a transaction.</li></ul></section>
+      <section id="repository" class="docs-section"><p class="eyebrow">Repository</p><h2>Developer material belongs in the repository</h2><p>The GitHub README contains setup, test commands, fork reproduction, and the repository map. The public docs explain the product; the README explains how to work on it.</p><div class="doc-card-grid"><article class="doc-card"><h3>Source</h3><p>Read the oracle contract and test suite in the repository.</p><a href="../src/ExitCapacityOracle.sol">Open oracle source</a></article><article class="doc-card"><h3>Developer README</h3><p>Run the local demo, contract tests, and figure checks.</p><a href="../README.md">Open README</a></article></div></section>
+    </div>
+  </div>
+</main>
+<footer class="docs-footer"><a class="brand" href="../"><img class="brand-mark" src="../demo/herkos-mark.svg" alt=""><span>herkos</span></a><p>Technical documentation</p><nav aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="../">Back to site</a></nav></footer>
+</body>
+</html>

@@ -1,0 +1,386 @@
+{
+  "diamond": "0x2a3fe068cd92178554cabcf7c95adf49b4b0b6a8",
+  "facets": [
+    {
+      "addr": "0x0331c6636b294ceb59045399b7fd71fb8802290c",
+      "selectors": [
+        "0x16fc2f6d",
+        "0x1f931c1c",
+        "0x20c5f99d",
+        "0x5aa6e675",
+        "0x62354e03",
+        "0xdebfda30",
+        "0xe17f212e",
+        "0xf5a98383"
+      ]
+    },
+    {
+      "addr": "0x14c6e3b9c339dac49d29f53488504440b248cfea",
+      "selectors": [
+        "0x01ffc9a7",
+        "0x52ef6b2c",
+        "0x7a0ed627",
+        "0xadfca15e",
+        "0xcdffacc6"
+      ]
+    },
+    {
+      "addr": "0xc8593e805399be27a57e905df4bd7bebb563ef90",
+      "selectors": [
+        "0x152052b0",
+        "0x5252f3a2",
+        "0x529cc2b9",
+        "0x5f016906",
+        "0x6e61164f",
+        "0x7e2ae0d7",
+        "0xb19aec17",
+        "0xc97c1dcc",
+        "0xcd715935",
+        "0xceb84b66",
+        "0xd3a5af8b"
+      ]
+    },
+    {
+      "addr": "0x21468a7b20d96d76bb60dfb83af513951ad92693",
+      "selectors": [
+        "0x04203930",
+        "0x3851b614",
+        "0x612007e5",
+        "0x8003314d",
+        "0xe415339c"
+      ]
+    },
+    {
+      "addr": "0x383795899d356748e1fa243b63fac25c03c1fcb8",
+      "selectors": [
+        "0x275a7bfc",
+        "0x368a3593"
+      ]
+    },
+    {
+      "addr": "0x98078c71ebb3b2e63c4cce11341e07da1bf4058b",
+      "selectors": [
+        "0x0da5e8e0",
+        "0x5a48b763",
+        "0x69f02020",
+        "0xec54eb35"
+      ]
+    },
+    {
+      "addr": "0x374b291092cd29b285ed8e1c4f81fc92b0c92e54",
+      "selectors": [
+        "0x69bd4e81",
+        "0x84807e8d"
+      ]
+    },
+    {
+      "addr": "0x611a158556d8d6afe33b291ee85b267deb4c3345",
+      "selectors": [
+        "0x01e261f6",
+        "0x1e8bee01",
+        "0x249f444d",
+        "0x65454f94",
+        "0x87375f27",
+        "0x9584da2a",
+        "0x99646d1c",
+        "0x997be0f4",
+        "0xc95cecbf",
+        "0xdf6f3663",
+        "0xed000b30"
+      ]
+    },
+    {
+      "addr": "0x06b88c867ceea8f086a0488c299cd22184a94126",
+      "selectors": [
+        "0x47748c85",
+        "0xbf9a2438"
+      ]
+    },
+    {
+      "addr": "0x800df9cbae8d3e436681c60fe8a69da8cd9f0947",
+      "selectors": [
+        "0x37fbae91",
+        "0x7b3477c3",
+        "0xafe4226a"
+      ]
+    },
+    {
+      "addr": "0x719ed12c968dc95fb2a9d6f7a9e88b5e36df5523",
+      "selectors": [
+        "0xb7f658ab",
+        "0xbcbaf487",
+        "0xe1c50100"
+      ]
+    },
+    {
+      "addr": "0xd654097f651958e96d102503e97cf592e9633dc0",
+      "selectors": [
+        "0x66a37046",
+        "0x7e7bfdc6",
+        "0xeb81ca63"
+      ]
+    },
+    {
+      "addr": "0x048332ac067d4939293f77ed1233703053fbde60",
+      "selectors": [
+        "0x0529cf5a",
+        "0x87b4fac6",
+        "0xa07ea7af",
+        "0xc0674b46"
+      ]
+    },
+    {
+      "addr": "0xe186483f23d4a845464e25889c3c9f4d5f02b7c3",
+      "selectors": [
+        "0x0877acff",
+        "0x4f4fbfca"
+      ]
+    },
+    {
+      "addr": "0x050914ba7ea987f4fef0e110cf67f944f65863f2",
+      "selectors": [
+        "0x31285909",
+        "0x5e71055c",
+        "0x778aadd5",
+        "0xb6620e44",
+        "0xb9a2ddb1"
+      ]
+    },
+    {
+      "addr": "0xc663e6c2f9cb091fe3661f8e7a3d73fb7234a756",
+      "selectors": [
+        "0x0ffb0e86",
+        "0xb74cb923",
+        "0xe7732f91"
+      ]
+    },
+    {
+      "addr": "0x734e64b0cbe2316cc6adbc1538499fd3cf811be5",
+      "selectors": [
+        "0x0f8d62c9",
+        "0x4610bc23",
+        "0x82dede26",
+        "0xb18e8e67"
+      ]
+    },
+    {
+      "addr": "0xd38ca05770e0c1da2a4b03fb6cf29b99246682c3",
+      "selectors": [
+        "0x0c6d51c1",
+        "0x29ff1308",
+        "0x2dabf2d0",
+        "0x469052ad",
+        "0xd9d71463"
+      ]
+    },
+    {
+      "addr": "0xa6484039c89c540dcc38f9c06a3312174ac76741",
+      "selectors": [
+        "0x177d0307",
+        "0x410418f1",
+        "0x4942f65f",
+        "0x49b5fdb4",
+        "0x531090f3",
+        "0x7c7db1a5",
+        "0x85b4bb53",
+        "0xf0c0b725"
+      ]
+    },
+    {
+      "addr": "0x81497a3f62937b113170086032e0248f7e0a2f81",
+      "selectors": [
+        "0x13d6a5e2",
+        "0x2779aaaa",
+        "0x2c06abf0",
+        "0x47814c06",
+        "0x568ae58e",
+        "0x5ac5c11e",
+        "0x6075765d",
+        "0x68f224ba",
+        "0x69b89e7e",
+        "0x6a598609",
+        "0x6ad6fb4f",
+        "0x6b38c643",
+        "0x6dd3d589",
+        "0x6df310d6",
+        "0x7800a11f",
+        "0x7b6fa762",
+        "0x7f4fcaa9",
+        "0x812e7d2e",
+        "0x8d94510a",
+        "0x9db27f55",
+        "0x9e193242",
+        "0xad74c72d",
+        "0xaf5f2b98",
+        "0xb2e6a2b5",
+        "0xbe069719",
+        "0xcda4c541",
+        "0xcfcb991d",
+        "0xd0743395",
+        "0xd57d25c5",
+        "0xdd64bd04",
+        "0xdf06ea96",
+        "0xdfc59417",
+        "0xe443147f",
+        "0xe68f3fbf",
+        "0xec516d24",
+        "0xec7430a4",
+        "0xf6a494af"
+      ]
+    },
+    {
+      "addr": "0x3d9fcfb8710b571d7a6b2c6cf62e516514fd6d79",
+      "selectors": [
+        "0x02312aec",
+        "0x39c045df",
+        "0x700104f7",
+        "0xb5a488a6",
+        "0xd6b93a9f",
+        "0xed3762aa",
+        "0xfc31a2e8"
+      ]
+    },
+    {
+      "addr": "0x755ec2069984470d4cbdc57f78456d98b1e7ef22",
+      "selectors": [
+        "0xae200322",
+        "0xb928b533",
+        "0xda8fbf2a"
+      ]
+    },
+    {
+      "addr": "0xe57cea676ec31c0a0b890bbdfcf773ac66486539",
+      "selectors": [
+        "0x26e64020",
+        "0x4331dd30",
+        "0x53777730",
+        "0x5c907eaa",
+        "0x91a76c40",
+        "0xb5bd20ee",
+        "0xe1a283d6"
+      ]
+    },
+    {
+      "addr": "0xc7a570e9cbc4c4a23a08411747f3f82d64f90843",
+      "selectors": [
+        "0x27c830a9",
+        "0x3fb100b9",
+        "0x460831c3",
+        "0x7e068d81",
+        "0xc7cc5bb6",
+        "0xe5d32c3a"
+      ]
+    },
+    {
+      "addr": "0x4f05cb96ccb0a301fc730e01c45e818ec426e261",
+      "selectors": [
+        "0x578558ac",
+        "0xe11112ab"
+      ]
+    },
+    {
+      "addr": "0x9d231acbafdac9533222e6d55512ca0e3adbcb11",
+      "selectors": [
+        "0x08739753",
+        "0xb291dde8",
+        "0xbc7f75fd"
+      ]
+    },
+    {
+      "addr": "0xb2ceace4333904fdc05a30d7441797e3678d56a6",
+      "selectors": [
+        "0x2a926491",
+        "0x75afe638"
+      ]
+    },
+    {
+      "addr": "0x2ed560ee0a6616d9c4a6201b5e948bec46213ecc",
+      "selectors": [
+        "0x210db79c",
+        "0x32974aaf",
+        "0x3f343ea2",
+        "0x687fea71",
+        "0x890a8340",
+        "0x9b70be1f"
+      ]
+    },
+    {
+      "addr": "0xba77bd1363a6b82d975512b281c59c880aed2664",
+      "selectors": [
+        "0x6286592e",
+        "0xcfffc006"
+      ]
+    },
+    {
+      "addr": "0xf24088e28208c00e1a4d2c8fee4d0513448dd172",
+      "selectors": [
+        "0x03094b21",
+        "0x223682fa",
+        "0x43b9552e",
+        "0x45e884e1",
+        "0x5438e32b",
+        "0x929d71bf",
+        "0xa2785a71",
+        "0xa67ab2b1",
+        "0xa79936e4",
+        "0xb2a0d420",
+        "0xbe1e366a",
+        "0xe6a118d5",
+        "0xec893905",
+        "0xecad40c9",
+        "0xfe1ad642"
+      ]
+    },
+    {
+      "addr": "0x2aa3e1d8ff2c1e2826a92bbe60fe073241ab6282",
+      "selectors": [
+        "0x020c8cd8",
+        "0x72eb06c2",
+        "0x78d0299e",
+        "0xa7556da6",
+        "0xd2406b8a"
+      ]
+    },
+    {
+      "addr": "0x0f441aceafd6b5f0072cd286277b42bfed199c2f",
+      "selectors": [
+        "0x05c2b4ce",
+        "0x1475f328",
+        "0x1eeabb1b",
+        "0x2aecb2b6",
+        "0x343297c7",
+        "0x3f9645ce",
+        "0x419a7f86",
+        "0x54f17de1",
+        "0x5e3e0943",
+        "0x725095a6",
+        "0x7aa8105b",
+        "0x817bbc54",
+        "0x8369ae6f",
+        "0x8d9410ee",
+        "0x935625db",
+        "0x9e04fd30",
+        "0xa071c243",
+        "0xb1287a03",
+        "0xb59c4d93",
+        "0xbd7429eb",
+        "0xd1e5535e",
+        "0xd561f156",
+        "0xf5aa3b8b",
+        "0xf7cd1ab8"
+      ]
+    },
+    {
+      "addr": "0x37f2057582513ee3fe5e715f1c0fd44e473aa996",
+      "selectors": [
+        "0x70694dda",
+        "0x78f32cf7",
+        "0xafa2aacb",
+        "0xc49219ba",
+        "0xc67a19f8",
+        "0xc88afab4",
+        "0xf3455238"
+      ]
+    }
+  ]
+}

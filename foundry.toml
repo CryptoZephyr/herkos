@@ -1,0 +1,16 @@
+[profile.default]
+src = "src"
+out = "out"
+test = "test"
+libs = []
+# No forge-std, no git submodules, no node_modules. test/Vm.sol is a ~40-line
+# local cheatcode interface — being dependency-free is part of the $0 story.
+solc_version = "0.8.28"
+optimizer = true
+optimizer_runs = 200000
+evm_version = "shanghai"
+gas_reports = ["ExitCapacityOracle"]
+fs_permissions = [{ access = "read", path = "./fork.json" }]
+
+[rpc_endpoints]
+flare = "https://flare-api.flare.network/ext/C/rpc"

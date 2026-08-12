@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herkos official docs</title>
+<meta name="description" content="Official documentation for Herkos, an exit-capacity oracle for FXRP lending on Flare.">
+<link rel="icon" href="../demo/herkos-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<header class="docs-header">
+  <div class="docs-nav">
+    <a class="brand" href="../"><img class="brand-mark" src="../demo/herkos-mark.svg" alt=""><span>herkos</span></a>
+    <nav class="docs-nav-links" aria-label="Documentation navigation">
+      <a href="index.html">Docs</a>
+      <a href="technical.html">Technical</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+<main class="docs-shell">
+  <section class="docs-hero" aria-labelledby="page-title">
+    <p class="eyebrow">Official documentation</p>
+    <h1 id="page-title">A clearer exit signal for FXRP lending.</h1>
+    <p class="intro">Herkos measures how much FXRP can leave Flare when lending positions need to exit. It turns that measurement into a conservative price adjustment that Compound-style markets can use.</p>
+  </section>
+  <div class="docs-layout">
+    <aside class="docs-aside" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#overview">Overview</a>
+      <a href="#data">Data and freshness</a>
+      <a href="#boundaries">Boundaries</a>
+      <a href="#more">More docs</a>
+    </aside>
+    <div>
+      <section id="overview" class="docs-section">
+        <p class="eyebrow">Overview</p>
+        <h2>What Herkos does</h2>
+        <p>A normal lending oracle can tell a market the current price of FXRP. Herkos adds another question: how much of the asset can realistically leave the system if many positions need to exit at once?</p>
+        <p>It measures redemption demand, liquid Core Vault funds, and eligible trading depth. Larger exits receive a more conservative haircut. The oracle keeps the existing lending interface, so a market can use the signal without a new pricing flow.</p>
+        <div class="doc-card-grid">
+          <article class="doc-card"><h3>For lenders</h3><p>A position value that reflects both market price and observed exit conditions.</p></article>
+          <article class="doc-card"><h3>For integrators</h3><p>A Compound-compatible price interface with the risk adjustment derived on-chain.</p></article>
+        </div>
+      </section>
+      <section id="data" class="docs-section">
+        <p class="eyebrow">Data and freshness</p>
+        <h2>Read each number with its source</h2>
+        <p>The public site separates live readings from the pinned lending-market result. Live readings show the Flare block used for the read. The stress result shows the shared fork block and capture time for every comparison.</p>
+        <ul>
+          <li>Live Flare reads change as the network changes.</li>
+          <li>The XRP Ledger read cross-checks Core Vault backing and escrow conditions.</li>
+          <li>The FDC example is a replayed finalized proof, not a new mainnet request.</li>
+          <li>Historical demand describes what users requested. It is not a guaranteed capacity ceiling.</li>
+        </ul>
+      </section>
+      <section id="boundaries" class="docs-section">
+        <p class="eyebrow">Boundaries</p>
+        <h2>What this project claims</h2>
+        <p>Herkos is a measured research prototype and hackathon integration. The demo does not claim that a live lending market has adopted the oracle or that FXRP is currently insolvent.</p>
+        <div class="callout"><p>The pinned result replays deployed Flare state on a mainnet fork. It is useful evidence for the integration, but it is not a live protocol change.</p></div>
+      </section>
+      <section id="more" class="docs-section">
+        <p class="eyebrow">More docs</p>
+        <h2>Choose the detail you need</h2>
+        <div class="doc-card-grid">
+          <article class="doc-card"><h3>Technical documentation</h3><p>Contract behavior, data sources, pricing logic, and verification boundaries.</p><a href="technical.html">Read technical docs</a></article>
+          <article class="doc-card"><h3>Privacy</h3><p>What the static site sends to public network endpoints and what it does not collect.</p><a href="privacy.html">Read privacy terms</a></article>
+          <article class="doc-card"><h3>Terms of use</h3><p>Use of the prototype, third-party services, and the limits of the displayed data.</p><a href="terms.html">Read terms</a></article>
+          <article class="doc-card"><h3>Repository README</h3><p>Developer setup, tests, fork reproduction, and repository file map.</p><a href="../README.md">Open GitHub README</a></article>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="docs-footer">
+  <a class="brand" href="../"><img class="brand-mark" src="../demo/herkos-mark.svg" alt=""><span>herkos</span></a>
+  <p>Exit capacity for FXRP lending on Flare.</p>
+  <nav aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="../">Back to site</a></nav>
+</footer>
+</body>
+</html>

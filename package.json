@@ -1,0 +1,20 @@
+{
+  "name": "herkos",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Exit-capacity oracle for FXRP on Flare — a drop-in Compound-compatible price oracle",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "phase0": "node scripts/phase0.js",
+    "phase1": "node scripts/phase1.js",
+    "phase2": "node scripts/phase2.js",
+    "phase3": "node scripts/phase3.js",
+    "publisher": "node scripts/phase3.js",
+    "keccak": "node scripts/lib/k.js",
+    "phase4": "node scripts/phase4.js",
+    "phase5": "node scripts/phase5.js",
+    "demo": "node scripts/demo.js"
+  }
+}

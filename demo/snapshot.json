@@ -1,0 +1,41 @@
+{
+  "snapshotBlock": 67013823,
+  "snapshotTimestamp": "2026-08-09T14:16:54Z",
+  "network": "Flare mainnet fork",
+  "market": {
+    "incumbentPriceUSD": 1.03935,
+    "herkosPriceUSD": 1.0393416852,
+    "haircutPPM": 999992,
+    "referenceSizeFXRP": 1000000,
+    "exitCapacityFXRP": 10596613.708126,
+    "queueFXRP": 1860950,
+    "coreVaultLiquidXRP": 7050810.428154,
+    "dexExitFXRP": 1684853.279972,
+    "borrowCapacityAtReferenceUSD": 2662798.4821539894,
+    "borrowCapacityAtStressUSD": 2585733.555803542,
+    "stressReferenceSizeFXRP": 300000000,
+    "stressHaircutPPM": 984786,
+    "stressPriceUSD": 1.0235373291,
+    "stressTimeToExitSeconds": 3198600,
+    "effectiveCollateralFactorAtReference": 0.6999944,
+    "effectiveCollateralFactorAtStress": 0.6893502,
+    "nominalCollateralFactor": 0.7,
+    "accountsMeasured": 8,
+    "shortfallsAtStress": 0
+  },
+  "proof": {
+    "status": "verified on pinned fork",
+    "transaction": "0x1df2dda233160bc9d82e127bb8de73d7dca1e5bf491c7ae904f73114f0ef254c",
+    "block": 67012947,
+    "votingRound": 1420598,
+    "verifier": "0x5c14fe9d73ab763f4d4a76f334bf7029ddd20ecc",
+    "oracleDirectionCheck": "inflow refused; only capacity-lowering state is accepted"
+  },
+  "ladder": [
+    { "referenceSizeFXRP": 1000000, "haircutPPM": 999992, "priceUSD": 1.0393416852, "timeToExitSeconds": 1800, "borrowCapacityUSD": 2662798.4821539894, "shortfalls": 0 },
+    { "referenceSizeFXRP": 10000000, "haircutPPM": 999170, "priceUSD": 1.0384873395, "timeToExitSeconds": 174600, "borrowCapacityUSD": 2658632.5365101607, "shortfalls": 0 },
+    { "referenceSizeFXRP": 50000000, "haircutPPM": 997526, "priceUSD": 1.0367786481, "timeToExitSeconds": 520200, "borrowCapacityUSD": 2650300.645222502, "shortfalls": 0 },
+    { "referenceSizeFXRP": 150000000, "haircutPPM": 992184, "priceUSD": 1.0312264404, "timeToExitSeconds": 1643400, "borrowCapacityUSD": 2623227.0665980056, "shortfalls": 0 },
+    { "referenceSizeFXRP": 300000000, "haircutPPM": 984786, "priceUSD": 1.0235373291, "timeToExitSeconds": 3198600, "borrowCapacityUSD": 2585733.555803542, "shortfalls": 0 }
+  ]
+}

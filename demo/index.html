@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herkos: exit capacity for FXRP lending</title>
+<meta name="description" content="Herkos measures how much FXRP can actually leave Flare and gives lending markets a more useful risk signal.">
+<meta name="theme-color" content="#f6f8fb">
+<meta property="og:title" content="Herkos: exit capacity for FXRP lending">
+<meta property="og:description" content="A Compound-compatible oracle that measures how much FXRP can leave Flare when lending positions need to exit.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="#top" aria-label="Herkos home"><img class="brand-mark" src="herkos-mark.svg" alt=""><span>herkos</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#snapshot">Risk snapshot</a>
+      <a href="#stress">Stress result</a>
+      <a href="#method">How it works</a>
+    </nav>
+    <a class="nav-link" href="docs/index.html">Official docs <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section id="top" class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Exit capacity for FXRP lending</p>
+      <h1 id="hero-title">Know how much FXRP can leave when exits get busy.</h1>
+      <p class="hero-lead">Herkos gives FXRP lending a clearer risk signal. It measures both the asset price and how much can leave Flare when exits get busy.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#snapshot">View risk snapshot <span aria-hidden="true">↓</span></a>
+        <a class="text-link" href="#stress">See the stress result <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+      <aside class="hero-proof" aria-label="Pinned stress result">
+      <p class="eyebrow">Pinned market result</p>
+      <strong id="hero-delta">−2.9%</strong>
+      <p>borrowing capacity at a 300M FXRP exit size</p>
+      <div class="hero-proof-rule"></div>
+      <dl>
+        <dt>Market</dt><dd>Compound-style FXRP lending</dd>
+        <dt>Accounts</dt><dd id="hero-accounts">8 measured</dd>
+        <dt>Shortfalls</dt><dd id="hero-shortfalls">0 accounts below limit</dd>
+      </dl>
+    </aside>
+  </section>
+
+  <section id="snapshot" class="section" aria-labelledby="snapshot-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Live network data</p>
+        <h2 id="snapshot-title">How much FXRP can leave Flare now</h2>
+      </div>
+      <div id="live-status" class="status neutral" aria-live="polite">Reading the Flare network</div>
+    </div>
+    <p class="section-lead">These readings come from one Flare block. They change with the network. They are signals, not promises about available liquidity.</p>
+
+    <div id="live-metrics" class="metric-grid" aria-live="polite">
+      <article class="metric-card skeleton-card"><span class="skeleton-line short"></span><span class="skeleton-line value"></span><span class="skeleton-line"></span></article>
+      <article class="metric-card skeleton-card"><span class="skeleton-line short"></span><span class="skeleton-line value"></span><span class="skeleton-line"></span></article>
+      <article class="metric-card skeleton-card"><span class="skeleton-line short"></span><span class="skeleton-line value"></span><span class="skeleton-line"></span></article>
+      <article class="metric-card skeleton-card"><span class="skeleton-line short"></span><span class="skeleton-line value"></span><span class="skeleton-line"></span></article>
+    </div>
+
+    <div class="signal-panel">
+      <div class="panel-heading">
+        <div>
+          <h3>Exit signals compared with lending exposure</h3>
+          <p>The bars use posted FXRP collateral as the baseline. XRP backing is shown one for one for comparison.</p>
+        </div>
+        <span id="live-freshness" class="data-age">Waiting for the network read</span>
+      </div>
+      <div id="signal-bars" class="signal-bars" aria-live="polite">
+        <div class="skeleton-bar" aria-hidden="true"></div><div class="skeleton-bar" aria-hidden="true"></div><div class="skeleton-bar" aria-hidden="true"></div>
+      </div>
+      <p id="live-summary" class="callout neutral-callout">Reading the queue, lending exposure, vault liquidity, and trading depth.</p>
+      <button id="retry-live" class="retry-button" type="button" hidden>Try the live read again</button>
+    </div>
+  </section>
+
+  <section id="stress" class="section" aria-labelledby="stress-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Pinned market snapshot</p>
+        <h2 id="stress-title">What changes when an exit gets large</h2>
+      </div>
+      <span id="snapshot-label" class="status snapshot-status">Loading snapshot</span>
+    </div>
+    <p class="section-lead">Both prices below come from the same market state. The ladder shows how borrowing capacity changes as the exit size grows.</p>
+
+    <div id="stress-content" class="stress-content">
+      <div class="comparison-grid">
+        <article class="comparison-card"><p class="card-label">Existing oracle</p><strong>Reading</strong><span>Waiting for the market block</span></article>
+        <article class="comparison-card featured"><p class="card-label">Herkos</p><strong>Reading</strong><span>Waiting for the market block</span></article>
+      </div>
+      <div class="stress-summary skeleton-block"></div>
+    </div>
+
+    <details class="technical-details">
+      <summary>View the full size ladder</summary>
+      <div class="table-scroll">
+        <table class="ladder-table">
+          <caption>Herkos response at several exit sizes from the same market snapshot</caption>
+          <thead><tr><th scope="col">Reference size</th><th scope="col">Price</th><th scope="col">Haircut</th><th scope="col">Time to exit</th><th scope="col">Borrowing capacity</th><th scope="col">Shortfalls</th></tr></thead>
+          <tbody id="ladder-body"><tr><td colspan="6">Waiting for the market snapshot</td></tr></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section id="method" class="section" aria-labelledby="method-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Three inputs, one lending price</p>
+        <h2 id="method-title">How Herkos works</h2>
+      </div>
+    </div>
+    <div class="method-grid">
+      <article class="method-card"><span class="step-number">01</span><h3>Measure what can leave</h3><p>Herkos reads the open redemption queue, liquid Core Vault funds, and DEX liquidity that can trade into a stable asset.</p></article>
+      <article class="method-card"><span class="step-number">02</span><h3>Price the delay</h3><p>It turns exit size and observed settlement time into a conservative haircut. Cross-chain evidence can only lower the measured capacity.</p></article>
+      <article class="method-card"><span class="step-number">03</span><h3>Use it in lending</h3><p>It returns the same price method used by Compound-style lending markets. Lending markets can use it without a new interface.</p></article>
+    </div>
+  </section>
+
+  <section id="trust" class="section trust-section" aria-labelledby="trust-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Evidence and limits</p>
+        <h2 id="trust-title">Where the numbers come from</h2>
+      </div>
+    </div>
+    <div class="trust-grid">
+      <article class="trust-card"><span class="trust-kicker">Flare</span><h3>Live contract state</h3><p>Queue, supply, vault accounting, and market exposure are read from public Flare contracts at one block.</p><span id="flare-proof" class="trust-status neutral-status">Checking</span></article>
+      <article class="trust-card"><span class="trust-kicker">XRP Ledger</span><h3>Backing cross-check</h3><p>The Core Vault account and its condition-gated escrow records come from the validated XRP Ledger. This checks Flare’s bookkeeping against the source ledger.</p><span id="xrpl-proof" class="trust-status neutral-status">Checking</span></article>
+      <article class="trust-card"><span class="trust-kicker">FDC</span><h3>Conservative proof handling</h3><p id="proof-copy">The deployed verifier accepted a finalized proof on the pinned fork. Herkos rejects an inflow that would make capacity look better.</p><span id="proof-status" class="trust-status neutral-status">Waiting for snapshot</span></article>
+    </div>
+    <div class="proof-row">
+      <div><span class="eyebrow">Proof reference</span><p id="proof-reference">Loading proof details</p></div>
+      <a id="proof-link" class="text-link" target="_blank" rel="noopener noreferrer" hidden>Open proof transaction in Flare Explorer <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section id="limits" class="section limits-section" aria-labelledby="limits-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Scope</p>
+        <h2 id="limits-title">Where this result applies</h2>
+      </div>
+      <a class="text-link" href="docs/technical.html">Read the technical docs <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="limits-grid">
+      <p><strong>Forked integration.</strong> This lending stress result uses deployed Flare state replayed on a pinned fork. It is an integration result, not a live protocol change.</p>
+      <p><strong>Replayed proof.</strong> The FDC proof is finalized and real. This demo replays an attestation that FAssets already paid for; no new mainnet request was made.</p>
+      <p><strong>Demand is not capacity.</strong> Redemption history shows what users requested. It does not set the maximum the system can settle.</p>
+      <p><strong>Refreshes cost gas.</strong> Reading the measurement is permissionless, but a production deployment still needs an update schedule and incentive.</p>
+    </div>
+  </section>
+
+  <section id="evidence" class="evidence-section" aria-labelledby="evidence-title">
+    <div>
+      <p class="eyebrow">Explore the details</p>
+      <h2 id="evidence-title">Verify the result</h2>
+      <p>Read the brief, inspect the oracle source, or follow the proof transaction.</p>
+    </div>
+    <div class="evidence-links">
+      <a href="docs/index.html">Official docs <span aria-hidden="true">↗</span></a>
+      <a href="docs/technical.html">Technical details <span aria-hidden="true">↗</span></a>
+      <a href="src/ExitCapacityOracle.sol">Oracle source <span aria-hidden="true">↗</span></a>
+      <a href="https://flare-explorer.flare.network/address/0x15f69897e6aebe0463401345543c26d1fd994abb" target="_blank" rel="noopener noreferrer">Flare market <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <a class="brand" href="#top" aria-label="Herkos home"><img class="brand-mark" src="herkos-mark.svg" alt=""><span>herkos</span></a>
+  <p>Exit capacity for FXRP lending on Flare.</p>
+  <p class="footer-note">Live network readings and a pinned lending market result.</p>
+  <nav class="footer-nav" aria-label="Legal and documentation">
+    <a href="docs/index.html">Docs</a>
+    <a href="docs/privacy.html">Privacy</a>
+    <a href="docs/terms.html">Terms</a>
+  </nav>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

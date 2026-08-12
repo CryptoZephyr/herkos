@@ -1,0 +1,375 @@
+{
+  "phase": 3,
+  "venues": {
+    "mainnet": "read-only",
+    "fork": "http://localhost:8545",
+    "coston2": "https://coston2-api.flare.network/ext/C/rpc"
+  },
+  "publish": false,
+  "checks": [
+    {
+      "name": "readers.json loaded",
+      "pass": true,
+      "detail": "block 67013823 · 0 reader checks"
+    },
+    {
+      "name": "readers.json is at the same pin",
+      "pass": true,
+      "detail": "readers 67013823 vs fork.json 67013823"
+    },
+    {
+      "name": "FdcVerification resolved through the registry",
+      "pass": true,
+      "detail": "0x5c14fe9d73ab763f4d4a76f334bf7029ddd20ecc"
+    },
+    {
+      "name": "Core Vault XRPL address read live from CoreVaultManager",
+      "pass": true,
+      "detail": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj"
+    },
+    {
+      "name": "CoreVaultManager funds re-read at the pin",
+      "pass": true,
+      "detail": "available 7,050,810.428 FXRP"
+    },
+    {
+      "name": "divergence direction classified",
+      "pass": true,
+      "detail": "XRPL at or above Flare — would RAISE capacity, never attestable"
+    },
+    {
+      "name": "divergence gate agrees with the Phase 1 reader",
+      "pass": true,
+      "detail": "attestable=false"
+    },
+    {
+      "name": "an FDC fee is authorised only by the divergence gate",
+      "pass": true,
+      "detail": "gate closed — 0 FLR, the correct outcome rather than a skipped step"
+    },
+    {
+      "name": "anvil fork reachable at the pin",
+      "pass": true,
+      "detail": "head 67013847 · pin 67013823"
+    },
+    {
+      "name": "fork clock warped back to the pinned timestamp",
+      "pass": true,
+      "detail": "was 0s ahead of the pin — the FTSO feed is frozen at the pin, so the feed staleness window (420s) would otherwise refuse to price"
+    },
+    {
+      "name": "oracle deployed on the fork",
+      "pass": true,
+      "detail": "0x36C02dA8a0983159322a80FFE9F24b1acfF8B570"
+    },
+    {
+      "name": "poke() succeeds from an unrelated account",
+      "pass": true,
+      "detail": "1,852,899 gas, caller 0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+    },
+    {
+      "name": "poke() takes no arguments and no submitted values",
+      "pass": true,
+      "detail": "selector poke() — 4 bytes of calldata, nothing else"
+    },
+    {
+      "name": "poke() wrote an aggregate",
+      "pass": true,
+      "detail": "capacity 8,911,760.428 FXRP · haircut 999992 ppm"
+    },
+    {
+      "name": "proof-carrying mainnet transactions found below the pin",
+      "pass": true,
+      "detail": "8 decoded IXRPPayment proofs"
+    },
+    {
+      "name": "proof + args re-encode byte-identical to mainnet calldata",
+      "pass": true,
+      "detail": "8/8 round-trip exactly"
+    },
+    {
+      "name": "a pre-pin proof is available to verify",
+      "pass": true,
+      "detail": "0x1df2dda233160bc9d82e127bb8de73d7dca1e5bf491c7ae904f73114f0ef254c @ 67012947"
+    },
+    {
+      "name": "the fork holds the finalized Merkle root for that voting round",
+      "pass": true,
+      "detail": "round 1420598 → 0x539e514f77d7791a…"
+    },
+    {
+      "name": "FdcVerification.verifyXRPPayment accepts the real proof on the fork",
+      "pass": true,
+      "detail": "verifyXRPPayment → true"
+    },
+    {
+      "name": "DA Layer endpoint is live and answering at the HTTP level",
+      "pass": true,
+      "detail": "HTTP 400: attestation request not found"
+    },
+    {
+      "name": "a real FDC-accepted proof whose subject is NOT the vault is refused",
+      "pass": true,
+      "detail": "→ WrongSubject(string,string)"
+    },
+    {
+      "name": "the fork holds NO root for a post-pin voting round",
+      "pass": true,
+      "detail": "round 1421530 → empty (control)"
+    },
+    {
+      "name": "a proof from a post-fork round is refused as unverifiable",
+      "pass": true,
+      "detail": "→ ProofRejected() (round 1421530 finalized after the pin, block 67086229)"
+    },
+    {
+      "name": "XRPPayment is fee-configured on both networks",
+      "pass": true,
+      "detail": "C2 testXRP 1,000 wei · mainnet XRP 20.0000 FLR — Core Vault flows — returns the XRPL address as a string"
+    },
+    {
+      "name": "XRPPaymentNonexistence is fee-configured on both networks",
+      "pass": true,
+      "detail": "C2 testXRP 1,000 wei · mainnet XRP 20.0000 FLR — proves a specific claimed payment absent"
+    },
+    {
+      "name": "BalanceDecreasingTransaction is fee-configured on both networks",
+      "pass": true,
+      "detail": "C2 testXRP 1,000 wei · mainnet XRP 20.0000 FLR — outflows where the balance delta is the fact"
+    },
+    {
+      "name": "ConfirmedBlockHeightExists is fee-configured on both networks",
+      "pass": true,
+      "detail": "C2 testXRP 1,000 wei · mainnet XRP 3.0000 FLR — freshness anchor — cheapest type"
+    },
+    {
+      "name": "EVMTransaction is fee-configured on both networks",
+      "pass": true,
+      "detail": "C2 testETH 1,000 wei · mainnet ETH 20.0000 FLR — optional: Ethereum OFT supply"
+    },
+    {
+      "name": "FdcHub.requestAttestation calldata built without broadcasting",
+      "pass": true,
+      "detail": "164 bytes"
+    },
+    {
+      "name": "every published number carries its inputs",
+      "pass": true,
+      "detail": "inputs() returns all 12 derived values in one call — a consumer can re-derive the haircut"
+    },
+    {
+      "name": "Herkos agrees with the incumbent under normal conditions",
+      "pass": true,
+      "detail": "$1.039342 vs $1.039350 — 0.08 bips below, the 999992 ppm haircut and nothing else"
+    },
+    {
+      "name": "FLR spend tracked per update",
+      "pass": true,
+      "detail": "fork 0 FLR · mainnet-equivalent poke 1.20 FLR · 0 attestations"
+    }
+  ],
+  "facts": {
+    "coreVault": {
+      "xrplAddress": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj",
+      "availableUBA": "7050810428154",
+      "escrowedUBA": "140000000000000"
+    },
+    "divergence": {
+      "xrplUBA": "7063788996353",
+      "flareUBA": "7050810428154",
+      "divergenceUBA": "12978568199",
+      "thresholdUBA": "100000000000",
+      "bips": 18,
+      "lowersCapacity": false,
+      "overThreshold": false,
+      "attestable": false,
+      "note": "Attested state is one-directional: only a divergence that LOWERS capacity may be attested."
+    },
+    "poke": {
+      "gas": 1852899,
+      "caller": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "flrAt650Gwei": 1.20438435
+    },
+    "daLayer": {
+      "url": "https://flr-data-availability.flare.network/api/v1/fdc/proof-by-request-round",
+      "round": 1420598,
+      "reqBytes": "0x5852505061796d656e7400000000000000000000000000000000000000000000585250000000000000000000000000000000000000000000000000000000000028f177558bf5a112928b4eb796e05a9d7d5ee9d5981c482c312ebbd486b47e270000000000000000000000000000000000000000000000000000000000000000",
+      "response": "attestation request not found",
+      "httpStatus": 400,
+      "note": "Informational. The binding check is FdcVerification on the fork, which validates the Merkle path against a finalized root rather than trusting an off-chain API."
+    },
+    "wrongSubject": {
+      "sourceAddress": "rwerD4SoJ8sHPKqXWTf93n7QgQfAJy4HEo",
+      "coreVault": "rfkXSaCZKTg1EZzec2rLDyrWHxRVJdtVXj",
+      "revert": "WrongSubject(string,string)"
+    },
+    "postPinControl": {
+      "hash": "0x82fe003dd0fde63f11dfb6a57b4f6854695fdc28a25638c43f049f59679d31a6",
+      "block": 67086229,
+      "votingRound": 1421530,
+      "rootOnFork": null,
+      "revert": "ProofRejected()"
+    },
+    "requestFees": {
+      "coston2": {
+        "XRPPayment/testXRP": "1000",
+        "XRPPaymentNonexistence/testXRP": "1000",
+        "BalanceDecreasingTransaction/testXRP": "1000",
+        "ConfirmedBlockHeightExists/testXRP": "1000",
+        "EVMTransaction/testETH": "1000"
+      },
+      "mainnet": {
+        "XRPPayment/XRP": "20000000000000000000",
+        "XRPPaymentNonexistence/XRP": "20000000000000000000",
+        "BalanceDecreasingTransaction/XRP": "20000000000000000000",
+        "ConfirmedBlockHeightExists/XRP": "3000000000000000000",
+        "EVMTransaction/ETH": "20000000000000000000"
+      }
+    },
+    "requestCalldata": "0x6238f354000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000605852505061796d656e740000000000000000000000000000000000000000000058525000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "spend": {
+    "forkFLR": 0,
+    "mainnetEquivalentFLR": {
+      "pokeAt650Gwei": 1.20438435,
+      "fdcAttestationsRequested": 0,
+      "fdcFeeFLR": 0,
+      "note": "Attestations are requested on divergence, never on a timer. A 15-minute heartbeat would be ~96 requests/day at 20 FLR = 1,920 FLR/day for no new information. This run requested none: the divergence was not attestable."
+    }
+  },
+  "harvest": [
+    {
+      "hash": "0x1df2dda233160bc9d82e127bb8de73d7dca1e5bf491c7ae904f73114f0ef254c",
+      "block": 67012947,
+      "selector": "0x78d0299e",
+      "selectorName": "executeDirectMinting",
+      "votingRound": 1420598,
+      "transactionId": "0x28f177558bf5a112928b4eb796e05a9d7d5ee9d5981c482c312ebbd486b47e27",
+      "sourceAddress": "rwerD4SoJ8sHPKqXWTf93n7QgQfAJy4HEo",
+      "spentAmount": "81300012",
+      "status": 0,
+      "merkleProofDepth": 3
+    },
+    {
+      "hash": "0x993cf0e614252b012a0fa9a801195d06c564933642083ee2fdcb298bfb6dddfe",
+      "block": 67011800,
+      "selector": "0x78d0299e",
+      "selectorName": "executeDirectMinting",
+      "votingRound": 1420583,
+      "transactionId": "0xe9f0a3454d1b841678b1642bf2835fdc1dbacdb9c763314f83e1e673dae89626",
+      "sourceAddress": "rMiry59sfiVYwvLMAXaNUPUYYHXG6nM7Ag",
+      "spentAmount": "3001201213",
+      "status": 0,
+      "merkleProofDepth": 3
+    },
+    {
+      "hash": "0x3902a485109de512df5bf64975f03d8f9d65385908c714d9ffc8f3adb0c6c754",
+      "block": 67010883,
+      "selector": "0x78d0299e",
+      "selectorName": "executeDirectMinting",
+      "votingRound": 1420572,
+      "transactionId": "0x4143f9f3be06d042b3c0632689b8f9c2c3dbb5b9a7f1f93ea1ccb6bd4cbe4cb7",
+      "sourceAddress": "rNx2puFgL1b7nF2rM9KxHUh25NbArg23fh",
+      "spentAmount": "588788801",
+      "status": 0,
+      "merkleProofDepth": 3
+    },
+    {
+      "hash": "0x6fbce62736e27e3d17aeb367d80d0fb5cc83b61dd72933b096a6f19096a06369",
+      "block": 67010339,
+      "selector": "0xa7556da6",
+      "selectorName": "executeDirectMintingWithData",
+      "votingRound": 1420565,
+      "transactionId": "0x09cacf2b024349e5d7514c5d4f91066acfd30b2c57f52401b36cc57edb9dafa2",
+      "sourceAddress": "r9TngtY1DHUXdcn19pMdZ9kdxBJ7fXwJH6",
+      "spentAmount": "300012",
+      "status": 0,
+      "merkleProofDepth": 3
+    },
+    {
+      "hash": "0xf73068a27561c11d629b021ed7c659b563733bac3282dc578e9840448f2a2a0d",
+      "block": 67009940,
+      "selector": "0x78d0299e",
+      "selectorName": "executeDirectMinting",
+      "votingRound": 1420560,
+      "transactionId": "0xbff996a74c2ed1b48b43f2706ff2d1b658f2f56bdf0bb190080cc8efda1f1f39",
+      "sourceAddress": "r9TngtY1DHUXdcn19pMdZ9kdxBJ7fXwJH6",
+      "spentAmount": "6208870307",
+      "status": 0,
+      "merkleProofDepth": 2
+    },
+    {
+      "hash": "0x92580c12630708015e0a54822c946dadee3047c52e01d718288cf4b5daee5f19",
+      "block": 67007877,
+      "selector": "0x78d0299e",
+      "selectorName": "executeDirectMinting",
+      "votingRound": 1420534,
+      "transactionId": "0x887d741e566e7a0a4d9839b731d77ca640294c9655c19806f0a62c4f2cdf73fc",
+      "sourceAddress": "rMdG3ju8pgyVh29ELPWaDuA74CpWW6Fxns",
+      "spentAmount": "4296912",
+      "status": 0,
+      "merkleProofDepth": 2
+    },
+    {
+      "hash": "0x74f0d346664c1b23bb0734007577b7c2160fd3306bc8cd67769ad2b2d48ab0f6",
+      "block": 67004294,
+      "selector": "0x78d0299e",
+      "selectorName": "executeDirectMinting",
+      "votingRound": 1420488,
+      "transactionId": "0xfae5f5409103b8d6a972c98d53f049ae33f0049a84b9ee8fc8b7b87d8aca94ee",
+      "sourceAddress": "rDAZJrimtEg5FGg7ZGidCxjNJaNYp3pvb2",
+      "spentAmount": "498698711",
+      "status": 0,
+      "merkleProofDepth": 3
+    },
+    {
+      "hash": "0xdc6cfba77059aafe2059f37f07f068983beb6a6a706b384a9b6d5d794e6790a5",
+      "block": 67000117,
+      "selector": "0x78d0299e",
+      "selectorName": "executeDirectMinting",
+      "votingRound": 1420434,
+      "transactionId": "0xbc721fa2df9a493de23053c80820754aac1780f6a06c3aaf7d93311f0a237d98",
+      "sourceAddress": "rMXJYHzPjkTEJP6KAFcbx5JMZXw1dPusku",
+      "spentAmount": "4404604617",
+      "status": 0,
+      "merkleProofDepth": 2
+    }
+  ],
+  "provenance": {
+    "publishedAt": "2026-08-10T13:27:11.756Z",
+    "price": "1039341685200000000000000000000",
+    "priceUSD": 1.0393416852,
+    "incumbent": "1039350000000000000000000000000",
+    "incumbentUSD": 1.03935,
+    "haircutPPM": 999992,
+    "inputs": {
+      "effectiveQueueUBA": "1860950000000",
+      "coreVaultUBA": "7050810428154",
+      "dexExitUBA": "0",
+      "dexQuoteUBA": "0",
+      "remoteClaimsUBA": "0",
+      "pendingProvenOutflowsUBA": "0",
+      "capacityUBA": "8911760428154",
+      "queueTickets": 80,
+      "queueTruncated": false,
+      "pokedAt": 1786285014,
+      "pokedAtBlock": 67013851
+    },
+    "derivedFrom": {
+      "pin": 67013823,
+      "xrplLedger": 106186745,
+      "divergence": {
+        "xrplUBA": "7063788996353",
+        "flareUBA": "7050810428154",
+        "divergenceUBA": "12978568199",
+        "thresholdUBA": "100000000000",
+        "bips": 18,
+        "lowersCapacity": false,
+        "overThreshold": false,
+        "attestable": false,
+        "note": "Attested state is one-directional: only a divergence that LOWERS capacity may be attested."
+      }
+    }
+  },
+  "generatedAt": "2026-08-10T13:27:11.758Z"
+}

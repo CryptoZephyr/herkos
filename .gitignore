@@ -1,0 +1,43 @@
+# No dependencies, ever. Nothing here imports a package — that is part of the $0 story,
+# not an accident. If node_modules appears, something went wrong.
+node_modules/
+
+# Local agent/editor state. These files can contain machine-specific settings.
+.claude/
+.impeccable/
+.vercel/
+.vscode/
+.idea/
+
+.env
+.env.local
+.env.*
+!.env.example
+
+# OS and runtime noise
+.DS_Store
+Thumbs.db
+*.log
+*.err
+
+# Demo-video scratch space. The finished MP4 belongs outside the repository.
+videos/
+recordings/
+audio/
+renders/
+auth-state.json
+
+# Keep the local README out of the public repository per project workflow.
+README.md
+
+# Foundry
+out/
+cache/
+broadcast/
+
+# Event scan caches — regenerable, but slow (a full rescan is ~20M blocks).
+cache-*.json
+
+# The reader snapshot the Phase 3 publisher consumes. Regenerable at the pin, and the
+# publisher should read live state anyway rather than trusting a checked-in snapshot.
+readers.json
