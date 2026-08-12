@@ -12,7 +12,7 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const requiredFiles = [
   'README.md', 'Writeup1.md', 'demo/index.html', 'demo/app.js', 'demo/style.css',
-  'demo/snapshot.json', 'docs/index.html', 'docs/technical.html', 'docs/privacy.html',
+  'demo/snapshot.json', 'demo/flare-mark.svg', 'docs/index.html', 'docs/technical.html', 'docs/privacy.html',
   'docs/terms.html', 'docs/docs.css', 'src/ExitCapacityOracle.sol',
   'src/Coston2SpotOracle.sol', 'src/Coston2LendingMarket.sol',
   'test/Coston2LendingMarket.t.sol', 'test/Coston2Fork.t.sol', 'testnet/index.html', 'testnet/app.js',
@@ -81,6 +81,7 @@ function main() {
     testnetConfig.deploymentPending === true || [testnetConfig.spotOracle, testnetConfig.herkos, testnetConfig.lendingMarket].every((value) => /^0x[a-f\d]{40}$/i.test(value)));
   check('README explains the Coston2 test market', /Coston2/i.test(read('README.md')) && /testnet/i.test(read('README.md')));
   check('official docs have privacy and terms links', /privacy\.html/.test(read('docs/index.html')) && /terms\.html/.test(read('docs/index.html')));
+  check('homepage has a factual Flare sponsor lockup', /sponsor-strip/.test(read('demo/index.html')) && /flare-mark\.svg/.test(read('demo/index.html')) && /resources\/developer-hub/.test(read('demo/index.html')));
   check('testnet page has no phase or audit language', !/(Phase 0|Phase 1|audit language|development phase)/i.test(read('testnet/index.html')));
 
   const linkTargets = [

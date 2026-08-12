@@ -33,7 +33,7 @@ const TYPES = {
    key anywhere in this build — but a server that will hand out any file
    under its root is a bad habit regardless of what is in the directory. */
 const ALLOW = new Set([
-  'demo/index.html', 'demo/app.js', 'demo/style.css', 'demo/snapshot.json', 'demo/favicon.svg', 'demo/herkos-mark.svg',
+  'demo/index.html', 'demo/app.js', 'demo/style.css', 'demo/snapshot.json', 'demo/favicon.svg', 'demo/herkos-mark.svg', 'demo/flare-mark.svg',
   'testnet/index.html', 'testnet/app.js', 'testnet/style.css', 'testnet/contracts.json',
   'docs/index.html', 'docs/technical.html', 'docs/privacy.html', 'docs/terms.html', 'docs/docs.css',
   'README.md', 'Writeup1.md', 'src/ExitCapacityOracle.sol', 'src/Coston2SpotOracle.sol',
@@ -49,7 +49,7 @@ const server = http.createServer((req, res) => {
   // The root URL is a convenience alias for demo/index.html. Its relative
   // stylesheet and script requests arrive as /style.css and /app.js, so map
   // those two safe assets back into demo/ as well.
-  const servedRel = /^(app\.js|style\.css|snapshot\.json|favicon\.svg|herkos-mark\.svg)$/.test(rel) ? `demo/${rel}` : rel;
+  const servedRel = /^(app\.js|style\.css|snapshot\.json|favicon\.svg|herkos-mark\.svg|flare-mark\.svg)$/.test(rel) ? `demo/${rel}` : rel;
   const full = path.resolve(ROOT, servedRel);
   const norm = path.relative(ROOT, full).split(path.sep).join('/');
 

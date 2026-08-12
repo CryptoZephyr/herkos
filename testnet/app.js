@@ -301,9 +301,20 @@ async function readMarket() {
     readNumber(market, SELECTOR.oracleFresh),
   ]);
   const [available, position, limit, health, supplied, fresh] = values;
-  state.position = { collateral: position[0], debt: position[1], supplied, available, limit, health };
   setText('market-liquidity', `${formatUnits(available, state.decimals.usdt)} USDT0`);
   setChip('market-status', fresh !== 0n ? 'Oracle ready' : 'Refresh required', fresh !== 0n ? 'good' : 'warn');
+  if (!state.account) {
+    state.position = { collateral: 0n, debt: 0n, supplied: 0n, available, limit: 0n, health: 0n };
+    setChip('position-status', 'No wallet');
+    setText('position-collateral', 'Not connected');
+    setText('position-debt', 'Not connected');
+    setText('position-supplied', 'Not connected');
+    setText('position-limit', 'Not connected');
+    setText('position-health', 'Not connected');
+    setText('position-note', 'Connect a wallet to read your position.');
+    return;
+  }
+  state.position = { collateral: position[0], debt: position[1], supplied, available, limit, health };
   setText('position-collateral', `${formatUnits(position[0], state.decimals.xrp)} FTestXRP`);
   setText('position-debt', `${formatUnits(position[1], state.decimals.usdt)} USDT0`);
   setText('position-supplied', `${formatUnits(supplied, state.decimals.usdt)} USDT0`);
@@ -417,6 +428,7 @@ function updateActionControls() {
   submit.disabled = !ready;
   submit.textContent = !state.account ? 'Connect wallet first' : !deployed() ? 'Deployment pending' : state.chainId !== C2_CHAIN_ID ? 'Switch to Coston2' : action.label;
   $('max-amount').disabled = !ready || currentMax() === 0n;
+  $('refresh-balances').disabled = !state.account;
   $('refresh-oracle').disabled = !ready;
   setText('action-state', ready ? 'Ready for a test transaction' : !deployed() ? 'Deployment pending' : 'Connect to enable actions');
 }

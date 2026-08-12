@@ -6,6 +6,7 @@
     { "source": "/snapshot.json", "destination": "/demo/snapshot.json" },
     { "source": "/favicon.svg", "destination": "/demo/favicon.svg" },
     { "source": "/herkos-mark.svg", "destination": "/demo/herkos-mark.svg" },
+    { "source": "/flare-mark.svg", "destination": "/demo/flare-mark.svg" },
     { "source": "/testnet", "destination": "/testnet/index.html" },
     { "source": "/testnet/", "destination": "/testnet/index.html" },
     { "source": "/testnet/:path*", "destination": "/testnet/:path*" },
