@@ -3,6 +3,7 @@
     { "source": "/", "destination": "/demo/index.html" },
     { "source": "/app.js", "destination": "/demo/app.js" },
     { "source": "/style.css", "destination": "/demo/style.css" },
+    { "source": "/snapshot.json", "destination": "/demo/snapshot.json" },
     { "source": "/favicon.svg", "destination": "/demo/favicon.svg" },
     { "source": "/herkos-mark.svg", "destination": "/demo/herkos-mark.svg" },
     { "source": "/docs/:path*", "destination": "/docs/:path*" }
