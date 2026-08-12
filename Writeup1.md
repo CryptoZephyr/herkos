@@ -26,7 +26,8 @@ maximum loan-to-value ratio, a 75% liquidation threshold, a 5% liquidation
 bonus, and no interest accrual. A visitor can connect a browser wallet, get
 assets from the [official faucet](https://faucet.flare.network/coston2),
 refresh Herkos, supply liquidity, deposit collateral, borrow, repay, and
-withdraw. The assets have no monetary value.
+withdraw. If the wallet does not know Coston2 yet, the app asks it to add the
+official network and switch to it. The assets have no monetary value.
 
 The deployment was checked with 10 USDT0 and 10 FTestXRP. The flow borrowed 7
 USDT0, repaid it, withdrew the collateral, and withdrew the supplied

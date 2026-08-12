@@ -45,10 +45,12 @@ collateral. Faucet USDT0 is the liquidity and debt asset. The market has a 70%
 maximum loan-to-value ratio, a 75% liquidation threshold, a 5% liquidation
 bonus, and no interest accrual.
 
-Connect a browser wallet, switch to Coston2, and use the [official Coston2
-faucet](https://faucet.flare.network/coston2) for free test assets. Deposits,
-borrows, repayments, withdrawals, and oracle refreshes are real testnet
-transactions. The assets have no monetary value.
+Connect a browser wallet and use the [official Coston2
+faucet](https://faucet.flare.network/coston2) for free test assets. If Coston2
+is not already in the wallet, Herkos asks the wallet to add the official
+network and then switch to it. Deposits, borrows, repayments, withdrawals, and
+oracle refreshes are real testnet transactions. The assets have no monetary
+value.
 
 The Mainnet page does not send transactions. Its market integration is a
 pinned fork result against an existing deployed market. The Coston2 page is

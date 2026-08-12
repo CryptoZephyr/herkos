@@ -193,33 +193,46 @@ async function connectWallet() {
     const accounts = await state.provider.request({ method: 'eth_requestAccounts' });
     if (!accounts?.[0]) throw new Error('No wallet account was returned.');
     state.account = accounts[0];
+    setText('connect', shorten(state.account));
+    setText('wallet-hint', `Connected ${shorten(state.account)}. Add Coston2 in your wallet to continue.`);
     state.chainId = await state.provider.request({ method: 'eth_chainId' });
     if (state.chainId !== C2_CHAIN_ID) await switchToCoston2();
-    setText('connect', shorten(state.account));
     setText('wallet-hint', `Connected ${shorten(state.account)}. The address and transactions remain public on Coston2.`);
     setStatus('Wallet connected on Coston2.', 'success');
     clearNotice();
     await loadAll();
   } catch (error) {
     setStatus(explainError(error), 'warning');
+    updateActionControls();
   }
+}
+
+function isMissingChainError(error) {
+  const message = String(error?.message || '').toLowerCase();
+  return error?.code === 4902 || /unknown chain|unrecognized chain|chain.*not added|does not exist/.test(message);
+}
+
+async function addCoston2() {
+  await state.provider.request({
+    method: 'wallet_addEthereumChain',
+    params: [{
+      chainId: C2_CHAIN_ID,
+      chainName: 'Flare Testnet Coston2',
+      nativeCurrency: { name: 'Coston2 Flare', symbol: 'C2FLR', decimals: 18 },
+      rpcUrls: [state.config.rpcUrl],
+      blockExplorerUrls: [state.config.explorerUrl],
+    }],
+  });
 }
 
 async function switchToCoston2() {
   try {
     await state.provider.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: C2_CHAIN_ID }] });
   } catch (error) {
-    if (error?.code !== 4902) throw error;
-    await state.provider.request({
-      method: 'wallet_addEthereumChain',
-      params: [{
-        chainId: C2_CHAIN_ID,
-        chainName: 'Flare Testnet Coston2',
-        nativeCurrency: { name: 'Coston2 Flare', symbol: 'C2FLR', decimals: 18 },
-        rpcUrls: [state.config.rpcUrl],
-        blockExplorerUrls: [state.config.explorerUrl],
-      }],
-    });
+    if (!isMissingChainError(error)) throw error;
+    setStatus('Coston2 is not in this wallet. Add it in the next wallet prompt.', '');
+    await addCoston2();
+    await state.provider.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: C2_CHAIN_ID }] });
   }
   state.chainId = await state.provider.request({ method: 'eth_chainId' });
   if (state.chainId !== C2_CHAIN_ID) throw new Error('Switch to Coston2 in your wallet before signing.');
