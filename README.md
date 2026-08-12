@@ -53,9 +53,9 @@ The contract tests use Foundry and a Flare fork:
 forge test -vv
 ```
 
-The repository also includes the scripts used to collect readings, run the
-forked integration, and check the public presentation. Their generated reports
-and local research caches are intentionally excluded from the public repo.
+The repository also includes the scripts used to collect readings and run the
+forked integration. Generated reports and local research caches are intentionally
+excluded from the public repo.
 
 ## Repository map
 
