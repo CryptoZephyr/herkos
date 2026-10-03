@@ -272,9 +272,13 @@ async function readOracle() {
     // `isPokeStale()` is read separately below. The inputs read gives the
     // evidence block and timestamp displayed to the user.
     const isStale = await readNumber(state.config.herkos, '0x3eecbebb');
-    const price = await readNumber(state.config.herkos, callData(SELECTOR.getUnderlyingPrice, state.config.lendingMarket));
+    // getUnderlyingPrice reverts with StalePoke while the aggregate is stale,
+    // so only ask for a price when there is one to give.
+    const price = isStale === 0n
+      ? await readNumber(state.config.herkos, callData(SELECTOR.getUnderlyingPrice, state.config.lendingMarket))
+      : 0n;
     state.lastReads.oracle = { values, price, stale: isStale !== 0n };
-    setText('oracle-price', formatPrice(price));
+    setText('oracle-price', isStale === 0n ? formatPrice(price) : 'Refresh required');
     setText('exit-capacity', `${formatUnits(values[6], state.decimals.xrp)} FXRP`);
     setText('haircut', formatPercentPpm(values[7]));
     const timestamp = Number(values[8]);
@@ -438,7 +442,15 @@ function currentMax() {
   if (action === 'deposit') return state.balances.xrp;
   if (action === 'repay') return state.balances.usdt < state.position.debt ? state.balances.usdt : state.position.debt;
   if (action === 'borrow') return state.position.limit > state.position.debt ? state.position.limit - state.position.debt : 0n;
-  if (action === 'withdrawCollateral') return state.position.collateral;
+  if (action === 'withdrawCollateral') {
+    const { collateral, debt } = state.position;
+    if (debt === 0n) return collateral;
+    // Keep the remaining collateral at or under the market's 70% LTV.
+    const price = state.lastReads.oracle?.price || 0n;
+    if (!price) return 0n;
+    const locked = (debt * 10_000n * 10n ** 30n + 7_000n * price - 1n) / (7_000n * price);
+    return collateral > locked ? collateral - locked : 0n;
+  }
   if (action === 'supply') return state.balances.usdt;
   if (action === 'withdrawLiquidity') return state.position.supplied < state.position.available ? state.position.supplied : state.position.available;
   return 0n;

@@ -10,7 +10,7 @@ import {IPriceOracle, IERC20, ICoreVaultManager} from "../src/interfaces/IHerkos
 abstract contract ForkBase is Test {
     // Pinned in fork.json. A pin that follows the head is not a pin.
     uint256 internal constant FORK_BLOCK = 67_013_823;
-    string internal constant RPC = "https://flare-api.flare.network/ext/C/rpc";
+    string internal constant RPC = "https://flare.public-rpc.com";
 
     address internal constant REGISTRY = 0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019;
     address internal constant ASSET_MANAGER = 0x2a3Fe068cD92178554cabcf7c95ADf49B4B0B6A8;

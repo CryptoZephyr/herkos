@@ -65,6 +65,9 @@ function main() {
     assert(cast(['code', address]).length > 2, `${label} has no bytecode`);
   }
   assert(call(record.herkos, 'isFXRPMarket(address)(bool)', [record.lendingMarket]) === 'true', 'market is not registered with Herkos');
+  const flow = {};
+  // Nobody pokes the public deployment on a schedule, so refresh it first.
+  if (call(record.herkos, 'isPokeStale()(bool)') === 'true') flow.poke = send(record.herkos, 'poke()');
   assert(call(record.herkos, 'isPokeStale()(bool)') === 'false', 'Herkos is stale before the flow');
   assert(BigInt(call(record.herkos, 'getUnderlyingPrice(address)(uint256)', [record.lendingMarket]).split(' ')[0]) > 0n, 'Herkos returned no price');
   assert(call(record.lendingMarket, 'underlying()(address)').toLowerCase() === record.fTestXrp.toLowerCase(), 'market underlying is not FTestXRP');
@@ -77,7 +80,6 @@ function main() {
   const XRP_AMOUNT = (10n * collateralUnit).toString();
   const BORROW_AMOUNT = (7n * debtUnit).toString();
 
-  const flow = {};
   flow.approveUsdt = send(record.testUsdt0, 'approve(address,uint256)', [record.lendingMarket, USDT_AMOUNT]);
   flow.supplyLiquidity = send(record.lendingMarket, 'supplyLiquidity(uint256)', [USDT_AMOUNT]);
   flow.approveFxrp = send(record.fTestXrp, 'approve(address,uint256)', [record.lendingMarket, XRP_AMOUNT]);
